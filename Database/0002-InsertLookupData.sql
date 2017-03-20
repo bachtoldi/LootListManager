@@ -336,8 +336,8 @@ GO
 -- FactionNames
 
 INSERT INTO [LootListManager].[dbo].[FactionNames] ( [FK_FactionId], [FactionNameCulture], [FactionNameString] ) VALUES
-(1,		'de',	'Allianz'),		(2,		'en',	'Alliance'),
-(2,		'de',	'Horde'),		(3,		'en',	'Horde')
+(1,		'de',	'Allianz'),		(1,		'en',	'Alliance'),
+(2,		'de',	'Horde'),		(2,		'en',	'Horde')
 
 GO
 

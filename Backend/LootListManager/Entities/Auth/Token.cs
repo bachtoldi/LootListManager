@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LootListManager.Entities {
+namespace LootListManager.Entities.Auth {
   public class Token {
     public virtual int TokenId { get; set; }
     public virtual User UserRef { get; set; }

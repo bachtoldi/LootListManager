@@ -39,7 +39,8 @@ IF OBJECT_ID(N'Instances') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Instances] (
 		[InstanceId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[InstanceSort] INT NOT NULL UNIQUE
+		[InstanceSort] INT NOT NULL UNIQUE,
+		[InstanceImage] NVARCHAR(MAX) NULL
 	)
 END
 GO
