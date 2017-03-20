@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LootListManager", "LootListManager\LootListManager.csproj", "{6734086B-6036-497B-8DBF-7E9209FC1502}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LootListManager.Logic", "LootListManager.Logic\LootListManager.Logic.csproj", "{321F8AA6-50BA-4833-8E4A-B647D189B620}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Logic", "01 Logic", "{87EAD0D4-54A0-4678-8197-0B2706E98C8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Service", "10 Service", "{4F49522F-A67B-42D8-B452-9BC64BB856E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{6734086B-6036-497B-8DBF-7E9209FC1502}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6734086B-6036-497B-8DBF-7E9209FC1502}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6734086B-6036-497B-8DBF-7E9209FC1502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321F8AA6-50BA-4833-8E4A-B647D189B620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321F8AA6-50BA-4833-8E4A-B647D189B620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321F8AA6-50BA-4833-8E4A-B647D189B620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321F8AA6-50BA-4833-8E4A-B647D189B620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6734086B-6036-497B-8DBF-7E9209FC1502} = {4F49522F-A67B-42D8-B452-9BC64BB856E2}
+		{321F8AA6-50BA-4833-8E4A-B647D189B620} = {87EAD0D4-54A0-4678-8197-0B2706E98C8A}
 	EndGlobalSection
 EndGlobal

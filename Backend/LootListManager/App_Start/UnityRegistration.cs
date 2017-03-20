@@ -1,5 +1,4 @@
-﻿using LootListManager.DataProviders;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 
 namespace LootListManager {
   public class UnityRegistration {
@@ -23,8 +22,6 @@ namespace LootListManager {
 
     public UnityRegistration() {
       _container = new UnityContainer();
-
-      _container.RegisterType<DataProvider>(new ContainerControlledLifetimeManager());
     }
 
     #endregion
