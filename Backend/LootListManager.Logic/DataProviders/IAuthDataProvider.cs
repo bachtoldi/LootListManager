@@ -1,8 +1,8 @@
 ﻿using LootListManager.Logic.Entities.Auth;
 using System.Collections.Generic;
 
-namespace LootListManager.Logic.Connectors {
-  public interface IAuthDataConnector {
+namespace LootListManager.Logic.DataProviders {
+  public interface IAuthDataProvider {
 
     #region - User -
 

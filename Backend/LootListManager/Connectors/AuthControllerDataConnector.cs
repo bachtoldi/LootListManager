@@ -1,4 +1,4 @@
-﻿using LootListManager.Logic.Connectors;
+﻿using LootListManager.Logic.DataProviders;
 using LootListManager.Logic.Entities.Auth;
 using System.Collections.Generic;
 
@@ -7,14 +7,14 @@ namespace LootListManager.Connectors {
 
     #region - Instance Variables -
 
-    private readonly IAuthDataConnector _authConnector;
+    private readonly IAuthDataProvider _authConnector;
 
     #endregion
 
     #region - Constructor -
 
     public AuthControllerDataConnector() {
-      _authConnector = ConnectorFactory.GetAuthDataConnector();
+      _authConnector = DataProviderFactory.GetAuthDataConnector();
     }
 
     #endregion

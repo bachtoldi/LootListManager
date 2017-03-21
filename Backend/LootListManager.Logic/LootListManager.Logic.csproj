@@ -52,9 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connectors\AuthDataConnector.cs" />
-    <Compile Include="Connectors\ConnectorFactory.cs" />
-    <Compile Include="Connectors\IAuthDataConnector.cs" />
+    <Compile Include="DataProviders\AuthDataConnector.cs" />
+    <Compile Include="DataProviders\DataProviderFactory.cs" />
+    <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
+    <Compile Include="DataProviders\IAuthDataProvider.cs" />
+    <Compile Include="DataProviders\IEnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\TokenMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\UserMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Config\NeedTypeMap.cs" />

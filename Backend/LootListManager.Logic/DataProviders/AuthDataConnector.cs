@@ -1,9 +1,8 @@
-﻿using LootListManager.Logic.DataProviders;
-using LootListManager.Logic.Entities.Auth;
+﻿using LootListManager.Logic.Entities.Auth;
 using System.Collections.Generic;
 
-namespace LootListManager.Logic.Connectors {
-  internal class AuthDataConnector : DataProvider, IAuthDataConnector {
+namespace LootListManager.Logic.DataProviders {
+  internal class AuthDataProvider : DataProvider, IAuthDataProvider {
 
     #region - User -
 
