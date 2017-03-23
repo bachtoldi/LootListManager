@@ -3,5 +3,6 @@
     public virtual int InstanceId { get; set; }
     public virtual int InstanceSort { get; set; }
     public virtual string InstanceImage { get; set; }
+    public virtual string InstanceName { get; set; }
   }
 }

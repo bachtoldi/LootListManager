@@ -1,4 +1,6 @@
-﻿namespace LootListManager.Logic.DataProviders {
+﻿using System.Globalization;
+
+namespace LootListManager.Logic.DataProviders {
   public static class DataProviderFactory {
 
     public static IAuthDataProvider GetAuthDataProvider() {

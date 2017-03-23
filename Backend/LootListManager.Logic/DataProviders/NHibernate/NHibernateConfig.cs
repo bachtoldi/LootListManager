@@ -14,7 +14,7 @@ namespace LootListManager.Logic.DataProviders {
         .DataBaseIntegration(db => {
           db.ConnectionProvider<DriverConnectionProvider>();
           db.Driver<SqlClientDriver>();
-          db.ConnectionString = "Server=PASCAL-DESKTOP\\SQLEXPRESS; Initial Catalog=LootListManager; Integrated Security=True;";
+          db.ConnectionString = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS; Initial Catalog=LootListManager; Integrated Security=True;";
           db.Dialect<MsSql2012Dialect>();
         });
 

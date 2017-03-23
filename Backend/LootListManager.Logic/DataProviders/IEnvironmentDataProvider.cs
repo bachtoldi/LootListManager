@@ -14,17 +14,6 @@ namespace LootListManager.Logic.DataProviders {
 
     #endregion
 
-    #region - BossName -
-
-    BossName GetBossName(int id);
-    BossName GetBossName(int bossId, string culture);
-    IList<BossName> GetBossNames();
-    IList<BossName> GetBossNames(int instanceId, string culture);
-    BossName SaveBossName(BossName bossName);
-    bool DeleteBossName(int id);
-
-    #endregion
-
     #region - Instance -
 
     Instance GetInstance(int id);
@@ -34,21 +23,7 @@ namespace LootListManager.Logic.DataProviders {
 
     #endregion
 
-    #region - InstanceName -
-
-    InstanceName GetInstanceName(int id);
-    InstanceName GetInstanceName(int instanceId, string culture);
-    IList<InstanceName> GetInstanceNames();
-    InstanceName SaveInstanceName(InstanceName instanceName);
-    bool DeleteInstanceName(int id);
-
-    #endregion
-
     #region - Item -
-
-    #endregion
-
-    #region - ItemName -
 
     #endregion
 

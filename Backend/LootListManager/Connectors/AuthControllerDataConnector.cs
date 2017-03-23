@@ -1,6 +1,7 @@
 ﻿using LootListManager.Logic.DataProviders;
 using LootListManager.Logic.Entities.Auth;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace LootListManager.Connectors {
   internal class AuthControllerDataConnector {
@@ -14,7 +15,7 @@ namespace LootListManager.Connectors {
     #region - Constructor -
 
     public AuthControllerDataConnector() {
-      _authConnector = DataProviderFactory.GetAuthDataConnector();
+      _authConnector = DataProviderFactory.GetAuthDataProvider();
     }
 
     #endregion

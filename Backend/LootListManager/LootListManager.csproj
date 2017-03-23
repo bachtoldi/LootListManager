@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingModels\UserBindingModel.cs" />
+    <Compile Include="Connectors\AuthControllerDataConnector.cs" />
     <Compile Include="Util\LinkContainer.cs" />
     <Compile Include="Util\RelValues.cs" />
     <Compile Include="Util\Link.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Connectors\AuthControllerDataConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

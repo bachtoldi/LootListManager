@@ -1,5 +1,6 @@
 ﻿using LootListManager.Logic.Entities.Environment;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace LootListManager.Logic.DataProviders {
   internal class EnvironmentDataProvider : DataProvider, IEnvironmentDataProvider {
@@ -7,51 +8,23 @@ namespace LootListManager.Logic.DataProviders {
     #region - Boss -
 
     public Boss GetBoss(int id) {
-
+      return null;
     }
 
     public IList<Boss> GetBosses() {
-
+      return null;
     }
 
     public IList<Boss> GetBosses(int instanceId) {
-
+      return null;
     }
 
     public Boss SaveBoss(Boss boss) {
-
+      return null;
     }
 
     public bool DeleteBoss(int id) {
-
-    }
-
-    #endregion
-
-    #region - BossName -
-
-    public BossName GetBossName(int id) {
-
-    }
-
-    public BossName GetBossName(int bossId, string culture) {
-
-    }
-
-    public IList<BossName> GetBossNames() {
-
-    }
-
-    public IList<BossName> GetBossNames(int instanceId, string culture) {
-
-    }
-
-    public BossName SaveBossName(BossName bossName) {
-
-    }
-
-    public bool DeleteBossName(int id) {
-
+      return false;
     }
 
     #endregion
@@ -59,52 +32,24 @@ namespace LootListManager.Logic.DataProviders {
     #region - Instance -
 
     public Instance GetInstance(int id) {
-
+      return null;
     }
 
     public IList<Instance> GetInstances() {
-
+      return null;
     }
 
     public Instance SaveInstance(Instance instance) {
-
+      return null;
     }
 
     public bool DeleteInstance(int id) {
-
-    }
-
-    #endregion
-
-    #region - InstanceName -
-
-    public InstanceName GetInstanceName(int id) {
-
-    }
-
-    public InstanceName GetInstanceName(int instanceId, string culture) {
-
-    }
-
-    public IList<InstanceName> GetInstanceNames() {
-
-    }
-
-    public InstanceName SaveInstanceName(InstanceName instanceName) {
-
-    }
-
-    public bool DeleteInstanceName(int id) {
-
+      return false;
     }
 
     #endregion
 
     #region - Item -
-
-    #endregion
-
-    #region - ItemName -
 
     #endregion
 

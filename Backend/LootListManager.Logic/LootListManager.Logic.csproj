@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProviders\AuthDataConnector.cs" />
+    <Compile Include="DataProviders\AuthDataProvider.cs" />
     <Compile Include="DataProviders\DataProviderFactory.cs" />
     <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\IAuthDataProvider.cs" />
@@ -62,23 +62,16 @@
     <Compile Include="DataProviders\ClassMaps\Config\NeedTypeMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Config\PriorityMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Environment\BossMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Environment\BossNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Environment\InstanceMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Environment\InstanceNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Environment\ItemBossSettingMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Environment\ItemMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Environment\ItemNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\CharacterMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\ClassMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Player\ClassNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\ClassRaceSettingMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\FactionMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Player\FactionNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\NeedMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\RaceMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Player\RaceNameMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\TalentMap.cs" />
-    <Compile Include="DataProviders\ClassMaps\Player\TalentNameMap.cs" />
     <Compile Include="DataProviders\DataProvider.cs" />
     <Compile Include="DataProviders\NHibernate\NHibernateConfig.cs" />
     <Compile Include="DataProviders\NHibernate\SessionFactory.cs" />
@@ -87,23 +80,16 @@
     <Compile Include="Entities\Config\NeedType.cs" />
     <Compile Include="Entities\Config\Priority.cs" />
     <Compile Include="Entities\Environment\Boss.cs" />
-    <Compile Include="Entities\Environment\BossName.cs" />
     <Compile Include="Entities\Environment\Instance.cs" />
-    <Compile Include="Entities\Environment\InstanceName.cs" />
     <Compile Include="Entities\Environment\Item.cs" />
     <Compile Include="Entities\Environment\ItemBossSetting.cs" />
-    <Compile Include="Entities\Environment\ItemName.cs" />
     <Compile Include="Entities\Player\Character.cs" />
     <Compile Include="Entities\Player\Class.cs" />
-    <Compile Include="Entities\Player\ClassName.cs" />
     <Compile Include="Entities\Player\ClassRaceSetting.cs" />
     <Compile Include="Entities\Player\Faction.cs" />
-    <Compile Include="Entities\Player\FactionName.cs" />
     <Compile Include="Entities\Player\Need.cs" />
     <Compile Include="Entities\Player\Race.cs" />
-    <Compile Include="Entities\Player\RaceName.cs" />
     <Compile Include="Entities\Player\Talent.cs" />
-    <Compile Include="Entities\Player\TalentName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
