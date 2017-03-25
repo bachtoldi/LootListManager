@@ -2,30 +2,30 @@
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Instances] ON
 
-INSERT INTO [LootListManager].[dbo].[Instances] ( [InstanceId], [InstanceSort] ) VALUES
-(1, 1), 
-(2, 2), 
-(3, 3), 
-(4, 4), 
-(5, 5), 
-(6, 6), 
-(7, 7), 
-(8, 8)
+INSERT INTO [LootListManager].[dbo].[Instances] ( [InstanceId], [InstanceLogicalId], [InstanceSort] ) VALUES
+(1, 'ony', 1), 
+(2, 'mc', 2), 
+(3, 'zg', 3), 
+(4, 'bwl', 4), 
+(5, 'aq20', 5), 
+(6, 'aq40', 6), 
+(7, 'nax', 7), 
+(8, 'wb', 8)
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Instances] OFF
 
 GO
 
 -- InstanceNames
-INSERT INTO [LootListManager].[dbo].[InstanceNames] ( [FK_InstanceId], [InstanceNameCulture], [InstanceNameString] ) VALUES
-(1,		'de',	'Onyxias Hort'),			(1,		'en',	'Onyxia''s Lair'),
-(2,		'de',	'Geschmolzener Kern'),		(2,		'en',	'Molten Core'),
-(3,		'de',	'Zul''Gurub'),				(3,		'en',	'Zul''Gurub'),
-(4,		'de',	'Pechschwingenhort'),		(4,		'en',	'Blackwinglair'),
-(5,		'de',	'Ruinen von Ahn''Qiraj'),	(5,		'en',	'Ruins of Ahn''Qiraj'),
-(6,		'de',	'Tempel von Ahn''Qiraj'),	(6,		'en',	'Temple of Ahn''Qiraj'),
-(7,		'de',	'Naxxramas'),				(7,		'en',	'Naxxramas'),
-(8,		'de',	'Weltbosse'),				(8,		'en',	'World Bosses')
+INSERT INTO [LootListManager].[dbo].[InstanceNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('ony',		'de',	'Onyxias Hort'),			('ony',		'en',	'Onyxia''s Lair'),
+('mc',		'de',	'Geschmolzener Kern'),		('mc',		'en',	'Molten Core'),
+('zg',		'de',	'Zul''Gurub'),				('zg',		'en',	'Zul''Gurub'),
+('bwl',		'de',	'Pechschwingenhort'),		('bwl',		'en',	'Blackwinglair'),
+('aq20',	'de',	'Ruinen von Ahn''Qiraj'),	('aq20',	'en',	'Ruins of Ahn''Qiraj'),
+('aq40',	'de',	'Tempel von Ahn''Qiraj'),	('aq40',	'en',	'Temple of Ahn''Qiraj'),
+('nax',		'de',	'Naxxramas'),				('nax',		'en',	'Naxxramas'),
+('wb',		'de',	'Weltbosse'),				('wb',		'en',	'World Bosses')
 
 GO
 
@@ -33,85 +33,85 @@ GO
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Bosses] ON
 
-INSERT INTO [LootListManager].[dbo].[Bosses] ( [BossId], [BossSort], [FK_InstanceId] ) VALUES
-(1,		1,		1),
+INSERT INTO [LootListManager].[dbo].[Bosses] ( [BossId], [BossLogicalId], [BossSort], [FK_InstanceId] ) VALUES
+(1,		'onyxia',		1,		1),
 
-(2,		1,		2),
-(3,		2,		2),
-(4,		3,		2),
-(5,		4, 2),
-(6,		5, 2),
-(7,		6, 2),
-(8,		7, 2),
-(9,		8, 2),
-(10,	9, 2),
-(11,	10,2),
-(12,	11,2),
+(2,		'luci',			1,		2),
+(3,		'magma',		2,		2),
+(4,		'gehe',			3,		2),
+(5,		'garr',			4,		2),
+(6,		'shazz',		5,		2),
+(7,		'geddon',		6,		2),
+(8,		'sulfuron',		7,		2),
+(9,		'gole',			8,		2),
+(10,	'majo',			9,		2),
+(11,	'raggi',		10,		2),
+(12,	'mctrash',		11,		2),
 
-(13,	1, 3),
-(14,	2, 3),
-(15,	3, 3),
-(16,	4, 3),
-(17,	5, 3),
-(18,	6, 3),
-(19,	7, 3),
-(20,	8, 3),
-(21,	9, 3),
-(22,	10,3),
-(23,	11,3),
+(13,	'jeklik',		1,		3),
+(14,	'venoxis',		2,		3),
+(15,	'marli',		3,		3),
+(16,	'thekal',		4,		3),
+(17,	'arlokk',		5,		3),
+(18,	'mando',		6,		3),
+(19,	'jindo',		7,		3),
+(20,	'gahz',			8,		3),
+(21,	'madness',		9,		3),
+(22,	'hakkar',		10,		3),
+(23,	'zgtrash',		11,		3),
 
-(24,	1, 4),
-(25,	2, 4),
-(26,	3, 4),
-(27,	4, 4),
-(28,	5, 4),
-(29,	6, 4),
-(30,	7, 4),
-(31,	8, 4),
-(32,	9, 4),
+(24,	'razo',			1,		4),
+(25,	'vael',			2,		4),
+(26,	'lash',	3,		4),
+(27,	'flamegor',		4,		4),
+(28,	'ebonroc',		5,		4),
+(29,	'firemaw',		6,		4),
+(30,	'chrommi',		7,		4),
+(31,	'nef',			8,		4),
+(32,	'bwltrash',		9,		4),
 
-(33,	1, 5),
-(34,	2, 5),
-(35,	3, 5),
-(36,	4, 5),
-(37,	5, 5),
-(38,	6, 5),
-(39,	7, 5),
+(33,	'kurinaxx',		1,		5),
+(34,	'rajaxx',		2,		5),
+(35,	'moam',			3,		5),
+(36,	'buru',			4,		5),
+(37,	'aya',			5,		5),
+(38,	'ossi',			6,		5),
+(39,	'aq20trash',	7,		5),
 
-(40,	1, 6),
-(41,	2, 6),
-(42,	3, 6),
-(43,	4, 6),
-(44,	5, 6),
-(45,	6, 6),
-(46,	7, 6),
-(47,	8, 6),
-(48,	9, 6),
-(49,	10,6),
+(40,	'skeram',		1,		6),
+(41,	'bugs',			2,		6),
+(42,	'sartura',		3,		6),
+(43,	'fankriss',		4,		6),
+(44,	'visci',		5,		6),
+(45,	'huhu',			6,		6),
+(46,	'twins',		7,		6),
+(47,	'ouro',			8,		6),
+(48,	'cthun',		9,		6),
+(49,	'aq40trash',	10,		6),
 
-(50,	1, 7),
-(51,	2, 7),
-(52,	3, 7),
-(53,	4, 7),
-(54,	5, 7),
-(55,	6, 7),
-(56,	7, 7),
-(57,	8, 7),
-(58,	9, 7),
-(59,	10,7),
-(60,	11,7),
-(61,	12,7),
-(62,	13,7),
-(63,	14,7),
-(64,	15,7),
-(65,	16,7),
+(50,	'anub',			1,		7),
+(51,	'widow',		2,		7),
+(52,	'maexxna',		3,		7),
+(53,	'noth',			4,		7),
+(54,	'heigan',		5,		7),
+(55,	'loatheb',		6,		7),
+(56,	'razuvi',		7,		7),
+(57,	'gothik',		8,		7),
+(58,	'horsemen',		9,		7),
+(59,	'patchwork',	10,		7),
+(60,	'grobbulus',	11,		7),
+(61,	'gluth',		12,		7),
+(62,	'thaddius',		13,		7),
+(63,	'saphiron',		14,		7),
+(64,	'kel',			15,		7),
+(65,	'naxtrash',		16,		7),
 
-(66,	1, 8),
-(67,	2, 8),
-(68,	3, 8),
-(69,	4, 8),
-(70,	5, 8),
-(71,	6, 8)
+(66,	'kazzak',		1,		8),
+(67,	'azu',			2,		8),
+(68,	'ysondre',		3,		8),
+(69,	'lethon',		4,		8),
+(70,	'taerar',		5,		8),
+(71,	'emeriss',		6,		8)
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Bosses] OFF
 
@@ -119,85 +119,85 @@ GO
 
 -- BossNames
 
-INSERT INTO [LootListManager].[dbo].[BossNames] ( [FK_BossId], [BossNameCulture], [BossNameString] ) VALUES
-(1,		'de',	'Onyxia'),						(1, 'en', 'Onyxia'),
+INSERT INTO [LootListManager].[dbo].[BossNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('onyxia',		'de',	'Onyxia'),						('onyxia',		'en', 'Onyxia'),
 
-(2,		'de',	'Lucifron'),					(2,		'en',	'Lucifron'),
-(3,		'de',	'Magmadar'),					(3,		'en',	'Magmadar'),
-(4,		'de',	'Gehennas'),					(4,		'en',	'Gehennas'),
-(5,		'de',	'Garr'),						(5,		'en',	'Garr'),
-(6,		'de',	'Shazzrah'),					(6,		'en',	'Shazzrah'),
-(7,		'de',	'Baron Geddon'),				(7,		'en',	'Baron Geddon'),
-(8,		'de',	'Sulfuronherold'),				(8,		'en',	'Sulfuron Herold'),
-(9,		'de',	'Golemagg der Verbrenner'),		(9,		'en',	'Golemagg the Incinerator'),
-(10,	'de',	'Majordomus Exekutus'),			(10,	'en',	'Majordomo Executus'),
-(11,	'de',	'Ragnaros'),					(11,	'en',	'Ragnaros'),
-(12,	'de',	'Trash'),						(12,	'en',	'Trash'),
+('luci',		'de',	'Lucifron'),					('luci',		'en',	'Lucifron'),
+('magma',		'de',	'Magmadar'),					('magma',		'en',	'Magmadar'),
+('gehe',		'de',	'Gehennas'),					('gehe',		'en',	'Gehennas'),
+('garr',		'de',	'Garr'),						('garr',		'en',	'Garr'),
+('shazz',		'de',	'Shazzrah'),					('shazz',		'en',	'Shazzrah'),
+('geddon',		'de',	'Baron Geddon'),				('geddon',		'en',	'Baron Geddon'),
+('sulfuron',	'de',	'Sulfuronherold'),				('sulfuron',	'en',	'Sulfuron Herold'),
+('gole',		'de',	'Golemagg der Verbrenner'),		('gole',		'en',	'Golemagg the Incinerator'),
+('majo',		'de',	'Majordomus Exekutus'),			('majo',		'en',	'Majordomo Executus'),
+('raggi',		'de',	'Ragnaros'),					('raggi',		'en',	'Ragnaros'),
+('mctrash',		'de',	'Trash'),						('mctrash',		'en',	'Trash'),
 
-(13,	'de',	'Hohepriesterin Jeklik'),		(13,	'en',	'High Priestess Jeklik'),
-(14,	'de',	'Hohepriester Venoxis'),		(14,	'en',	'High Priest Venoxis'),
-(15,	'de',	'Hohepriesterin Mar''li'),		(15,	'en',	'High Priestess Mar''li'),
-(16,	'de',	'Hohepriester Thekal'),			(16,	'en',	'High Priest Thekal'),
-(17,	'de',	'Hohepriesterin Arlokk'),		(17,	'en',	'High Priestess Arlokk'),
-(18,	'de',	'Blutfürst Mandokir'),			(18,	'en',	'Bloodlord Mandokir'),
-(19,	'de',	'Jin''do der Verhexer'),		(19,	'en',	'Jin''do the Hexxer'),
-(20,	'de',	'Gahz''ranka'),					(20,	'en',	'Gahz''ranka'),
-(21,	'de',	'Hort des Wahnsinns'),			(21,	'en',	'Edge of Madness'),
-(22,	'de',	'Hakkar'),						(22,	'en',	'Hakkar'),
-(23,	'de',	'Trash'),						(23,	'en',	'Trash'),
+('jeklik',		'de',	'Hohepriesterin Jeklik'),		('jeklik',		'en',	'High Priestess Jeklik'),
+('venoxis',		'de',	'Hohepriester Venoxis'),		('venoxis',		'en',	'High Priest Venoxis'),
+('marli',		'de',	'Hohepriesterin Mar''li'),		('marli',		'en',	'High Priestess Mar''li'),
+('thekal',		'de',	'Hohepriester Thekal'),			('thekal',		'en',	'High Priest Thekal'),
+('arlokk',		'de',	'Hohepriesterin Arlokk'),		('arlokk',		'en',	'High Priestess Arlokk'),
+('mando',		'de',	'Blutfürst Mandokir'),			('mando',		'en',	'Bloodlord Mandokir'),
+('jindo',		'de',	'Jin''do der Verhexer'),		('jindo',		'en',	'Jin''do the Hexxer'),
+('ghaz',		'de',	'Gahz''ranka'),					('ghaz',		'en',	'Gahz''ranka'),
+('madness',		'de',	'Hort des Wahnsinns'),			('madness',		'en',	'Edge of Madness'),
+('hakkar',		'de',	'Hakkar'),						('hakkar',		'en',	'Hakkar'),
+('zgtrash',		'de',	'Trash'),						('zgtrash',		'en',	'Trash'),
 
-(24,	'de',	'Feuerkralle der Ungezähmte'),	(24,	'en',	'Razorgore the Untamed'),
-(25,	'de',	'Vaelastrasz'),					(25,	'en',	'Vaelastrasz the Corrupt'),
-(26,	'de',	'Brutwächter Dreschbringer'),	(26,	'en',	'Broodlord Lashlayer'),
-(27,	'de',	'Feuerschwinge'),				(27,	'en',	'Flamegor'),
-(28,	'de',	'Schattenschwinge'),			(28,	'en',	'Ebonroc'),
-(29,	'de',	'Flammenmaul'),					(29,	'en',	'Firemaw'),
-(30,	'de',	'Chromagus'),					(30,	'en',	'Chromaggus'),
-(31,	'de',	'Nefarian'),					(31,	'en',	'Nefarian'),
-(32,	'de',	'Trash'),						(32,	'en',	'Trash'),
+('razo',		'de',	'Feuerkralle der Ungezähmte'),	('razo',		'en',	'Razorgore the Untamed'),
+('vael',		'de',	'Vaelastrasz'),					('vael',		'en',	'Vaelastrasz the Corrupt'),
+('lash',		'de',	'Brutwächter Dreschbringer'),	('lash',		'en',	'Broodlord Lashlayer'),
+('flamegor',	'de',	'Feuerschwinge'),				('flamegor',	'en',	'Flamegor'),
+('ebonroc',		'de',	'Schattenschwinge'),			('ebonroc',		'en',	'Ebonroc'),
+('firemaw',		'de',	'Flammenmaul'),					('firemaw',		'en',	'Firemaw'),
+('chrommi',		'de',	'Chromagus'),					('chrommi',		'en',	'Chromaggus'),
+('nef',			'de',	'Nefarian'),					('nef',			'en',	'Nefarian'),
+('bwltrash',	'de',	'Trash'),						('bwltrash',	'en',	'Trash'),
 
-(33,	'de',	'Kurinaxx'),					(33,	'en',	'Kurinaxx'),
-(34,	'de',	'General Rajaxx'),				(34,	'en',	'General Rajaxx'),
-(35,	'de',	'Moam'),						(35,	'en',	'Moam'),
-(36,	'de',	'Buru der Verschlinger'),		(36,	'en',	'Buru the Gorger'),
-(37,	'de',	'Ayamiss der Jäger'),			(37,	'en',	'Ayamiss the Hunter'),
-(38,	'de',	'Ossirian der Narbenlose'),		(38,	'en',	'Ossirian the Unscarred'),
-(39,	'de',	'Trash'),						(39,	'en',	'Trash'),
+('kurinaxx',	'de',	'Kurinaxx'),					('kurinaxx',	'en',	'Kurinaxx'),
+('rajaxx',		'de',	'General Rajaxx'),				('rajaxx',		'en',	'General Rajaxx'),
+('moam',		'de',	'Moam'),						('moam',		'en',	'Moam'),
+('buru',		'de',	'Buru der Verschlinger'),		('buru',		'en',	'Buru the Gorger'),
+('aya',			'de',	'Ayamiss der Jäger'),			('aya',			'en',	'Ayamiss the Hunter'),
+('ossi',		'de',	'Ossirian der Narbenlose'),		('ossi',		'en',	'Ossirian the Unscarred'),
+('aq20trash',	'de',	'Trash'),						('aq20trash',	'en',	'Trash'),
 
-(40,	'de',	'Der Prophet Skeram'),			(40,	'en',	'The Prophet Skeram'),
-(41,	'de',	'Adel der Silithiden'),			(41,	'en',	'Silithid Royalty'),
-(42,	'de',	'Schlachtwache Sartura'),		(42,	'en',	'Battleguard Sartura'),
-(43,	'de',	'Fankriss der Unnachgiebige'),	(43,	'en',	'Fankriss the Unyielding'),
-(44,	'de',	'Viscidus'),					(44,	'en',	'Viscidus'),
-(45,	'de',	'Prinzessin Huhuran'),			(45,	'en',	'Princess Huhuran'),
-(46,	'de',	'Zwilingsimperatoren'),			(46,	'en',	'The Twin Emperors'),
-(47,	'de',	'Ouro'),						(47,	'en',	'Ouro'),
-(48,	'de',	'C''Thun'),						(48,	'en',	'C''Thun'),
-(49,	'de',	'Trash'),						(49,	'en',	'Trash'),
+('skeram',		'de',	'Der Prophet Skeram'),			('skeram',		'en',	'The Prophet Skeram'),
+('bugs',		'de',	'Adel der Silithiden'),			('bugs',		'en',	'Silithid Royalty'),
+('sartura',		'de',	'Schlachtwache Sartura'),		('sartura',		'en',	'Battleguard Sartura'),
+('fankriss',	'de',	'Fankriss der Unnachgiebige'),	('fankriss',	'en',	'Fankriss the Unyielding'),
+('visci',		'de',	'Viscidus'),					('visci',		'en',	'Viscidus'),
+('huhu',		'de',	'Prinzessin Huhuran'),			('huhu',		'en',	'Princess Huhuran'),
+('twins',		'de',	'Zwilingsimperatoren'),			('twins',		'en',	'The Twin Emperors'),
+('ouro',		'de',	'Ouro'),						('ouro',		'en',	'Ouro'),
+('cthun',		'de',	'C''Thun'),						('cthun',		'en',	'C''Thun'),
+('aq40trash',	'de',	'Trash'),						('aq40trash',	'en',	'Trash'),
 
-(50,	'de',	'Anub''Rekhan'),				(50,	'en',	'Anub''Rekhan'),
-(51,	'de',	'Großwitwe Faerlina'),			(51,	'en',	'Grand Widow Faerlina'),
-(52,	'de',	'Maexxna'),						(52,	'en',	'Maexxna'),
-(53,	'de',	'Noth der Seuchenfürst'),		(53,	'en',	'Noth the Plaguebringer'),
-(54,	'de',	'Heighan der Unreine'),			(54,	'en',	'Heigan the Unclean'),
-(55,	'de',	'Loatheb'),						(55,	'en',	'Loatheb'),
-(56,	'de',	'Instrukteur Razuvious'),		(56,	'en',	'Instructor Razuvious'),
-(57,	'de',	'Gothik der Seelenjäger'),		(57,	'en',	'Gothik the Harvester'),
-(58,	'de',	'Die vier Reiter'),				(58,	'en',	'The Four Horsemen'),
-(59,	'de',	'Flickwerk'),					(59,	'en',	'Patchwork'),
-(60,	'de',	'Grobbulus'),					(60,	'en',	'Grobbulus'),
-(61,	'de',	'Gluth'),						(61,	'en',	'Gluth'),
-(62,	'de',	'Thaddius'),					(62,	'en',	'Thaddius'),
-(63,	'de',	'Saphiron'),					(63,	'en',	'Sapphiron'),
-(64,	'de',	'Kel''Thuzad'),					(64,	'en',	'Kel''Thuzad'),
-(65,	'de',	'Trash'),						(65,	'en',	'Trash'),
+('anub',		'de',	'Anub''Rekhan'),				('anub',		'en',	'Anub''Rekhan'),
+('widow',		'de',	'Großwitwe Faerlina'),			('widow',		'en',	'Grand Widow Faerlina'),
+('maexxna',		'de',	'Maexxna'),						('maexxna',		'en',	'Maexxna'),
+('noth',		'de',	'Noth der Seuchenfürst'),		('noth',		'en',	'Noth the Plaguebringer'),
+('heigan',		'de',	'Heigan der Unreine'),			('heigan',		'en',	'Heigan the Unclean'),
+('loatheb',		'de',	'Loatheb'),						('loatheb',		'en',	'Loatheb'),
+('razuvi',		'de',	'Instrukteur Razuvious'),		('razuvi',		'en',	'Instructor Razuvious'),
+('gothik',		'de',	'Gothik der Seelenjäger'),		('gothik',		'en',	'Gothik the Harvester'),
+('horsemen',	'de',	'Die vier Reiter'),				('horsemen',	'en',	'The Four Horsemen'),
+('patchwork',	'de',	'Flickwerk'),					('patchwork',	'en',	'Patchwork'),
+('grobbulus',	'de',	'Grobbulus'),					('grobbulus',	'en',	'Grobbulus'),
+('gluth',		'de',	'Gluth'),						('gluth',		'en',	'Gluth'),
+('thaddius',	'de',	'Thaddius'),					('thaddius',	'en',	'Thaddius'),
+('saphiron',	'de',	'Saphiron'),					('saphiron',	'en',	'Sapphiron'),
+('kel',			'de',	'Kel''Thuzad'),					('kel',			'en',	'Kel''Thuzad'),
+('naxtrash',	'de',	'Trash'),						('naxtrash',	'en',	'Trash'),
 
-(66,	'de',	'Kazzak'),						(66,	'en',	'Kazzak'),
-(67,	'de',	'Azuregos'),					(67,	'en',	'Azuregos'),
-(68,	'de',	'Ysondre'),						(68,	'en',	'Ysondre'),
-(69,	'de',	'Lethon'),						(69,	'en',	'Lethon'),
-(70,	'de',	'Taerar'),						(70,	'en',	'Taerar'),
-(71,	'de',	'Emeriss'),						(71,	'en',	'Emeriss')
+('kazzak',		'de',	'Kazzak'),						('kazzak',		'en',	'Kazzak'),
+('azu',			'de',	'Azuregos'),					('azu',			'en',	'Azuregos'),
+('ysondre',		'de',	'Ysondre'),						('ysondre',		'en',	'Ysondre'),
+('lethon',		'de',	'Lethon'),						('lethon',		'en',	'Lethon'),
+('taerar',		'de',	'Taerar'),						('taerar',		'en',	'Taerar'),
+('emeriss',		'de',	'Emeriss'),						('emeriss',		'en',	'Emeriss')
 
 GO
 
@@ -205,16 +205,16 @@ GO
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Classes] ON
 
-INSERT INTO [LootListManager].[dbo].[Classes] ( [ClassId] ) VALUES
-(1),
-(2),
-(3),
-(4),
-(5),
-(6),
-(7),
-(8),
-(9)
+INSERT INTO [LootListManager].[dbo].[Classes] ( [ClassId], [ClassLogicalId] ) VALUES
+(1, 'priest'),
+(2,	'mage'),
+(3,	'wl'),
+(4,	'rogue'),
+(5,	'druid'),
+(6,	'hunter'),
+(7,	'shami'),
+(8,	'warri'),
+(9,	'pala')
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Classes] OFF
 
@@ -222,16 +222,16 @@ GO
 
 -- ClassNames
 
-INSERT INTO [LootListManager].[dbo].[ClassNames] ( [FK_ClassId], [ClassNameCulture], [ClassNameString] ) VALUES
-(1,		'de',	'Priester'),		(1,		'en',	'Priest'),
-(2,		'de',	'Magier'),			(2,		'en',	'Mage'),
-(3,		'de',	'Hexenmeister'),	(3,		'en',	'Warlock'),
-(4,		'de',	'Schurke'),			(4,		'en',	'Rogue'),
-(5,		'de',	'Druide'),			(5,		'en',	'Druid'),
-(6,		'de',	'Jäger'),			(6,		'en',	'Hunter'),
-(7,		'de',	'Schamane'),		(7,		'en',	'Shaman'),
-(8,		'de',	'Krieger'),			(8,		'en',	'Warrior'),
-(9,		'de',	'Paladin'),			(9,		'en',	'Paladin')
+INSERT INTO [LootListManager].[dbo].[ClassNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('priest',	'de',	'Priester'),		('priest',	'en',	'Priest'),
+('mage',	'de',	'Magier'),			('mage',	'en',	'Mage'),
+('wl',		'de',	'Hexenmeister'),	('wl',		'en',	'Warlock'),
+('rogue',	'de',	'Schurke'),			('rogue',	'en',	'Rogue'),
+('druid',	'de',	'Druide'),			('druid',	'en',	'Druid'),
+('hunter',	'de',	'Jäger'),			('hunter',	'en',	'Hunter'),
+('shami',	'de',	'Schamane'),		('shami',	'en',	'Shaman'),
+('warri',	'de',	'Krieger'),			('warri',	'en',	'Warrior'),
+('pala',	'de',	'Paladin'),			('pala',	'en',	'Paladin')
 
 GO
 
@@ -239,42 +239,42 @@ GO
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Talents] ON
 
-INSERT INTO [LootListManager].[dbo].[Talents] ( [TalentId], [FK_ClassId] ) VALUES
-(1,		1),
-(2,		1),
-(3,		1),
+INSERT INTO [LootListManager].[dbo].[Talents] ( [TalentId], [TalentLogicalId], [FK_ClassId] ) VALUES
+(1,		'holypr',	1),
+(2,		'disc',		1),
+(3,		'shadow',	1),
 
-(4,		2),
-(5,		2),
-(6,		2),
+(4,		'frost',	2),
+(5,		'fire',		2),
+(6,		'arcane',	2),
 
-(7,		3),
-(8,		3),
-(9,		3),
+(7,		'affli',	3),
+(8,		'destro',	3),
+(9,		'demo',		3),
 
-(10,	4),
-(11,	4),
-(12,	4),
+(10,	'combat',	4),
+(11,	'sub',		4),
+(12,	'ass',		4),
 
-(13,	5),
-(14,	5),
-(15,	5),
+(13,	'feral',	5),
+(14,	'balance',	5),
+(15,	'restod',	5),
 
-(16,	6),
-(17,	6),
-(18,	6),
+(16,	'surv',		6),
+(17,	'mark',		6),
+(18,	'beast',	6),
 
-(19,	7),
-(20,	7),
-(21,	7),
+(19,	'restos',	7),
+(20,	'enh',		7),
+(21,	'ele',		7),
 
-(22,	8),
-(23,	8),
-(24,	8),
+(22,	'protw',	8),
+(23,	'arms',		8),
+(24,	'fury',		8),
 
-(25,	9),
-(26,	9),
-(27,	9)
+(25,	'holypa',	9),
+(26,	'protp',	9),
+(27,	'ret',		9)
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Talents] OFF
 
@@ -282,42 +282,42 @@ GO
 
 -- TalentNames
 
-INSERT INTO [LootListManager].[dbo].[TalentNames] ( [FK_TalentId], [TalentNameCulture], [TalentNameString] ) VALUES
-(1,		'de',	'Heilig'),				(1,		'en',	'Holy'),
-(2,		'de',	'Disziplin'),			(2,		'en',	'Discipline'),
-(3,		'de',	'Schatten'),			(3,		'en',	'Shadow'),
+INSERT INTO [LootListManager].[dbo].[TalentNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('holypr',	'de',	'Heilig'),				('',		'en',	'Holy'),
+('disc',	'de',	'Disziplin'),			('',		'en',	'Discipline'),
+('shadow',	'de',	'Schatten'),			('',		'en',	'Shadow'),
 
-(4,		'de',	'Frost'),				(4,		'en',	'Frost'),
-(5,		'de',	'Feuer'),				(5,		'en',	'Fire'),
-(6,		'de',	'Arkan'),				(6,		'en',	'Arcane'),
+('frost',	'de',	'Frost'),				('',		'en',	'Frost'),
+('fire',	'de',	'Feuer'),				('',		'en',	'Fire'),
+('arcane',	'de',	'Arkan'),				('',		'en',	'Arcane'),
 
-(7,		'de',	'Gebrechen'),			(7,		'en',	'Affliction'),
-(8,		'de',	'Zerstörung'),			(8,		'en',	'Descruction'),
-(9,		'de',	'Dämonologie'),			(9,		'en',	'Demonology'),
+('affli',	'de',	'Gebrechen'),			('',		'en',	'Affliction'),
+('destro',	'de',	'Zerstörung'),			('',		'en',	'Descruction'),
+('demo',	'de',	'Dämonologie'),			('',		'en',	'Demonology'),
 
-(10,	'de',	'Kampf'),				(10,	'en',	'Combat'),
-(11,	'de',	'Täuschung'),			(11,	'en',	'Subtlety'),
-(12,	'de',	'Meucheln'),			(12,	'en',	'Assassination'),
+('combat',	'de',	'Kampf'),				('',	'en',	'Combat'),
+('sub',		'de',	'Täuschung'),			('',	'en',	'Subtlety'),
+('ass',		'de',	'Meucheln'),			('',	'en',	'Assassination'),
 
-(13,	'de',	'Wilder Kampf'),		(13,	'en',	'Feral'),
-(14,	'de',	'Gleichgewicht'),		(14,	'en',	'Balance'),
-(15,	'de',	'Wiederherstellung'),	(15,	'en',	'Restoration'),
+('feral',	'de',	'Wilder Kampf'),		('',	'en',	'Feral'),
+('balance',	'de',	'Gleichgewicht'),		('',	'en',	'Balance'),
+('restod',	'de',	'Wiederherstellung'),	('',	'en',	'Restoration'),
 
-(16,	'de',	'Überleben'),			(16,	'en',	'Survival'),
-(17,	'de',	'Treffsicherheit'),		(17,	'en',	'Marksmanship'),
-(18,	'de',	'Tierherrschaft'),		(18,	'en',	'Beast Mastery'),
+('surv',	'de',	'Überleben'),			('',	'en',	'Survival'),
+('mark',	'de',	'Treffsicherheit'),		('',	'en',	'Marksmanship'),
+('beast',	'de',	'Tierherrschaft'),		('',	'en',	'Beast Mastery'),
 
-(19,	'de',	'Wiederherstellung'),	(19,	'en',	'Restoration'),
-(20,	'de',	'Verstärkung'),			(20,	'en',	'Enhancement'),
-(21,	'de',	'Elementar'),			(21,	'en',	'Elemental'),
+('restos',	'de',	'Wiederherstellung'),	('',	'en',	'Restoration'),
+('enh',		'de',	'Verstärkung'),			('',	'en',	'Enhancement'),
+('ele',		'de',	'Elementar'),			('',	'en',	'Elemental'),
 
-(22,	'de',	'Schutz'),				(22,	'en',	'Protection'),
-(23,	'de',	'Waffen'),				(23,	'en',	'Arms'),
-(24,	'de',	'Furor'),				(24,	'en',	'Fury'),
+('protw',	'de',	'Schutz'),				('',	'en',	'Protection'),
+('arms',	'de',	'Waffen'),				('',	'en',	'Arms'),
+('fury',	'de',	'Furor'),				('',	'en',	'Fury'),
 
-(25,	'de',	'Heilig'),				(25,	'en',	'Holy'),
-(26,	'de',	'Schutz'),				(26,	'en',	'Protection'),
-(27,	'de',	'Vergeltung'),			(27,	'en',	'Retribution')
+('holypa',	'de',	'Heilig'),				('',	'en',	'Holy'),
+('protp',	'de',	'Schutz'),				('',	'en',	'Protection'),
+('ret',		'de',	'Vergeltung'),			('',	'en',	'Retribution')
 
 GO
 

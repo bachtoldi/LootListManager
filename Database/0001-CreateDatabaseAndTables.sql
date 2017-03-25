@@ -39,6 +39,7 @@ IF OBJECT_ID(N'Instances') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Instances] (
 		[InstanceId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[InstanceLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[InstanceSort] INT NOT NULL UNIQUE,
 		[InstanceImage] NVARCHAR(MAX) NULL
 	)
@@ -49,11 +50,10 @@ GO
 IF OBJECT_ID(N'InstanceNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[InstanceNames] (
-		[InstanceNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_InstanceId] INT FOREIGN KEY REFERENCES [dbo].[Instances]([InstanceId]) NOT NULL,
-		[InstanceNameCulture] NVARCHAR(10) NOT NULL,
-		[InstanceNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_InstanceNameCultureInstance] UNIQUE NONCLUSTERED ( [InstanceNameCulture], [FK_InstanceId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Instances] ( [InstanceLogicalId] ) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
+		CONSTRAINT [pk_InstanceNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture])
 	)
 END
 GO
@@ -63,6 +63,7 @@ IF OBJECT_ID(N'Bosses') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Bosses] (
 		[BossId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[BossLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[BossSort] INT NOT NULL,
 		[FK_InstanceId] INT FOREIGN KEY REFERENCES [dbo].[Instances]([InstanceId]) NOT NULL,
 		CONSTRAINT [uq_InstanceBossSort] UNIQUE NONCLUSTERED ( [BossSort], [FK_InstanceId] ) ON [PRIMARY]
@@ -74,11 +75,10 @@ GO
 IF OBJECT_ID(N'BossNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[BossNames] (
-		[BossNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_BossId] INT FOREIGN KEY REFERENCES [dbo].[Bosses]([BossId]) NOT NULL,
-		[BossNameCulture] NVARCHAR(10) NOT NULL,
-		[BossNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_BossNameCultureBoss] UNIQUE NONCLUSTERED ( [BossNameCulture], [FK_BossId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Bosses] ( [BossLogicalId] ) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
+		CONSTRAINT [pk_BossNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO
@@ -88,6 +88,7 @@ IF OBJECT_ID(N'Classes') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Classes] (
 		[ClassId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[ClassLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[ClassImage] NVARCHAR(MAX) NULL,
 	)
 END
@@ -97,11 +98,10 @@ GO
 IF OBJECT_ID(N'ClassNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[ClassNames] (
-		[ClassNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_ClassId] INT FOREIGN KEY REFERENCES [dbo].[Classes]([ClassId]) NOT NULL,
-		[ClassNameCulture] NVARCHAR(10) NOT NULL,
-		[ClassNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_ClassNameCultureClass] UNIQUE NONCLUSTERED ( [ClassNameCulture], [FK_ClassId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Classes]([ClassLogicalId]) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(50) NOT NULL,
+		CONSTRAINT [pk_ClassNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO
@@ -111,6 +111,7 @@ IF OBJECT_ID(N'Items') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Items] (
 		[ItemId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[ItemLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[ItemImage] NVARCHAR(MAX) NULL
 	)
 END
@@ -120,11 +121,10 @@ GO
 IF OBJECT_ID(N'ItemNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[ItemNames] (
-		[ItemNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_ItemId] INT FOREIGN KEY REFERENCES [dbo].[Items]([ItemId]) NOT NULL,
-		[ItemNameCulture] NVARCHAR(10) NOT NULL,
-		[ItemNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_ItemNameCultureItem] UNIQUE NONCLUSTERED ( [ItemNameCulture], [FK_ItemId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Items]([ItemLogicalId]) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(150) NOT NULL,
+		CONSTRAINT [pk_ItemNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO
@@ -146,6 +146,7 @@ IF OBJECT_ID(N'Talents') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Talents] (
 		[TalentId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[TalentLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[FK_ClassId] INT FOREIGN KEY REFERENCES [dbo].[Classes]([ClassId]) NOT NULL,
 		[TalentImage] NVARCHAR(MAX) NULL
 	)
@@ -156,11 +157,10 @@ GO
 IF OBJECT_ID(N'TalentNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[TalentNames] (
-		[TalentNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_TalentId] INT FOREIGN KEY REFERENCES [dbo].[Talents]([TalentId]) NOT NULL,
-		[TalentNameCulture] NVARCHAR(10) NOT NULL,
-		[TalentNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_TalentNameCultureTalent] UNIQUE NONCLUSTERED ( [TalentNameCulture], [FK_TalentId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Talents]([TalentLogicalId]) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(50) NOT NULL,
+		CONSTRAINT [pk_TalentNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO
@@ -170,6 +170,7 @@ IF OBJECT_ID(N'Factions') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Factions] (
 		[FactionId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[FactionLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[FactionImage] NVARCHAR(MAX) NULL
 	)
 END
@@ -179,11 +180,10 @@ GO
 IF OBJECT_ID(N'FactionNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[FactionNames] (
-		[FactionNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_FactionId] INT FOREIGN KEY REFERENCES [dbo].[Factions]([FactionId]) NOT NULL,
-		[FactionNameCulture] NVARCHAR(10) NOT NULL,
-		[FactionNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_FactionNameCultureFaction] UNIQUE NONCLUSTERED ( [FactionNameCulture], [FK_FactionId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Factions]([FactionLogicalId]) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(50) NOT NULL,
+		CONSTRAINT [pk_FactionNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO
@@ -193,6 +193,7 @@ IF OBJECT_ID(N'Races') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Races] (
 		[RaceId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[RaceLogicalId] NVARCHAR(10) NOT NULL UNIQUE,
 		[FK_FactionId] INT FOREIGN KEY REFERENCES [dbo].[Factions]([FactionId]) NOT NULL,
 		[RaceImage] NVARCHAR(MAX) NULL
 	)
@@ -203,11 +204,10 @@ GO
 IF OBJECT_ID(N'RaceNames') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[RaceNames] (
-		[RaceNameId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_RaceId] INT FOREIGN KEY REFERENCES [dbo].[Races]([RaceId]) NOT NULL,
-		[RaceNameCulture] NVARCHAR(10) NOT NULL,
-		[RaceNameString] NVARCHAR(MAX) NOT NULL,
-		CONSTRAINT [uq_RaceNameCultureRace] UNIQUE NONCLUSTERED ( [RaceNameCulture], [FK_RaceId] ) ON [PRIMARY]
+		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Races]([RaceLogicalId]) NOT NULL,
+		[Culture] NVARCHAR(10) NOT NULL,
+		[Value] NVARCHAR(50) NOT NULL,
+		CONSTRAINT [pk_RaceNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
 GO

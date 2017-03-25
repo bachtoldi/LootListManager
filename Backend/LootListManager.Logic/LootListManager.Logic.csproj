@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProviders\AuthDataProvider.cs" />
+    <Compile Include="DataProviders\ConnectionString.cs" />
     <Compile Include="DataProviders\DataProviderFactory.cs" />
     <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\IAuthDataProvider.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceProviders\DatabaseResourceProvider.cs" />
     <Compile Include="ResourceProviders\ResourceEntry.cs" />
+    <Compile Include="ResourceProviders\ResourceProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

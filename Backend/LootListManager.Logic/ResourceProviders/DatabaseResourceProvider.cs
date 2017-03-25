@@ -30,7 +30,7 @@ namespace LootListManager.Logic.ResourceProviders {
 
     #region - Public Methods -
 
-    public object GetResource(string logicalId, CultureInfo cultureInfo) {
+    public string GetResource(string logicalId, CultureInfo cultureInfo) {
       if (string.IsNullOrWhiteSpace(logicalId)) {
         throw new ArgumentException("Resource logicalId cannot be null or empty");
       }
