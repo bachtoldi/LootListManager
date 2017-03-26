@@ -2,7 +2,7 @@
 using LootListManager.Logic.Entities.Environment;
 
 namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
-  public class InstanceMap:ClassMap<Instance> {
+  public class InstanceMap : ClassMap<Instance> {
     public InstanceMap() {
       Table("Instances");
 
@@ -10,6 +10,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
 
       Map(i => i.InstanceSort);
       Map(i => i.InstanceImage);
+      Map(i => i.InstanceLogicalId);
     }
   }
 }

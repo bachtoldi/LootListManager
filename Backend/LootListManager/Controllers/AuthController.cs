@@ -25,6 +25,8 @@ namespace LootListManager.Controllers {
 
     #endregion
 
+    // Token based authentication usiung asp.net web api owin: http://www.c-sharpcorner.com/UploadFile/ff2f08/token-based-authentication-using-Asp-Net-web-api-owin-and-i/
+
     #region - User -
 
     [HttpGet]
@@ -109,7 +111,7 @@ namespace LootListManager.Controllers {
 
     [HttpDelete]
     [Route("User/{id:int}")]
-    public IHttpActionResult DeleteUser([FromUri]int id) {
+    public IHttpActionResult DeleteUser([FromUri] int id) {
 
       Exception ex = null;
 

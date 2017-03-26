@@ -8,8 +8,8 @@ namespace LootListManager.Logic.Entities.Environment {
     public virtual int InstanceSort { get; set; }
     public virtual string InstanceImage { get; set; }
 
-    public string InstanceName(CultureInfo cultureInfo) {
-      return ResourceProvider.DatabaseResources.GetResource(InstanceLogicalId, cultureInfo);
+    public virtual string InstanceName(CultureInfo cultureInfo) {
+      return ResourceProvider.DatabaseResources.GetResource("InstanceNames", InstanceLogicalId, cultureInfo);
     }
   }
 }

@@ -1,24 +1,31 @@
 ﻿using LootListManager.Logic.DataProviders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LootListManager.Logic.ResourceProviders {
   public static class ResourceProvider {
 
     private static readonly DatabaseResourceProvider _dbResourceProvider;
+    private static string[] _resourceTables;
 
     static ResourceProvider() {
-      var supportetCultures = new string[] { "de", "en" };
-      _dbResourceProvider = new DatabaseResourceProvider(supportetCultures, ConnectionString.String);
+      InitializeResourceTableArray();
+      _dbResourceProvider = new DatabaseResourceProvider(_resourceTables, ConnectionString.String);
     }
 
     public static DatabaseResourceProvider DatabaseResources {
       get {
         return _dbResourceProvider;
       }
+    }
+
+    public static void InitializeResourceTableArray() {
+      _resourceTables = new string[] {
+        "BossNames",
+        "FactionNames",
+        "InstanceNames",
+        "ItemNames",
+        "RaceNames",
+        "TalentNames",
+      };
     }
 
   }

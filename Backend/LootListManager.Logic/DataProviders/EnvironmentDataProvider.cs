@@ -1,6 +1,5 @@
 ﻿using LootListManager.Logic.Entities.Environment;
 using System.Collections.Generic;
-using System.Globalization;
 
 namespace LootListManager.Logic.DataProviders {
   internal class EnvironmentDataProvider : DataProvider, IEnvironmentDataProvider {
@@ -32,19 +31,22 @@ namespace LootListManager.Logic.DataProviders {
     #region - Instance -
 
     public Instance GetInstance(int id) {
-      return null;
+      return GetById<Instance>(id);
     }
 
     public IList<Instance> GetInstances() {
-      return null;
+      return GetList<Instance>();
     }
 
     public Instance SaveInstance(Instance instance) {
-      return null;
+      Save(instance);
+      return GetById<Instance>(instance.InstanceId);
     }
 
     public bool DeleteInstance(int id) {
-      return false;
+      var instance = GetInstance(id);
+      Delete(instance);
+      return GetById<Instance>(instance.InstanceId) == null;
     }
 
     #endregion

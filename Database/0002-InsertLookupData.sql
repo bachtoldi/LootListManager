@@ -1,3 +1,9 @@
+-- Users
+
+INSERT INTO [LootListManager].[dbo].[Users] ( [UserName], [UserPasswordHash], [UserLoginAttempts] ) VALUES
+('armon', 'asdf', 0),
+('test', 'asdf', 0)
+
 -- Instances
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Instances] ON
@@ -141,7 +147,7 @@ INSERT INTO [LootListManager].[dbo].[BossNames] ( [LogicalId], [Culture], [Value
 ('arlokk',		'de',	'Hohepriesterin Arlokk'),		('arlokk',		'en',	'High Priestess Arlokk'),
 ('mando',		'de',	'Blutfürst Mandokir'),			('mando',		'en',	'Bloodlord Mandokir'),
 ('jindo',		'de',	'Jin''do der Verhexer'),		('jindo',		'en',	'Jin''do the Hexxer'),
-('ghaz',		'de',	'Gahz''ranka'),					('ghaz',		'en',	'Gahz''ranka'),
+('gahz',		'de',	'Gahz''ranka'),					('gahz',		'en',	'Gahz''ranka'),
 ('madness',		'de',	'Hort des Wahnsinns'),			('madness',		'en',	'Edge of Madness'),
 ('hakkar',		'de',	'Hakkar'),						('hakkar',		'en',	'Hakkar'),
 ('zgtrash',		'de',	'Trash'),						('zgtrash',		'en',	'Trash'),
@@ -283,41 +289,41 @@ GO
 -- TalentNames
 
 INSERT INTO [LootListManager].[dbo].[TalentNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('holypr',	'de',	'Heilig'),				('',		'en',	'Holy'),
-('disc',	'de',	'Disziplin'),			('',		'en',	'Discipline'),
-('shadow',	'de',	'Schatten'),			('',		'en',	'Shadow'),
+('holypr',	'de',	'Heilig'),				('holypr',	'en',	'Holy'),
+('disc',	'de',	'Disziplin'),			('disc',	'en',	'Discipline'),
+('shadow',	'de',	'Schatten'),			('shadow',	'en',	'Shadow'),
 
-('frost',	'de',	'Frost'),				('',		'en',	'Frost'),
-('fire',	'de',	'Feuer'),				('',		'en',	'Fire'),
-('arcane',	'de',	'Arkan'),				('',		'en',	'Arcane'),
+('frost',	'de',	'Frost'),				('frost',	'en',	'Frost'),
+('fire',	'de',	'Feuer'),				('fire',	'en',	'Fire'),
+('arcane',	'de',	'Arkan'),				('arcane',	'en',	'Arcane'),
 
-('affli',	'de',	'Gebrechen'),			('',		'en',	'Affliction'),
-('destro',	'de',	'Zerstörung'),			('',		'en',	'Descruction'),
-('demo',	'de',	'Dämonologie'),			('',		'en',	'Demonology'),
+('affli',	'de',	'Gebrechen'),			('affli',	'en',	'Affliction'),
+('destro',	'de',	'Zerstörung'),			('destro',	'en',	'Descruction'),
+('demo',	'de',	'Dämonologie'),			('demo',	'en',	'Demonology'),
 
-('combat',	'de',	'Kampf'),				('',	'en',	'Combat'),
-('sub',		'de',	'Täuschung'),			('',	'en',	'Subtlety'),
-('ass',		'de',	'Meucheln'),			('',	'en',	'Assassination'),
+('combat',	'de',	'Kampf'),				('combat',	'en',	'Combat'),
+('sub',		'de',	'Täuschung'),			('sub',		'en',	'Subtlety'),
+('ass',		'de',	'Meucheln'),			('ass',		'en',	'Assassination'),
 
-('feral',	'de',	'Wilder Kampf'),		('',	'en',	'Feral'),
-('balance',	'de',	'Gleichgewicht'),		('',	'en',	'Balance'),
-('restod',	'de',	'Wiederherstellung'),	('',	'en',	'Restoration'),
+('feral',	'de',	'Wilder Kampf'),		('feral',	'en',	'Feral'),
+('balance',	'de',	'Gleichgewicht'),		('balance',	'en',	'Balance'),
+('restod',	'de',	'Wiederherstellung'),	('restod',	'en',	'Restoration'),
 
-('surv',	'de',	'Überleben'),			('',	'en',	'Survival'),
-('mark',	'de',	'Treffsicherheit'),		('',	'en',	'Marksmanship'),
-('beast',	'de',	'Tierherrschaft'),		('',	'en',	'Beast Mastery'),
+('surv',	'de',	'Überleben'),			('surv',	'en',	'Survival'),
+('mark',	'de',	'Treffsicherheit'),		('mark',	'en',	'Marksmanship'),
+('beast',	'de',	'Tierherrschaft'),		('beast',	'en',	'Beast Mastery'),
 
-('restos',	'de',	'Wiederherstellung'),	('',	'en',	'Restoration'),
-('enh',		'de',	'Verstärkung'),			('',	'en',	'Enhancement'),
-('ele',		'de',	'Elementar'),			('',	'en',	'Elemental'),
+('restos',	'de',	'Wiederherstellung'),	('restos',	'en',	'Restoration'),
+('enh',		'de',	'Verstärkung'),			('enh',		'en',	'Enhancement'),
+('ele',		'de',	'Elementar'),			('ele',		'en',	'Elemental'),
 
-('protw',	'de',	'Schutz'),				('',	'en',	'Protection'),
-('arms',	'de',	'Waffen'),				('',	'en',	'Arms'),
-('fury',	'de',	'Furor'),				('',	'en',	'Fury'),
+('protw',	'de',	'Schutz'),				('protw',	'en',	'Protection'),
+('arms',	'de',	'Waffen'),				('arms',	'en',	'Arms'),
+('fury',	'de',	'Furor'),				('fury',	'en',	'Fury'),
 
-('holypa',	'de',	'Heilig'),				('',	'en',	'Holy'),
-('protp',	'de',	'Schutz'),				('',	'en',	'Protection'),
-('ret',		'de',	'Vergeltung'),			('',	'en',	'Retribution')
+('holypa',	'de',	'Heilig'),				('holypa',	'en',	'Holy'),
+('protp',	'de',	'Schutz'),				('protp',	'en',	'Protection'),
+('ret',		'de',	'Vergeltung'),			('ret',		'en',	'Retribution')
 
 GO
 
@@ -325,9 +331,9 @@ GO
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Factions] ON
 
-INSERT INTO [LootListManager].[dbo].[Factions] ( [FactionId] ) VALUES
-(1),
-(2)
+INSERT INTO [LootListManager].[dbo].[Factions] ( [FactionId], [FactionLogicalId] ) VALUES
+(1, 'ally'),
+(2, 'horde')
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Factions] OFF
 
@@ -335,9 +341,9 @@ GO
 
 -- FactionNames
 
-INSERT INTO [LootListManager].[dbo].[FactionNames] ( [FK_FactionId], [FactionNameCulture], [FactionNameString] ) VALUES
-(1,		'de',	'Allianz'),		(1,		'en',	'Alliance'),
-(2,		'de',	'Horde'),		(2,		'en',	'Horde')
+INSERT INTO [LootListManager].[dbo].[FactionNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('ally',	'de',	'Allianz'),		('ally',	'en',	'Alliance'),
+('horde',	'de',	'Horde'),		('horde',	'en',	'Horde')
 
 GO
 
@@ -345,15 +351,15 @@ GO
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Races] ON
 
-INSERT INTO [LootListManager].[dbo].[Races] ( [RaceId], [FK_FactionId] ) VALUES
-(1,		1),
-(2,		1),
-(3,		1),
-(4,		1),
-(5,		2),
-(6,		2),
-(7,		2),
-(8,		2)
+INSERT INTO [LootListManager].[dbo].[Races] ( [RaceId], [RaceLogicalId], [FK_FactionId] ) VALUES
+(1,		'gnome'		,1),
+(2,		'dwarf'		,1),
+(3,		'human'		,1),
+(4,		'ne'		,1),
+(5,		'ud'		,2),
+(6,		'orc'		,2),
+(7,		'troll'		,2),
+(8,		'tauren'	,2)
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Races] OFF
 
@@ -361,15 +367,15 @@ GO
 
 -- RaceNames
 
-INSERT INTO [LootListManager].[dbo].[RaceNames] ( [FK_RaceId], [RaceNameCulture], [RaceNameString] ) VALUES
-(1,		'de',	'Gnom'),		(1,		'en',	'Gnome'),
-(2,		'de',	'Zwerg'),		(2,		'en',	'Dwarf'),
-(3,		'de',	'Mensch'),		(3,		'en',	'Human'),
-(4,		'de',	'Nachtelf'),	(4,		'en',	'Nightelf'),
-(5,		'de',	'Untot'),		(5,		'en',	'Undead'),
-(6,		'de',	'Ork'),			(6,		'en',	'Orc'),
-(7,		'de',	'Troll'),		(7,		'en',	'Troll'),
-(8,		'de',	'Taure'),		(8,		'en',	'Tauren')
+INSERT INTO [LootListManager].[dbo].[RaceNames] ( [LogicalId], [Culture], [Value] ) VALUES
+('gnome',	'de',	'Gnom'),		('gnome',	'en',	'Gnome'),
+('dwarf',	'de',	'Zwerg'),		('dwarf',	'en',	'Dwarf'),
+('human',	'de',	'Mensch'),		('human',	'en',	'Human'),
+('ne',		'de',	'Nachtelf'),	('ne',		'en',	'Nightelf'),
+('ud',		'de',	'Untot'),		('ud',		'en',	'Undead'),
+('orc',		'de',	'Ork'),			('orc',		'en',	'Orc'),
+('troll',	'de',	'Troll'),		('troll',	'en',	'Troll'),
+('tauren',	'de',	'Taure'),		('tauren',	'en',	'Tauren')
 
 GO
 

@@ -100,7 +100,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[ClassNames] (
 		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Classes]([ClassLogicalId]) NOT NULL,
 		[Culture] NVARCHAR(10) NOT NULL,
-		[Value] NVARCHAR(50) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
 		CONSTRAINT [pk_ClassNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
@@ -123,7 +123,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[ItemNames] (
 		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Items]([ItemLogicalId]) NOT NULL,
 		[Culture] NVARCHAR(10) NOT NULL,
-		[Value] NVARCHAR(150) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
 		CONSTRAINT [pk_ItemNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
@@ -159,7 +159,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[TalentNames] (
 		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Talents]([TalentLogicalId]) NOT NULL,
 		[Culture] NVARCHAR(10) NOT NULL,
-		[Value] NVARCHAR(50) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
 		CONSTRAINT [pk_TalentNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
@@ -182,7 +182,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[FactionNames] (
 		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Factions]([FactionLogicalId]) NOT NULL,
 		[Culture] NVARCHAR(10) NOT NULL,
-		[Value] NVARCHAR(50) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
 		CONSTRAINT [pk_FactionNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
@@ -206,7 +206,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[RaceNames] (
 		[LogicalId] NVARCHAR(10) FOREIGN KEY REFERENCES [dbo].[Races]([RaceLogicalId]) NOT NULL,
 		[Culture] NVARCHAR(10) NOT NULL,
-		[Value] NVARCHAR(50) NOT NULL,
+		[Value] NVARCHAR(100) NOT NULL,
 		CONSTRAINT [pk_RaceNamesLogicalIdCulture] PRIMARY KEY ( [LogicalId], [Culture] )
 	)
 END
