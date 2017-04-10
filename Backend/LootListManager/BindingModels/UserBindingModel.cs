@@ -1,4 +1,5 @@
-﻿using LootListManager.Logic.Entities.Auth;
+﻿using LootListManager.Auth;
+using LootListManager.Logic.Entities.Auth;
 
 namespace LootListManager.BindingModels {
   public class UserBindingModel {
@@ -6,7 +7,7 @@ namespace LootListManager.BindingModels {
     #region - Properties -
 
     public string UserName { get; set; }
-    public string UserPasswordHash { get; set; }
+    public string UserPassword { get; set; }
 
     #endregion
 
@@ -15,8 +16,12 @@ namespace LootListManager.BindingModels {
     public User GetEntity() {
       return new User {
         UserName = UserName,
-        UserPasswordHash = UserPasswordHash,
+        PasswordHash = UserPassword,
       };
+    }
+
+    public ApplicationUser GetAppUser() {
+      return new ApplicationUser(GetEntity());
     }
 
     #endregion

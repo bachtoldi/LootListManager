@@ -1,6 +1,6 @@
 -- Users
 
-INSERT INTO [LootListManager].[dbo].[Users] ( [UserName], [UserPasswordHash], [UserLoginAttempts] ) VALUES
+INSERT INTO [LootListManager].[dbo].[Users] ( [UserName], [PasswordHash], [UserLoginAttempts] ) VALUES
 ('armon', 'asdf', 0),
 ('test', 'asdf', 0)
 
@@ -397,3 +397,8 @@ INSERT INTO [LootListManager].[dbo].[ClassRaceSettings] ( [FK_ClassId], [FK_Race
 -- ItemNames
 
 -- ItemBossSettings
+
+-- Roles
+INSERT INTO [LootListManager].[dbo].[Roles] ( [RoleName] ) VALUES
+( 'User' ),
+( 'Admin' )

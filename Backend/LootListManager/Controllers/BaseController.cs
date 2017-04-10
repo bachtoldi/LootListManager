@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace LootListManager.Controllers {
+  [Authorize]
   public class BaseController : ApiController {
 
     #region - Instance Variables -

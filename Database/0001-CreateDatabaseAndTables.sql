@@ -13,9 +13,9 @@ GO
 IF OBJECT_ID(N'Users') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Users] (
-		[UserId] INT IDENTITY(1,1) PRIMARY KEY,
+		[Id] INT IDENTITY(1,1) PRIMARY KEY,
 		[UserName] NVARCHAR(50) NOT NULL UNIQUE,
-		[UserPasswordHash] NVARCHAR(MAX) NOT NULL,
+		[PasswordHash] NVARCHAR(MAX) NOT NULL,
 		[UserLoginAttempts] INT NOT NULL
 	)
 END
@@ -26,7 +26,7 @@ IF OBJECT_ID(N'Tokens') IS NULL
 BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Tokens] (
 		[TokenId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-		[FK_UserId] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Users]([UserId]),
+		[FK_UserId] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Users]([Id]),
 		[AuthToken] NVARCHAR(MAX) NOT NULL,
 		[IssuedOn] DATETIME2(7) NOT NULL,
 		[ExpiresOn] DATETIME2(7) NOT NULL
@@ -230,7 +230,7 @@ BEGIN
 	CREATE TABLE [LootListManager].[dbo].[Characters] (
 		[CharacterId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 		[CharacterName] NVARCHAR(50) NOT NULL UNIQUE,
-		[FK_UserId] INT FOREIGN KEY REFERENCES [dbo].[Users]([UserId]) NOT NULL,
+		[FK_UserId] INT FOREIGN KEY REFERENCES [dbo].[Users]([Id]) NOT NULL,
 		[FK_RaceId] INT FOREIGN KEY REFERENCES [dbo].[Races]([RaceId]) NOT NULL,
 		[FK_TalentId] INT FOREIGN KEY REFERENCES [dbo].[Talents]([TalentId]) NOT NULL
 	)
@@ -267,6 +267,27 @@ BEGIN
 		[FK_NeedTypeId] INT FOREIGN KEY REFERENCES [dbo].[NeedTypes]([NeedTypeId]) NOT NULL,
 		[FK_PriorityId] INT FOREIGN KEY REFERENCES [dbo].[Priorities]([PriorityId]) NOT NULL,
 		CONSTRAINT [uq_CharItem] UNIQUE NONCLUSTERED ( [FK_CharacterId], [FK_ItemId] ) ON [PRIMARY]
+	)
+END
+GO
+
+-- Roles
+IF OBJECT_ID(N'Roles') IS NULL
+BEGIN
+	CREATE TABLE [LootListManager].[dbo].[Roles] (
+		[RoleId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[RoleName] NVARCHAR(50) NOT NULL UNIQUE
+	)
+END
+GO
+
+-- UserRoles
+IF OBJECT_ID(N'UserRoles') IS NULL
+BEGIN
+	CREATE TABLE [LootListManager].[dbo].[UserRoles] (
+		[UserRoleId] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		[FK_UserId] INT FOREIGN KEY REFERENCES [dbo].[Users] ( [Id] ) NOT NULL,
+		[FK_RoleId] INT FOREIGN KEY REFERENCES [dbo].[Roles] ( [RoleId] ) NOT NULL
 	)
 END
 GO

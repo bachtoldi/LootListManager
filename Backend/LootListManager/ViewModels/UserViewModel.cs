@@ -7,7 +7,7 @@ namespace LootListManager.ViewModels {
     #region - Constructor -
 
     public UserViewModel(User user) {
-      UserId = user.UserId;
+      UserId = user.Id;
       UserName = user.UserName;
     }
 

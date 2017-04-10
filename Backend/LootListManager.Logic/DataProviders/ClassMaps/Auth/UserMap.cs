@@ -6,10 +6,10 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Auth {
     public UserMap() {
       Table("Users");
 
-      Id(u => u.UserId);
+      Id(u => u.Id);
 
       Map(u => u.UserName);
-      Map(u => u.UserPasswordHash);
+      Map(u => u.PasswordHash);
       Map(u => u.UserLoginAttempts);
     }
   }

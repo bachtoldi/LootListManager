@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProviders\AuthDataProvider.cs" />
+    <Compile Include="DataProviders\ClassMaps\Auth\RoleMap.cs" />
     <Compile Include="DataProviders\ConnectionString.cs" />
     <Compile Include="DataProviders\DataProviderFactory.cs" />
     <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="DataProviders\DataProvider.cs" />
     <Compile Include="DataProviders\NHibernate\NHibernateConfig.cs" />
     <Compile Include="DataProviders\NHibernate\SessionFactory.cs" />
+    <Compile Include="Entities\Auth\Role.cs" />
     <Compile Include="Entities\Auth\Token.cs" />
     <Compile Include="Entities\Auth\User.cs" />
     <Compile Include="Entities\Config\NeedType.cs" />

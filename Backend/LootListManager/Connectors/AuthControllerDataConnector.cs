@@ -34,7 +34,7 @@ namespace LootListManager.Connectors {
     }
 
     public void DeleteUser(int id) {
-      _dataProvider.DeleteUser(id);
+      _dataProvider.DeleteUser(GetUser(id));
     }
 
     #endregion
