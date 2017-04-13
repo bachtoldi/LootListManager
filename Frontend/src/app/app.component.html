@@ -1,0 +1,15 @@
+<div>
+    <h1>{{title}}</h1>
+    <div>
+        <label>{{usernameTitle}}</label>
+        <input [(ngModel)]="user.username" placeholder="username" />
+    </div>
+    <div>
+        <label>{{passwordTitle}}</label>
+        <input [(ngModel)]="user.password" type="password" placeholder="password" />
+    </div>
+    <div>
+        <button type="submit" ng-click="onSubmit()">{{submitTitle}}</button>
+        <button type="submit">{{registerTitle}}</button>
+    </div>
+</div>
