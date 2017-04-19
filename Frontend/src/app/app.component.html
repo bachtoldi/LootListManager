@@ -9,7 +9,7 @@
         <input [(ngModel)]="user.password" type="password" placeholder="password" />
     </div>
     <div>
-        <button type="submit" ng-click="onSubmit()">{{submitTitle}}</button>
+        <button type="submit" (click)="onSubmit()">{{submitTitle}}</button>
         <button type="submit">{{registerTitle}}</button>
     </div>
 </div>

@@ -16,7 +16,14 @@ var AuthenticationService = (function () {
         this.http = http;
     }
     AuthenticationService.prototype.login = function (username, password) {
-        return this.http.post('http://localhost:11970/auth/token', JSON.stringify({ username: username, password: password }))
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Authorization', undefined);
+        var url = 'http://localhost:11970/auth/token';
+        var body = 'grant_type=' + 'password' + '&username=' + username + '&password=' + password;
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .post(url, body, options)
             .map(function (response) {
             // login successful if there's a jwt token in the response
             var user = response.json();
