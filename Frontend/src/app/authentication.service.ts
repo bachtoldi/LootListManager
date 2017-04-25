@@ -27,7 +27,7 @@ export class AuthenticationService {
             .post(url, body, header)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
-                let token = response.json() && response.json().token;
+                let token = response.json() && response.json().access_token;
                 if (token) {
                     this.token = token;
                     localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));

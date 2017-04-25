@@ -29,7 +29,7 @@ var AuthenticationService = (function () {
             .post(url, body, header)
             .map(function (response) {
             // login successful if there's a jwt token in the response
-            var token = response.json() && response.json().token;
+            var token = response.json() && response.json().access_token;
             if (token) {
                 _this.token = token;
                 localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));

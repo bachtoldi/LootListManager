@@ -1,0 +1,19 @@
+<div>
+    <h1>{{title}}</h1>
+    <div>
+        <label>{{usernameTitle}}</label>
+        <input [(ngModel)]="user.username" placeholder="username" />
+    </div>
+    <div>
+        <label>{{passwordTitle}}</label>
+        <input [(ngModel)]="user.password" type="password" placeholder="password" />
+    </div>
+    <div>
+        <label>{{passwordConfirmationTitle}}</label>
+        <input [(ngModel)]="passwordConfirmation" type="password" placeholder="password" />
+    </div>
+    <div>
+        <button type="submit" (click)="onSubmit()">{{submitTitle}}</button>
+        <button type="submit" (click)="onCancel()">{{cancelTitle}}</button>
+    </div>
+</div>
