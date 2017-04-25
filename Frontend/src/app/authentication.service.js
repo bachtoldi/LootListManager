@@ -14,22 +14,29 @@ require("rxjs/add/operator/map");
 var AuthenticationService = (function () {
     function AuthenticationService(http) {
         this.http = http;
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.token = currentUser && currentUser.token;
     }
     AuthenticationService.prototype.login = function (username, password) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        headers.append('Authorization', undefined);
+        var _this = this;
+        var header = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         var url = 'http://localhost:11970/auth/token';
-        var body = 'grant_type=' + 'password' + '&username=' + username + '&password=' + password;
-        var options = new http_1.RequestOptions({ headers: headers });
+        var body = 'grant_type=' + encodeURIComponent('password') +
+            '&username=' + encodeURIComponent(username) +
+            '&password=' + encodeURIComponent(password);
+        var options = new http_1.RequestOptions({ headers: header });
         return this.http
-            .post(url, body, options)
+            .post(url, body, header)
             .map(function (response) {
             // login successful if there's a jwt token in the response
-            var user = response.json();
-            if (user && user.token) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('currentUser', JSON.stringify(user));
+            var token = response.json() && response.json().token;
+            if (token) {
+                _this.token = token;
+                localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+                return true;
+            }
+            else {
+                return false;
             }
         });
     };

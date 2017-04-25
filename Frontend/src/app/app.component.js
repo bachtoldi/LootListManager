@@ -28,13 +28,19 @@ var AppComponent = (function () {
         };
         this.submitTitle = "Login";
         this.registerTitle = "Register";
+        this.error = '';
+        this.loading = false;
     }
     AppComponent.prototype.onSubmit = function () {
+        this.loading = true;
         this.authenticationSercie.login(this.user.username, this.user.password)
             .subscribe(function (data) {
-            alert("success");
-        }, function (error) {
-            alert("error");
+            if (data === true) {
+                alert('success');
+            }
+            else {
+                alert('error');
+            }
         });
     };
     return AppComponent;

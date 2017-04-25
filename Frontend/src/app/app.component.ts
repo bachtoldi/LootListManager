@@ -22,20 +22,23 @@ export class AppComponent {
   };
   submitTitle = "Login";
   registerTitle = "Register";
+  error = '';
+  loading = false;
 
   constructor(
     private authenticationSercie: AuthenticationService
   ) { }
 
   onSubmit() {
+    this.loading = true;
     this.authenticationSercie.login(this.user.username, this.user.password)
-    .subscribe(
+      .subscribe(
       data => {
-        alert("success");
-      },
-      error =>{
-        alert("error");
-      }
-    );
+        if (data === true) {
+          alert('success');
+        } else {
+          alert('error');
+        }
+      });
   }
 }

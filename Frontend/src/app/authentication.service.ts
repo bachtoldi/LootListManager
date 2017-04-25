@@ -5,25 +5,36 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: Http) { }
+    public token: string;
+
+    constructor(private http: Http) {
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.token = currentUser && currentUser.token;
+    }
 
     login(username: string, password: string) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        headers.append('Authorization', undefined);
+        let header = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
         const url = 'http://localhost:11970/auth/token';
-        let body = 'grant_type=' + 'password' + '&username=' + username + '&password=' + password;
-        let options = new RequestOptions({ headers: headers });
+
+        let body = 'grant_type=' + encodeURIComponent('password') +
+            '&username=' + encodeURIComponent(username) +
+            '&password=' + encodeURIComponent(password);
+
+        let options = new RequestOptions({ headers: header });
 
         return this.http
-            .post(url, body, options)
+            .post(url, body, header)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
-                let user = response.json();
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                let token = response.json() && response.json().token;
+                if (token) {
+                    this.token = token;
+                    localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+
+                    return true;
+                } else {
+                    return false;
                 }
             });
     }
