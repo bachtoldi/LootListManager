@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login.component';
-import { RegistrationComponent } from './registration.component';
+import { LoginComponent } from './login/index';
+import { RegistrationComponent } from './registration/index';
 
 import { routing } from './app.routing';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from './_services/index';
 
 @NgModule({
   imports: [

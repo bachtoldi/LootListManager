@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../_services/index';
 
 export class User {
   username: string;
@@ -7,13 +7,13 @@ export class User {
 }
 
 @Component({
-    moduleId: module.id,
-    selector: 'login',
-    templateUrl: 'app.component.html'
+  moduleId: module.id,
+  selector: 'login',
+  templateUrl: 'login.component.html'
 })
 
-export class LoginComponent{
-    title = 'Login';
+export class LoginComponent {
+  title = 'Login';
   usernameTitle = "Username:";
   passwordTitle = "Password:";
   user: User = {
@@ -35,9 +35,9 @@ export class LoginComponent{
       .subscribe(
       data => {
         if (data === true) {
-          
+
         } else {
-          
+
         }
       });
   }

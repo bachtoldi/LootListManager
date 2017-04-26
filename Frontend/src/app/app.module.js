@@ -10,10 +10,10 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var login_component_1 = require("./login.component");
-var registration_component_1 = require("./registration.component");
+var index_1 = require("./login/index");
+var index_2 = require("./registration/index");
 var app_routing_1 = require("./app.routing");
-var authentication_service_1 = require("./authentication.service");
+var index_3 = require("./_services/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,14 +29,14 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            login_component_1.LoginComponent,
-            registration_component_1.RegistrationComponent
+            index_1.LoginComponent,
+            index_2.RegistrationComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
         ],
         providers: [
-            authentication_service_1.AuthenticationService
+            index_3.AuthenticationService
         ]
     })
 ], AppModule);

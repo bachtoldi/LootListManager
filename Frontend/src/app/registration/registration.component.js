@@ -8,11 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var RegistrationComponent = (function () {
     function RegistrationComponent() {
+        this.title = 'Registrierung';
+        this.usernameTitle = 'Benutzername:';
+        this.passwordTitle = 'Passwort:';
+        this.passwordConfirmationTitle = 'Passwort wiederholen:';
+        this.submitTitle = 'Registrieren';
+        this.cancelTitle = 'Abbrechen';
         this.user = {
             username: '',
             password: ''
         };
     }
+    RegistrationComponent.prototype.onSubmit = function () {
+    };
+    RegistrationComponent.prototype.onCancel = function () {
+    };
     return RegistrationComponent;
 }());
 RegistrationComponent = __decorate([

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var authentication_service_1 = require("./authentication.service");
+var index_1 = require("../_services/index");
 var User = (function () {
     function User() {
     }
@@ -47,9 +47,9 @@ LoginComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'login',
-        templateUrl: 'app.component.html'
+        templateUrl: 'login.component.html'
     }),
-    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
+    __metadata("design:paramtypes", [index_1.AuthenticationService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
