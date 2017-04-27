@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/index';
 import { RegistrationComponent } from './registration/index';
+import { NavigationComponent } from './navigation/index';
 
 import { routing } from './app.routing';
 
@@ -21,7 +22,8 @@ import { AuthenticationService } from './_services/index';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NavigationComponent
   ],
   bootstrap: [
     AppComponent
