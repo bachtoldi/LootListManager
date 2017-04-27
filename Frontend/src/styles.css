@@ -1,9 +1,11 @@
+/* line 1, styles.scss */
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
 
+/* line 7, styles.scss */
 button {
   width: 150px;
   height: 40px;
@@ -13,16 +15,19 @@ button {
   background-color: grey;
 }
 
+/* line 16, styles.scss */
 .cView {
   display: flex;
 }
 
+/* line 20, styles.scss */
 .cNavi {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
 }
 
+/* line 26, styles.scss */
 .cContent {
   display: flex;
   flex: 1 1 0px;
