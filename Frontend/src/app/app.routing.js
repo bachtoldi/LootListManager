@@ -5,7 +5,7 @@ var index_2 = require("./registration/index");
 var appRoutes = [
     { path: 'login', component: index_1.LoginComponent },
     { path: 'registration', component: index_2.RegistrationComponent },
-    { path: '', component: index_2.RegistrationComponent },
+    { path: '', component: index_1.LoginComponent },
     { path: '**', redirectTo: '' }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
