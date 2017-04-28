@@ -5,10 +5,10 @@ import { LoginComponent } from './login/index';
 import { RegistrationComponent } from './registration/index';
 
 const appRoutes: Routes = [
-    { path: '', component: RegistrationComponent },
-    { path: '**', redirectTo: '' },
     { path: 'login', component: LoginComponent },
-    { path: 'registration', component: RegistrationComponent }
+    { path: 'registration', component: RegistrationComponent },
+    { path: '', component: RegistrationComponent },
+    { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
