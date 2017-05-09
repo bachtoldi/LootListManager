@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var index_1 = require("../_services/index");
+var index_2 = require("../translate/index");
 var User = (function () {
     function User() {
     }
@@ -17,27 +18,23 @@ var User = (function () {
 }());
 exports.User = User;
 var LoginComponent = (function () {
-    function LoginComponent(authenticationSercie) {
+    function LoginComponent(authenticationSercie, _translate) {
         this.authenticationSercie = authenticationSercie;
-        this.title = 'Login';
-        this.usernameTitle = "Username:";
-        this.passwordTitle = "Password:";
+        this._translate = _translate;
         this.user = {
             username: '',
             password: ''
         };
-        this.submitTitle = "Login";
-        this.registerTitle = "Register";
-        this.error = '';
-        this.loading = false;
+        this.username = this._translate.instant('username');
+        this.password = this._translate.instant('password');
     }
     LoginComponent.prototype.onSubmit = function () {
-        this.loading = true;
         this.authenticationSercie.login(this.user.username, this.user.password)
             .subscribe(function (data) {
             if (data === true) {
             }
             else {
+                alert("success");
             }
         });
     };
@@ -47,9 +44,11 @@ LoginComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'login',
-        templateUrl: 'login.component.html'
+        templateUrl: 'login.component.html',
+        styleUrls: ['login.styles.css']
     }),
-    __metadata("design:paramtypes", [index_1.AuthenticationService])
+    __metadata("design:paramtypes", [index_1.AuthenticationService,
+        index_2.TranslateService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

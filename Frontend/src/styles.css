@@ -1,11 +1,16 @@
 /* line 1, styles.scss */
-h1 {
-  color: #369;
+label, p, h1, input, button, a {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 12px;
 }
 
-/* line 7, styles.scss */
+/* line 6, styles.scss */
+h1 {
+  color: #369;
+  font-size: 200%;
+}
+
+/* line 11, styles.scss */
 button {
   width: 150px;
   height: 40px;
@@ -13,23 +18,59 @@ button {
   border: none;
   color: white;
   background-color: grey;
+  font-size: 14px;
 }
 
-/* line 16, styles.scss */
+/* line 21, styles.scss */
+button:hover {
+  background-color: white;
+  color: grey;
+}
+
+/* line 26, styles.scss */
 .cView {
   display: flex;
 }
 
-/* line 20, styles.scss */
+/* line 30, styles.scss */
 .cNavi {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
 }
 
-/* line 26, styles.scss */
+/* line 36, styles.scss */
 .cContent {
   display: flex;
   flex: 1 1 0px;
   flex-direction: column;
+  padding-left: 10px;
+}
+
+/* line 43, styles.scss */
+nav {
+  display: block;
+  list-style-type: none;
+}
+/* line 47, styles.scss */
+nav li, nav a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+}
+/* line 58, styles.scss */
+nav a:hover {
+  background-color: white;
+  color: grey;
+}
+
+/* line 64, styles.scss */
+a {
+  color: black;
+  text-decoration: none;
 }

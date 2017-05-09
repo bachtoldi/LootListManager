@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/index';
 import { RegistrationComponent } from './registration/index';
 import { NavigationComponent } from './navigation/index';
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './translate/index';
 
 import { routing } from './app.routing';
 
@@ -25,13 +26,16 @@ import { AuthenticationService } from './_services/index';
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    NavigationComponent
+    NavigationComponent,
+    TranslatePipe
   ],
   bootstrap: [
     AppComponent
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    TRANSLATION_PROVIDERS,
+    TranslateService
   ]
 })
 

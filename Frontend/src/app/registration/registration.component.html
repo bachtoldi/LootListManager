@@ -1,19 +1,8 @@
 <div>
-    <h1>{{title}}</h1>
-    <div>
-        <label>{{usernameTitle}}</label>
-        <input [(ngModel)]="user.username" placeholder="username" />
-    </div>
-    <div>
-        <label>{{passwordTitle}}</label>
-        <input [(ngModel)]="user.password" type="password" placeholder="password" />
-    </div>
-    <div>
-        <label>{{passwordConfirmationTitle}}</label>
-        <input [(ngModel)]="passwordConfirmation" type="password" placeholder="password" />
-    </div>
-    <div>
-        <button type="submit" (click)="onSubmit()">{{submitTitle}}</button>
-        <button type="submit" (click)="onCancel()">{{cancelTitle}}</button>
-    </div>
+    <h1>{{ 'registerTitle' | translate }}</h1>
+    <input [(ngModel)]="user.username" placeholder="{{username}}" />
+    <input [(ngModel)]="user.password" type="password" placeholder="{{password}}" />
+    <input [(ngModel)]="passwordConfirmation" type="password" placeholder="{{passwordRepeat}}" />
+    <button class="cRegisterButton" type="submit" (click)="onSubmit()">{{ 'register' | translate }}</button>
+    <button class="cCancelButton" type="submit" routerLink="/login">{{ 'cancel' | translate }}</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../_services/index';
+import { TranslateService } from '../translate/index';
 
 export class User {
   username: string;
@@ -9,35 +10,34 @@ export class User {
 @Component({
   moduleId: module.id,
   selector: 'login',
-  templateUrl: 'login.component.html'
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.styles.css']
 })
 
 export class LoginComponent {
-  title = 'Login';
-  usernameTitle = "Username:";
-  passwordTitle = "Password:";
+  public username: string;
+  public password: string;
+
   user: User = {
     username: '',
     password: ''
   };
-  submitTitle = "Login";
-  registerTitle = "Register";
-  error = '';
-  loading = false;
 
   constructor(
-    private authenticationSercie: AuthenticationService
-  ) { }
+    private authenticationSercie: AuthenticationService,
+    private _translate: TranslateService) {
+    this.username = this._translate.instant('username');
+    this.password = this._translate.instant('password');
+  }
 
   onSubmit() {
-    this.loading = true;
     this.authenticationSercie.login(this.user.username, this.user.password)
       .subscribe(
       data => {
         if (data === true) {
-
+          
         } else {
-
+          alert("success");
         }
       });
   }

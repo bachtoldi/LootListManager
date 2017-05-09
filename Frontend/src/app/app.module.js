@@ -14,8 +14,9 @@ var app_component_1 = require("./app.component");
 var index_1 = require("./login/index");
 var index_2 = require("./registration/index");
 var index_3 = require("./navigation/index");
+var index_4 = require("./translate/index");
 var app_routing_1 = require("./app.routing");
-var index_4 = require("./_services/index");
+var index_5 = require("./_services/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,13 +35,16 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             index_1.LoginComponent,
             index_2.RegistrationComponent,
-            index_3.NavigationComponent
+            index_3.NavigationComponent,
+            index_4.TranslatePipe
         ],
         bootstrap: [
             app_component_1.AppComponent
         ],
         providers: [
-            index_4.AuthenticationService
+            index_5.AuthenticationService,
+            index_4.TRANSLATION_PROVIDERS,
+            index_4.TranslateService
         ]
     })
 ], AppModule);

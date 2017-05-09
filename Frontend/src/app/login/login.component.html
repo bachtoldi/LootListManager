@@ -1,15 +1,7 @@
 <div>
-    <h1>{{title}}</h1>
-    <div>
-        <label>{{usernameTitle}}</label>
-        <input [(ngModel)]="user.username" placeholder="username" />
-    </div>
-    <div>
-        <label>{{passwordTitle}}</label>
-        <input [(ngModel)]="user.password" type="password" placeholder="password" />
-    </div>
-    <div>
-        <button type="submit" (click)="onSubmit()">{{submitTitle}}</button>
-        <button type="submit" (click)="onRegister()">{{registerTitle}}</button>
-    </div>
+    <h1>{{ 'loginTitle' | translate }}</h1>
+    <input [(ngModel)]="user.username" placeholder="{{username}}" />
+    <input [(ngModel)]="user.password" type="password" placeholder="{{password}}" />
+    <button class="cLoginButton" type="submit" (click)="onSubmit()">{{ 'login' | translate }}</button>
+    <button class="cRegisterButton" type="submit" routerLink="/registration">{{ 'register' | translate }}</button>
 </div>
