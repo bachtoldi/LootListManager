@@ -9,6 +9,7 @@ import { LoginComponent } from './login/index';
 import { RegistrationComponent } from './registration/index';
 import { NavigationComponent } from './navigation/index';
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './translate/index';
+import { AuthGuard } from './_guards/index';
 
 import { routing } from './app.routing';
 
@@ -33,6 +34,7 @@ import { AuthenticationService } from './_services/index';
     AppComponent
   ],
   providers: [
+    AuthGuard,
     AuthenticationService,
     TRANSLATION_PROVIDERS,
     TranslateService
