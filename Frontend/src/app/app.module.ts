@@ -10,6 +10,7 @@ import { RegistrationComponent } from './registration/index';
 import { NavigationComponent } from './navigation/index';
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './translate/index';
 import { LanguagesComponent } from './languages/index';
+import { AuthGuard } from './_guards/index';
 import { HomeComponent } from './home/index';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +38,7 @@ import { AuthenticationService } from './_services/index';
     AppComponent
   ],
   providers: [
+    AuthGuard,
     AuthenticationService,
     TRANSLATION_PROVIDERS,
     TranslateService
