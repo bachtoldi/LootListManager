@@ -32,10 +32,11 @@ var LoginComponent = (function () {
         this.authenticationSercie.login(this.user.username, this.user.password)
             .subscribe(function (data) {
             if (data === true) {
+                var string = localStorage.getItem('currentUser');
+                alert(string);
             }
-            else {
-                alert("success");
-            }
+        }, function (error) {
+            alert("error");
         });
     };
     return LoginComponent;

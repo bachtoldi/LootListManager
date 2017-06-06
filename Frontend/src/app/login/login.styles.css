@@ -1,15 +1,19 @@
 /* line 1, login.styles.scss */
 div {
   width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* line 5, login.styles.scss */
+/* line 10, login.styles.scss */
 h1 {
   width: 100%;
   text-align: center;
 }
 
-/* line 10, login.styles.scss */
+/* line 15, login.styles.scss */
 input {
   text-align: center;
   width: 100%;
@@ -18,19 +22,19 @@ input {
   box-sizing: border-box;
 }
 
-/* line 18, login.styles.scss */
+/* line 23, login.styles.scss */
 button {
   width: 49%;
   padding: 0;
   margin: 0;
 }
 
-/* line 24, login.styles.scss */
+/* line 29, login.styles.scss */
 .cLoginButton {
   float: left;
 }
 
-/* line 28, login.styles.scss */
+/* line 33, login.styles.scss */
 .cRegisterButton {
   float: right;
 }

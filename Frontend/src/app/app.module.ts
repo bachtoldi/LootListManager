@@ -9,8 +9,10 @@ import { LoginComponent } from './login/index';
 import { RegistrationComponent } from './registration/index';
 import { NavigationComponent } from './navigation/index';
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './translate/index';
+import { LanguagesComponent } from './languages/index';
+import { HomeComponent } from './home/index';
 
-import { routing } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AuthenticationService } from './_services/index';
 
@@ -20,14 +22,16 @@ import { AuthenticationService } from './_services/index';
     FormsModule,
     HttpModule,
     RouterModule,
-    routing
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
     NavigationComponent,
-    TranslatePipe
+    TranslatePipe,
+    HomeComponent,
+    LanguagesComponent
   ],
   bootstrap: [
     AppComponent

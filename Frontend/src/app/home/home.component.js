@@ -6,18 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var NavigationComponent = (function () {
-    function NavigationComponent() {
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    return NavigationComponent;
+    return HomeComponent;
 }());
-NavigationComponent = __decorate([
+HomeComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'navigation',
-        templateUrl: 'navigation.component.html',
-        styleUrls: ['navigation.styles.css']
+        selector: 'home',
+        templateUrl: 'home.component.html',
+        styleUrls: ['home.styles.css']
     })
-], NavigationComponent);
-exports.NavigationComponent = NavigationComponent;
-//# sourceMappingURL=navigation.component.js.map
+], HomeComponent);
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

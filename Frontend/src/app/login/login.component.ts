@@ -35,10 +35,12 @@ export class LoginComponent {
       .subscribe(
       data => {
         if (data === true) {
-          
-        } else {
-          alert("success");
+          let string = localStorage.getItem('currentUser');
+          alert(string);
         }
+      },
+      error => {
+        alert("error");
       });
   }
 }

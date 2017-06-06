@@ -1,16 +1,21 @@
 /* line 1, styles.scss */
+body {
+  margin: 0;
+}
+
+/* line 5, styles.scss */
 label, p, h1, input, button, a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
 
-/* line 6, styles.scss */
+/* line 10, styles.scss */
 h1 {
   color: #369;
   font-size: 200%;
 }
 
-/* line 11, styles.scss */
+/* line 15, styles.scss */
 button {
   width: 150px;
   height: 40px;
@@ -21,56 +26,64 @@ button {
   font-size: 14px;
 }
 
-/* line 21, styles.scss */
+/* line 25, styles.scss */
 button:hover {
   background-color: white;
   color: grey;
 }
 
-/* line 26, styles.scss */
+/* line 30, styles.scss */
 .cView {
   display: flex;
-}
-
-/* line 30, styles.scss */
-.cNavi {
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* line 36, styles.scss */
-.cContent {
+.cRight {
   display: flex;
   flex: 1 1 0px;
   flex-direction: column;
   padding-left: 10px;
+  height: 100%;
+  width: 80%;
+  overflow: auto;
 }
 
-/* line 43, styles.scss */
-nav {
-  display: block;
-  list-style-type: none;
-}
-/* line 47, styles.scss */
-nav li, nav a {
-  display: block;
-  width: 150px;
-  height: 40px;
-  background-color: grey;
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  font-size: 14px;
-}
-/* line 58, styles.scss */
-nav a:hover {
-  background-color: white;
-  color: grey;
+/* line 46, styles.scss */
+.cNavi {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  height: 100%;
+  width: 20%;
+  background-color: lightgrey;
 }
 
-/* line 64, styles.scss */
+/* line 55, styles.scss */
+.cContent {
+  display: flex;
+  position: relative;
+  float: top;
+  height: 100%;
+}
+
+/* line 62, styles.scss */
+.cLanguages {
+  display: block;
+  float: bottom;
+}
+
+/* line 67, styles.scss */
 a {
   color: black;
   text-decoration: none;
+}
+
+/* line 72, styles.scss */
+.clearfix::after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
 }
