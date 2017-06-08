@@ -20,7 +20,13 @@ export class LanguagesComponent implements OnInit {
       { display: 'Deutsch', value: 'de' }
     ];
 
-    this.selectLanguage('en');
+    let currentLanguage = localStorage.getItem('currentLanguage');
+
+    if (currentLanguage) {
+      this.selectLanguage(currentLanguage);
+    } else {
+      this.selectLanguage('en');
+    }
   }
 
   isCurrentLanguage(lang: string) {
@@ -46,11 +52,13 @@ export class LanguagesComponent implements OnInit {
 
   clickEnglish() {
     this.selectLanguage('en');
-    this.router.navigate(['/login']);
+    localStorage.setItem('currentLanguage', 'en');
+    window.location.reload();
   }
 
   clickGerman() {
     this.selectLanguage('de');
-    this.router.navigate(['/login']);
+    localStorage.setItem('currentLanguage', 'de');
+    window.location.reload();
   }
 }

@@ -21,7 +21,13 @@ var LanguagesComponent = (function () {
             { display: 'English', value: 'en' },
             { display: 'Deutsch', value: 'de' }
         ];
-        this.selectLanguage('en');
+        var currentLanguage = localStorage.getItem('currentLanguage');
+        if (currentLanguage) {
+            this.selectLanguage(currentLanguage);
+        }
+        else {
+            this.selectLanguage('en');
+        }
     };
     LanguagesComponent.prototype.isCurrentLanguage = function (lang) {
         return lang === this._translate.currentLanguage;
@@ -43,11 +49,13 @@ var LanguagesComponent = (function () {
     };
     LanguagesComponent.prototype.clickEnglish = function () {
         this.selectLanguage('en');
-        this.router.navigate(['/login']);
+        localStorage.setItem('currentLanguage', 'en');
+        window.location.reload();
     };
     LanguagesComponent.prototype.clickGerman = function () {
         this.selectLanguage('de');
-        this.router.navigate(['/login']);
+        localStorage.setItem('currentLanguage', 'de');
+        window.location.reload();
     };
     return LanguagesComponent;
 }());
