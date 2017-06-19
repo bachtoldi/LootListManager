@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { User } from '../login/index';
-import { TranslateService } from '../translate/index';
+import { User } from '../login/login.component';
+import { TranslateService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
     selector: 'registration',
     templateUrl: 'registration.component.html',
-    styleUrls: ['registration.styles.css']
+    styleUrls: ['registration.component.scss']
 })
 
 export class RegistrationComponent {

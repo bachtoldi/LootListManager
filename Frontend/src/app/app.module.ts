@@ -5,17 +5,16 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/index';
-import { RegistrationComponent } from './registration/index';
-import { NavigationComponent } from './navigation/index';
-import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './translate/index';
-import { LanguagesComponent } from './languages/index';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LanguagesComponent } from './languages/languages.component';
+import { HomeComponent } from './home/home.component';
+
+import { AppRoutingModule } from './app.routing';
 import { AuthGuard } from './_guards/index';
-import { HomeComponent } from './home/index';
-
-import { AppRoutingModule } from './app-routing.module';
-
-import { AuthenticationService } from './_services/index';
+import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate/index';
+import { AuthenticationService,TranslateService} from './_services/index';
 
 @NgModule({
   imports: [

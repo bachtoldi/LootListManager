@@ -4,7 +4,15 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'navigation',
     templateUrl: 'navigation.component.html',
-    styleUrls: ['navigation.styles.css']
+    styleUrls: ['navigation.component.scss']
 })
 
-export class NavigationComponent { }
+export class NavigationComponent { 
+    hasToken(){
+        if (localStorage.getItem('currentUser')) {
+            return true;
+        }
+
+        return false;
+    }
+}

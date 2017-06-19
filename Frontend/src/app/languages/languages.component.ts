@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { TranslateService } from '../translate/index';
+import { TranslateService } from '../_services/translate.service';
 
 @Component({
   moduleId: module.id,
   selector: 'languages',
   templateUrl: 'languages.component.html',
-  styleUrls: ['languages.styles.css']
+  styleUrls: ['languages.component.scss']
 })
 
 export class LanguagesComponent implements OnInit {

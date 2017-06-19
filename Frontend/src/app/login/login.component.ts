@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../_services/index';
-import { TranslateService } from '../translate/index';
+import { AuthenticationService, TranslateService } from '../_services/index';
 
 export class User {
   username: string;
@@ -11,7 +10,7 @@ export class User {
   moduleId: module.id,
   selector: 'login',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.styles.css']
+  styleUrls: ['login.component.scss']
 })
 
 export class LoginComponent {

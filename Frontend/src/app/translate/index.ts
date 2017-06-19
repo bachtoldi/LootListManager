@@ -1,6 +1,4 @@
-// translation 
-// https://scotch.io/tutorials/simple-language-translation-in-angular-2-part-1
-
-export * from './translate.service';
-export * from './translations';
+export * from './lang-de';
+export * from './lang-en';
 export * from './translate.pipe';
+export * from './translations';
