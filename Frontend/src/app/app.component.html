@@ -1,5 +1,5 @@
 <div class="cView">
-    <div class="cNavi" ng-hide="hasToken()">
+    <div class="cNavi" [hidden]="!hasToken()">
         <navigation></navigation>
     </div>
     <div class="cRight clearfix">
