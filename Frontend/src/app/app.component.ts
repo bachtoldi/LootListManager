@@ -1,41 +1,22 @@
-import { Component } from '@angular/core';
-import { AuthenticationService } from './authentication.service';
-
-export class User {
-  username: string;
-  password: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { NavigationComponent } from './navigation/navigation.component';
+import { TranslateService } from './_services/index';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 
 export class AppComponent {
-  title = 'Login';
-  usernameTitle = "Username:";
-  passwordTitle = "Password:";
-  user: User = {
-    username: '',
-    password: ''
-  };
-  submitTitle = "Login";
-  registerTitle = "Register";
+  hasToken() {
+    let token = localStorage.getItem('currentUser');
+    
+    if (token != null) {
+      return true;
+    }
 
-  constructor(
-    private authenticationSercie: AuthenticationService
-  ) { }
-
-  onSubmit() {
-    this.authenticationSercie.login(this.user.username, this.user.password)
-    .subscribe(
-      data => {
-        alert("success");
-      },
-      error =>{
-        alert("error");
-      }
-    );
+    return false;
   }
 }

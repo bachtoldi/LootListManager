@@ -1,9 +1,3 @@
--- Users
-
-INSERT INTO [LootListManager].[dbo].[Users] ( [UserName], [PasswordHash], [UserLoginAttempts] ) VALUES
-('armon', 'asdf', 0),
-('test', 'asdf', 0)
-
 -- Instances
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Instances] ON

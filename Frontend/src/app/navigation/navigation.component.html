@@ -1,0 +1,10 @@
+<nav class="cTop">
+    <li>
+        <a routerLink="/home">{{ 'home' | translate }}</a>
+    </li>
+</nav>
+<nav class="cBottom">
+    <li class="cBottom">
+        <a routerLink="/login" (click)="logout()">{{'logout' | translate}}</a>
+    </li>
+</nav>
