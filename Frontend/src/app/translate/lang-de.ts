@@ -9,4 +9,5 @@ export const LANG_DE_TRANS = {
     'registerTitle': 'Registrieren',
     'passwordRepeat': 'Passwort widerholen',
     'cancel': 'Abbrechen',
+    'home': 'Home',
 };

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, TranslateService } from '../_services/index';
+import { Router } from '@angular/router';
 
 export class User {
   username: string;
@@ -24,7 +25,8 @@ export class LoginComponent {
 
   constructor(
     private authenticationSercie: AuthenticationService,
-    private _translate: TranslateService) {
+    private _translate: TranslateService,
+    private router: Router) {
     this.username = this._translate.instant('username');
     this.password = this._translate.instant('password');
   }
@@ -35,7 +37,7 @@ export class LoginComponent {
       data => {
         if (data === true) {
           let string = localStorage.getItem('currentUser');
-          alert(string);
+          this.router.navigate(['/home']);
         }
       },
       error => {

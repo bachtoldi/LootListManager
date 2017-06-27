@@ -9,4 +9,5 @@ export const LANG_EN_TRANS = {
     'registerTitle': 'Register',
     'passwordRepeat': 'repeat password',
     'cancel': 'cancel',
+    'home': 'Home',
 };

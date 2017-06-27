@@ -1,13 +1,10 @@
-<nav ng-hide="hasToken()">
+<nav class="cTop">
     <li>
-        <a routerLink="/login">{{ 'login' | translate }}</a>
-    </li>
-    <li>
-        <a routerLink="/registration">{{ 'register' | translate }}</a>
+        <a routerLink="/home">{{ 'home' | translate }}</a>
     </li>
 </nav>
-<nav ng-hide="!hasToken()">
+<nav class="cBottom">
     <li class="cBottom">
-        <a routerLink="/logout">{{'logout'|translate}}</a>
+        <a routerLink="/login" (click)="logout()">{{'logout' | translate}}</a>
     </li>
 </nav>

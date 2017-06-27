@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
     styleUrls: ['navigation.component.scss']
 })
 
-export class NavigationComponent { 
-    hasToken(){
+export class NavigationComponent {
+    hasToken() {
         if (localStorage.getItem('currentUser')) {
             return true;
         }
 
         return false;
+    }
+
+    logout() {
+        localStorage.removeItem('currentUser');
     }
 }

@@ -1,5 +1,5 @@
 <div class="cView">
-    <div class="cNavi" [hidden]="!hasToken()">
+    <div class="cNavi" *ngIf="hasToken()">
         <navigation></navigation>
     </div>
     <div class="cRight clearfix">

@@ -11,7 +11,9 @@ import { TranslateService } from './_services/index';
 
 export class AppComponent {
   hasToken() {
-    if (localStorage.getItem('currentUser')) {
+    let token = localStorage.getItem('currentUser');
+    
+    if (token != null) {
       return true;
     }
 
