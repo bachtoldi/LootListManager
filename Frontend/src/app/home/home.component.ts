@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../_services/index';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  user() {
+    this.userService.getUser();
+  }
 
 }
