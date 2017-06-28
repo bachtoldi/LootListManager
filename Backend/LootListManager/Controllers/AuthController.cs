@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
 
 namespace LootListManager.Controllers {
   [RoutePrefix("Auth")]
@@ -82,6 +83,24 @@ namespace LootListManager.Controllers {
       }
 
       return GetHttpActionResult(users, ex);
+
+    }
+
+    [HttpGet]
+    [Route("User/Current")]
+    public IHttpActionResult GetCurrentUser() {
+
+      Exception ex = null;
+      UserViewModel user = null;
+
+      try {
+        var id = User.Identity.GetUserId();
+        user = new UserViewModel(_dataConnector.GetUser(int.Parse(id)));
+      }catch(Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(user, ex);
 
     }
 
