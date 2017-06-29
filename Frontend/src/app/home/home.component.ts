@@ -11,8 +11,9 @@ export class HomeComponent {
 
   constructor(private userService: UserService) { }
 
-  user() {
-    this.userService.getUser();
+  getUser() {
+    let user = this.userService.getUser();
+    // console.log(user);
   }
 
 }

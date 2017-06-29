@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, TranslateService } from '../_services/index';
 import { Router } from '@angular/router';
-
-export class User {
-  username: string;
-  password: string;
-}
+import { LoginUser } from '../_models/index';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +14,7 @@ export class LoginComponent {
   public username: string;
   public password: string;
 
-  user: User = {
+  user: LoginUser = {
     username: '',
     password: ''
   };

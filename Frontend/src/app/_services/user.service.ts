@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { User } from '../_models/index';
 
 import * as globals from '../globals';
 
 @Injectable()
 export class UserService {
+
+  user: User;
 
   constructor(private http: Http) { }
 
@@ -23,7 +26,11 @@ export class UserService {
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)
-      .map(response => console.log(response)).subscribe();
+      .map(response => {
+        // this.user =
+        console.log(response);
+        return this.user;
+      }).subscribe();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { User } from '../login/login.component';
 import { TranslateService } from '../_services/index';
+
+import { LoginUser } from '../_models/index';
 
 @Component({
     moduleId: module.id,
@@ -17,7 +18,7 @@ export class RegistrationComponent {
 
     submitTitle = 'Registrieren';
     cancelTitle = 'Abbrechen';
-    user: User = {
+    user: LoginUser = {
         username: '',
         password: ''
     };
