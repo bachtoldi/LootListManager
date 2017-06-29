@@ -17,13 +17,13 @@ export class UserService {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Authorization', 'Bearer ${token}');
+    headers.append('Authorization', 'Bearer ' + token);
 
     // var headers = new Headers({ 'Authorization': 'Bearer ' + JSON.parse(token).token });
     var options = new RequestOptions({ headers: headers });
 
     return this.http.get(url, options)
-      .map(response => console.log(response));
+      .map(response => console.log(response)).subscribe();
   }
 
 }
