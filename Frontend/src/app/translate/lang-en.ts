@@ -10,4 +10,5 @@ export const LANG_EN_TRANS = {
     'passwordRepeat': 'repeat password',
     'cancel': 'cancel',
     'home': 'Home',
+    'welcome': 'Welcome',
 };

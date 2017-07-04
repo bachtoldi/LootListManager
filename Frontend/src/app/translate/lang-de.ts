@@ -10,4 +10,5 @@ export const LANG_DE_TRANS = {
     'passwordRepeat': 'Passwort widerholen',
     'cancel': 'Abbrechen',
     'home': 'Home',
+    'welcome': 'Willkommen',
 };

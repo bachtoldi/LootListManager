@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../_services/index';
+import { UserService, TranslateService } from '../_services/index';
 import { User } from '../_models/index';
 
 @Component({
@@ -8,16 +8,21 @@ import { User } from '../_models/index';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
 
-  user: User;
+export class HomeComponent implements OnInit {
+
+  user: User = new User();
 
   constructor(private userService: UserService) { }
 
-  getUser() {
-    this.userService.getUser().subscribe(result => this.user = result);
+  ngOnInit() {
+    this.getUser();
+  }
 
-    console.log(this.user);
+  getUser() {
+    this.userService.getUser().subscribe(result => {
+      this.user = result;
+    });
   }
 
 }

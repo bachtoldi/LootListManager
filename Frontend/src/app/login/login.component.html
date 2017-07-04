@@ -1,7 +1,7 @@
 <div>
     <h1>{{ 'loginTitle' | translate }}</h1>
     <input [(ngModel)]="user.username" placeholder="{{username}}" />
-    <input [(ngModel)]="user.password" type="password" placeholder="{{password}}" />
+    <input [(ngModel)]="user.password" type="password" (keyup.enter)="onSubmit()" placeholder="{{password}}" />
     <button class="cLoginButton" type="submit" (click)="onSubmit()">{{ 'login' | translate }}</button>
     <button class="cRegisterButton" type="submit" routerLink="/registration">{{ 'register' | translate }}</button>
 </div>
