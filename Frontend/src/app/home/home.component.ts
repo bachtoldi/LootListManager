@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/index';
+import { User } from '../_models/index';
 
 @Component({
   moduleId: module.id,
@@ -9,11 +10,14 @@ import { UserService } from '../_services/index';
 })
 export class HomeComponent {
 
+  user: User;
+
   constructor(private userService: UserService) { }
 
   getUser() {
-    let user = this.userService.getUser();
-    // console.log(user);
+    this.userService.getUser().subscribe(result => this.user = result);
+
+    console.log(this.user);
   }
 
 }
