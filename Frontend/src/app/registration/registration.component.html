@@ -2,7 +2,7 @@
     <h1>{{ 'registerTitle' | translate }}</h1>
     <input [(ngModel)]="user.username" placeholder="{{username}}" />
     <input [(ngModel)]="user.password" type="password" placeholder="{{password}}" />
-    <input [(ngModel)]="passwordConfirmation" type="password" placeholder="{{passwordRepeat}}" />
+    <input [(ngModel)]="passwordConfirmation" type="password" (keyup.enter)="onSubmit()" placeholder="{{passwordRepeat}}" />
     <button class="cRegisterButton" type="submit" (click)="onSubmit()">{{ 'register' | translate }}</button>
     <button class="cCancelButton" type="submit" routerLink="/login">{{ 'cancel' | translate }}</button>
 </div>

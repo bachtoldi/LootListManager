@@ -32,12 +32,11 @@ export class LoginComponent {
       .subscribe(
       data => {
         if (data === true) {
-          let string = localStorage.getItem('currentUser');
           this.router.navigate(['/home']);
         }
       },
       error => {
-        alert("error");
+        alert('error');
       });
   }
 }

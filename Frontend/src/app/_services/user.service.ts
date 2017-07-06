@@ -37,4 +37,29 @@ export class UserService {
     return user;
   }
 
+  register(username: string, password: string) {
+    const url = globals.backendUrl + "/Auth/Register";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    var options = new RequestOptions({ headers: headers });
+
+    var body = {
+      UserName: username,
+      UserPassword: password
+    };
+
+    return this.http
+      .post(url, body, options)
+      .map((response: Response) => {
+        console.log(response.status);
+        if (response.status == 200) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+  }
 }
