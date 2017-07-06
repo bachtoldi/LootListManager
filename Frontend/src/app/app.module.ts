@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app.routing';
 import { AuthGuard } from './_guards/index';
 import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate/index';
 import { AuthenticationService, TranslateService, UserService } from './_services/index';
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { AuthenticationService, TranslateService, UserService } from './_service
     NavigationComponent,
     TranslatePipe,
     HomeComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    CharacterComponent
   ],
   bootstrap: [
     AppComponent
