@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace LootListManager.Controllers {
-  [RoutePrefix("Environment")]
+  [RoutePrefix("Environments")]
   public class EnvironmentController : BaseController {
 
     #region - Instance Variables -
@@ -31,9 +31,8 @@ namespace LootListManager.Controllers {
     #region - Instance -
 
     [HttpGet]
-    [Route("Instance")]
+    [Route("Instances")]
     public IHttpActionResult GetInstances() {
-
       Exception ex = null;
       LinkContainer<InstanceViewModel> instances = null;
 
@@ -45,23 +44,20 @@ namespace LootListManager.Controllers {
         instances = new LinkContainer<InstanceViewModel>(_dataConnector.GetInstances().Select(x => new InstanceViewModel(x, cultureInfo)).ToList());
 
         foreach(var instance in instances.Items) {
-          instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "environment/instance/" + instance.InstanceId));
+          instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "environments/instances/" + instance.InstanceId));
         }
 
-        instances.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "environment/instance"));
-
+        instances.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "environments/instances"));
       } catch(Exception e) {
         ex = e;
       }
 
       return GetHttpActionResult(instances, ex);
-
     }
 
     [HttpGet]
-    [Route("Instance/{id:int}")]
+    [Route("Instances/{id:int}")]
     public IHttpActionResult GetInstance([FromUri] int id) {
-
       Exception ex = null;
       InstanceViewModel instance = null;
 
@@ -72,22 +68,20 @@ namespace LootListManager.Controllers {
         var cultureInfo = new CultureInfo("de-CH");
         instance = new InstanceViewModel(_dataConnector.GetInstance(id), cultureInfo);
 
-        instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "environment/instance/" + instance.InstanceId));
-        instance.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "environment/instance/" + instance.InstanceId));
-        instance.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "environment/instance/" + instance.InstanceId));
+        instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "environments/instances/" + instance.InstanceId));
+        instance.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "environments/instances/" + instance.InstanceId));
+        instance.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "environments/instances/" + instance.InstanceId));
 
       } catch(Exception e) {
         ex = e;
       }
 
       return GetHttpActionResult(instance, ex);
-
     }
 
     [HttpPost]
-    [Route("Instance/{id:int}")]
+    [Route("Instances")]
     public IHttpActionResult CreateInstance([FromBody] InstanceBindingModel instance, [FromBody] ResourceEntryBindingModel instanceName) {
-
       Exception ex = null;
 
       try {
@@ -98,13 +92,11 @@ namespace LootListManager.Controllers {
       }
 
       return GetHttpActionResult(ex);
-
     }
 
     [HttpPut]
-    [Route("Instance/{id:int}")]
+    [Route("Instances/{id:int}")]
     public IHttpActionResult UpdateInstance([FromUri] int id, [FromBody] InstanceBindingModel instance) {
-
       Exception ex = null;
 
       try {
@@ -114,13 +106,11 @@ namespace LootListManager.Controllers {
       }
 
       return GetHttpActionResult(ex);
-
     }
 
     [HttpDelete]
-    [Route("Instance/{id:int}")]
+    [Route("Instances/{id:int}")]
     public IHttpActionResult DeleteInstance([FromUri] int id) {
-
       Exception ex = null;
 
       try {
@@ -130,7 +120,6 @@ namespace LootListManager.Controllers {
       }
 
       return GetHttpActionResult(ex);
-
     }
 
     #endregion

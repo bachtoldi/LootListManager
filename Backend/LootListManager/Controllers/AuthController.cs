@@ -17,14 +17,14 @@ namespace LootListManager.Controllers {
 
     #region - Instance Variables -
 
-    private readonly AuthControllerDataConnector _dataConnector;
+    private readonly AuthDataConnector _dataConnector;
 
     #endregion
 
     #region - Constructor -
 
     public AuthController() : base() {
-      _dataConnector = new AuthControllerDataConnector();
+      _dataConnector = new AuthDataConnector();
     }
 
     #endregion

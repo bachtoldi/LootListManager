@@ -11,5 +11,9 @@ namespace LootListManager.Logic.DataProviders {
       return new EnvironmentDataProvider();
     }
 
+    public static IPlayerDataProvider GetPlayerDataProvider() {
+      return new PlayerDataProvider();
+    }
+
   }
 }

@@ -76,8 +76,10 @@
     <Compile Include="DataProviders\ClassMaps\Player\RaceMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Player\TalentMap.cs" />
     <Compile Include="DataProviders\DataProvider.cs" />
+    <Compile Include="DataProviders\IPlayerDataProvider.cs" />
     <Compile Include="DataProviders\NHibernate\NHibernateConfig.cs" />
     <Compile Include="DataProviders\NHibernate\SessionFactory.cs" />
+    <Compile Include="DataProviders\PlayerDataProvider.cs" />
     <Compile Include="Entities\Auth\Role.cs" />
     <Compile Include="Entities\Auth\Token.cs" />
     <Compile Include="Entities\Auth\User.cs" />

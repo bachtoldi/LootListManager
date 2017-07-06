@@ -163,9 +163,11 @@
     <Compile Include="BindingModels\InstanceBindingModel.cs" />
     <Compile Include="BindingModels\NameBindingModel.cs" />
     <Compile Include="BindingModels\UserBindingModel.cs" />
-    <Compile Include="Connectors\AuthControllerDataConnector.cs" />
+    <Compile Include="Connectors\AuthDataConnector.cs" />
+    <Compile Include="Connectors\PlayerDataConnector.cs" />
     <Compile Include="Connectors\EnvironmentDataConnector.cs" />
     <Compile Include="Connectors\ResourceDataConnector.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Util\LinkContainer.cs" />
     <Compile Include="Util\RelValues.cs" />

@@ -3,7 +3,7 @@ using LootListManager.Logic.Entities.Auth;
 using System.Collections.Generic;
 
 namespace LootListManager.Connectors {
-  internal class AuthControllerDataConnector {
+  internal class AuthDataConnector {
 
     #region - Instance Variables -
 
@@ -13,7 +13,7 @@ namespace LootListManager.Connectors {
 
     #region - Constructor -
 
-    public AuthControllerDataConnector() {
+    public AuthDataConnector() {
       _dataProvider = DataProviderFactory.GetAuthDataProvider();
     }
 
