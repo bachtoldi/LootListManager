@@ -136,8 +136,8 @@ namespace LootListManager.Connectors {
       _dataProvider.SaveRace(race);
     }
 
-    public void DeleteRace(Race race) {
-      _dataProvider.DeleteRace(race);
+    public void DeleteRace(int id) {
+      _dataProvider.DeleteRace(id);
     }
 
     #endregion

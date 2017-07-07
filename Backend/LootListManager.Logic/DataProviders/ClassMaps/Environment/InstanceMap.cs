@@ -8,9 +8,9 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
 
       Id(i => i.InstanceId);
 
+      Map(i => i.InstanceLogicalId);
       Map(i => i.InstanceSort);
       Map(i => i.InstanceImage);
-      Map(i => i.InstanceLogicalId);
     }
   }
 }

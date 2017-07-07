@@ -38,6 +38,13 @@ namespace LootListManager.BindingModels {
       };
     }
 
+    public ClassRaceSetting GetClassRaceSettingFromModel(ClassRaceSettingBindingModel model) {
+      return new ClassRaceSetting {
+        ClassRef = _playerConnector.GetClass(model.ClassFk),
+        RaceRef = _playerConnector.GetRace(model.RaceFk),
+      };
+    }
+
     #endregion
 
   }

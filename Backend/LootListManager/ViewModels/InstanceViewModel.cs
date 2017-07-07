@@ -18,6 +18,7 @@ namespace LootListManager.ViewModels {
     #region - Properties -
 
     public int InstanceId { get; set; }
+    public string InstanceLogicalId { get; set; }
     public int InstanceSort { get; set; }
     public string InstanceName { get; set; }
 

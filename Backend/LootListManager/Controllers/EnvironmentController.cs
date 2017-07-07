@@ -37,18 +37,17 @@ namespace LootListManager.Controllers {
       LinkContainer<InstanceViewModel> instances = null;
 
       try {
-
         var requestUri = Request.RequestUri;
         // todo -> save in auth token after authorization is implemented
         var cultureInfo = new CultureInfo("de-CH");
         instances = new LinkContainer<InstanceViewModel>(_dataConnector.GetInstances().Select(x => new InstanceViewModel(x, cultureInfo)).ToList());
 
-        foreach(var instance in instances.Items) {
+        foreach (var instance in instances.Items) {
           instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "environments/instances/" + instance.InstanceId));
         }
 
         instances.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "environments/instances"));
-      } catch(Exception e) {
+      } catch (Exception e) {
         ex = e;
       }
 
@@ -62,7 +61,6 @@ namespace LootListManager.Controllers {
       InstanceViewModel instance = null;
 
       try {
-
         var requestUri = Request.RequestUri;
         // todo -> save in auth token after authorization is implemented
         var cultureInfo = new CultureInfo("de-CH");
@@ -71,8 +69,7 @@ namespace LootListManager.Controllers {
         instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "environments/instances/" + instance.InstanceId));
         instance.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "environments/instances/" + instance.InstanceId));
         instance.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "environments/instances/" + instance.InstanceId));
-
-      } catch(Exception e) {
+      } catch (Exception e) {
         ex = e;
       }
 
@@ -87,7 +84,7 @@ namespace LootListManager.Controllers {
       try {
         _dataConnector.SaveInstance(instance.GetEntity());
         _resourceConnector.AddResource(instanceName.GetResourceEntry(instance.GetEntity().GetType().Name));
-      } catch(Exception e) {
+      } catch (Exception e) {
         ex = e;
       }
 
@@ -101,7 +98,7 @@ namespace LootListManager.Controllers {
 
       try {
         _dataConnector.SaveInstance(instance.GetEntity());
-      } catch(Exception e) {
+      } catch (Exception e) {
         ex = e;
       }
 
@@ -115,7 +112,7 @@ namespace LootListManager.Controllers {
 
       try {
         _dataConnector.DeleteInstance(id);
-      } catch(Exception e) {
+      } catch (Exception e) {
         ex = e;
       }
 

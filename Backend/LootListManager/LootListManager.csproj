@@ -162,8 +162,11 @@
     <Compile Include="Auth\ApplicationUserStore.cs" />
     <Compile Include="BindingModels\BindingModelFactory.cs" />
     <Compile Include="BindingModels\CharacterBindingModel.cs" />
+    <Compile Include="BindingModels\ClassBindingModel.cs" />
+    <Compile Include="BindingModels\ClassRaceSettingBindingModel.cs" />
+    <Compile Include="BindingModels\FactionBindingModel.cs" />
     <Compile Include="BindingModels\InstanceBindingModel.cs" />
-    <Compile Include="BindingModels\NameBindingModel.cs" />
+    <Compile Include="BindingModels\ResourceEntryBindingModel.cs" />
     <Compile Include="BindingModels\UserBindingModel.cs" />
     <Compile Include="Connectors\AuthDataConnector.cs" />
     <Compile Include="Connectors\PlayerDataConnector.cs" />
@@ -177,6 +180,9 @@
     <Compile Include="Util\ActionValues.cs" />
     <Compile Include="Util\LinkViewModel.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
+    <Compile Include="ViewModels\ClassRaceSettingViewModel.cs" />
+    <Compile Include="ViewModels\ClassViewModel.cs" />
+    <Compile Include="ViewModels\FactionViewModel.cs" />
     <Compile Include="ViewModels\InstanceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Content Include="Global.asax" />

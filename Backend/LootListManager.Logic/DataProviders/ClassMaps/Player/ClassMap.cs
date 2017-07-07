@@ -8,6 +8,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
 
       Id(c => c.ClassId);
 
+      Map(c => c.ClassLogicalId);
       Map(c => c.ClassImage);
     }
   }
