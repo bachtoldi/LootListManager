@@ -37,17 +37,37 @@ namespace LootListManager.Logic.DataProviders {
 
     #region - Faction -
 
+    Faction GetFaction(int id);
+    IList<Faction> GetFactions();
+    Faction SaveFaction(Faction faction);
+    bool DeleteFaction(int id);
+
     #endregion
 
     #region - Need -
+
+    Need GetNeed(int id);
+    IList<Need> GetNeeds();
+    Need SaveNeed(Need need);
+    bool DeleteNeed(int id);
 
     #endregion
 
     #region - Race -
 
+    Race GetRace(int id);
+    IList<Race> GetRaces();
+    Race SaveRace(Race race);
+    bool DeleteRace(int id);
+
     #endregion
 
     #region - Talent -
+
+    Talent GetTalent(int id);
+    IList<Talent> GetTalents();
+    Talent SaveTalent(Talent talent);
+    bool DeleteTalent(int id);
 
     #endregion
 

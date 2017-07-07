@@ -38,7 +38,6 @@ namespace LootListManager.Controllers {
     [HttpGet]
     [Route("Characters")]
     public IHttpActionResult GetCharacters() {
-
       Exception ex = null;
       LinkContainer<CharacterViewModel> characters = null;
 
@@ -119,6 +118,52 @@ namespace LootListManager.Controllers {
 
       return GetHttpActionResult(ex);
     }
+
+    #endregion
+
+    #region -- Class --
+
+    [HttpGet]
+    [Route("Classes")]
+    public IHttpActionResult GetClasss() {
+      Exception ex = null;
+      LinkContainer<ClassViewModel> classes = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        classes = new LinkContainer<ClassViewModel>(_playerConnector.GetClasses().Select(x => new ClassViewModel(x)).ToList());
+
+        foreach (var c in classes.Items) {
+          c.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/classes/" + c.ClassId));
+        }
+
+        classes.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/classes"));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(classes, ex);
+    }
+
+    #endregion
+
+    #region -- ClassRaceSetting --
+
+    #endregion
+
+    #region -- Faction --
+
+    #endregion
+
+    #region -- Need --
+
+    #endregion
+
+    #region -- Race --
+
+    #endregion
+
+    #region -- Talent --
 
     #endregion
 
