@@ -19,9 +19,19 @@ namespace LootListManager.Logic.DataProviders {
 
     #region - Class -
 
+    Class GetClass(int id);
+    IList<Class> GetClasses();
+    Class SaveClass(Class c);
+    bool DeleteClass(int id);
+
     #endregion
 
     #region - ClassRaceSetting -
+
+    ClassRaceSetting GetClassRaceSetting(int id);
+    IList<ClassRaceSetting> GetClassRaceSettings();
+    ClassRaceSetting SaveClassRaceSetting(ClassRaceSetting classRaceSetting);
+    bool DeleteClassRaceSetting(int id);
 
     #endregion
 

@@ -160,6 +160,8 @@
     <Compile Include="Auth\ApplicationUser.cs" />
     <Compile Include="Auth\ApplicationUserManager.cs" />
     <Compile Include="Auth\ApplicationUserStore.cs" />
+    <Compile Include="BindingModels\BindingModelFactory.cs" />
+    <Compile Include="BindingModels\CharacterBindingModel.cs" />
     <Compile Include="BindingModels\InstanceBindingModel.cs" />
     <Compile Include="BindingModels\NameBindingModel.cs" />
     <Compile Include="BindingModels\UserBindingModel.cs" />
@@ -174,6 +176,7 @@
     <Compile Include="Util\Link.cs" />
     <Compile Include="Util\ActionValues.cs" />
     <Compile Include="Util\LinkViewModel.cs" />
+    <Compile Include="ViewModels\CharacterViewModel.cs" />
     <Compile Include="ViewModels\InstanceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Content Include="Global.asax" />

@@ -94,8 +94,7 @@ namespace LootListManager.Controllers {
       UserViewModel user = null;
 
       try {
-        var id = User.Identity.GetUserId();
-        user = new UserViewModel(_dataConnector.GetUser(int.Parse(id)));
+        user = new UserViewModel(_dataConnector.GetUser(UserId));
       }catch(Exception e) {
         ex = e;
       }

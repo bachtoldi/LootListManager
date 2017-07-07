@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace LootListManager.Connectors {
-  public class PlayerDataConnector {
+  internal class PlayerDataConnector {
 
     #region - Instance Variables -
 

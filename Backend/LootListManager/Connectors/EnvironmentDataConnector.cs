@@ -3,7 +3,7 @@ using LootListManager.Logic.Entities.Environment;
 using System.Collections.Generic;
 
 namespace LootListManager.Connectors {
-  public class EnvironmentDataConnector {
+  internal class EnvironmentDataConnector {
 
     #region - Instance Variables -
 
