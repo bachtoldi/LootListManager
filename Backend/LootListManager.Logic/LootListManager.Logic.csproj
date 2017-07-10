@@ -55,10 +55,12 @@
   <ItemGroup>
     <Compile Include="DataProviders\AuthDataProvider.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\RoleMap.cs" />
+    <Compile Include="DataProviders\ConfigDataProvider.cs" />
     <Compile Include="DataProviders\ConnectionString.cs" />
     <Compile Include="DataProviders\DataProviderFactory.cs" />
     <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\IAuthDataProvider.cs" />
+    <Compile Include="DataProviders\IConfigDataProvider.cs" />
     <Compile Include="DataProviders\IEnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\TokenMap.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\UserMap.cs" />

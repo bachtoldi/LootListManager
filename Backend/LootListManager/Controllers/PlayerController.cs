@@ -579,6 +579,95 @@ namespace LootListManager.Controllers {
 
     #region -- Talent --
 
+    [HttpGet]
+    [Route("Talents")]
+    public IHttpActionResult GetTalents() {
+      Exception ex = null;
+      LinkContainer<TalentViewModel> talents = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        // todo -> save in auth token after authorization is implemented
+        var cultureInfo = new CultureInfo("de-CH");
+        talents = new LinkContainer<TalentViewModel>(_playerConnector.GetTalents().Select(x => new TalentViewModel(x, cultureInfo)).ToList());
+
+        foreach (var talent in talents.Items) {
+          talent.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/talents/" + talent.TalentId));
+        }
+
+        talents.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/talents"));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(talents, ex);
+    }
+
+    [HttpGet]
+    [Route("Talents/{id:int}")]
+    public IHttpActionResult GetTalent([FromUri] int id) {
+      Exception ex = null;
+      TalentViewModel talent = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        // todo -> save in auth token after authorization is implemented
+        var cultureInfo = new CultureInfo("de-CH");
+        talent = new TalentViewModel(_playerConnector.GetTalent(id), cultureInfo);
+
+        talent.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/talents/" + talent.TalentId));
+        talent.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/talents/" + talent.TalentId));
+        talent.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "players/talents/" + talent.TalentId));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(talent, ex);
+    }
+
+    [HttpPost]
+    [Route("Talents")]
+    public IHttpActionResult CreateTalent([FromBody] TalentBindingModel talent, [FromBody] ResourceEntryBindingModel talentName) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveTalent(_bindingModelFactory.GetTalentFromModel(talent));
+        _resourceConnector.AddResource(talentName.GetResourceEntry(_bindingModelFactory.GetTalentFromModel(talent).GetType().Name));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpPut]
+    [Route("Talents/{id:int}")]
+    public IHttpActionResult UpdateTalent([FromUri] int id, [FromBody] TalentBindingModel talent) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveTalent(_bindingModelFactory.GetTalentFromModel(talent));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpDelete]
+    [Route("Talents/{id:int}")]
+    public IHttpActionResult DeleteTalent([FromUri] int id) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.DeleteTalent(id);
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
     #endregion
 
     #endregion

@@ -60,6 +60,13 @@ namespace LootListManager.BindingModels {
       };
     }
 
+    public Talent GetTalentFromModel(TalentBindingModel model) {
+      return new Talent {
+        TalentLogicalId = model.TalentLogicalId,
+        ClassRef = _playerConnector.GetClass(model.ClassFk)
+      };
+    }
+
     #endregion
 
   }

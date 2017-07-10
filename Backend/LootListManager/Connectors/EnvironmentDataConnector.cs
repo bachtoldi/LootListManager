@@ -19,6 +19,10 @@ namespace LootListManager.Connectors {
 
     #endregion
 
+    #region - Boss -
+
+    #endregion
+
     #region - Instance -
 
     public Instance GetInstance(int id) {
@@ -36,6 +40,14 @@ namespace LootListManager.Connectors {
     public void DeleteInstance(int id) {
       _dataProvider.DeleteInstance(id);
     }
+
+    #endregion
+
+    #region - Item -
+
+    #endregion
+
+    #region - ItemBossSetting -
 
     #endregion
 

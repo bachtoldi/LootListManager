@@ -15,5 +15,9 @@ namespace LootListManager.Logic.DataProviders {
       return new PlayerDataProvider();
     }
 
+    public static IConfigDataProvider GetConfigDataProvider() {
+      return new ConfigDataProvider();
+    }
+
   }
 }
