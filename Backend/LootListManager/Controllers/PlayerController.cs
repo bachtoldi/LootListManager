@@ -398,9 +398,182 @@ namespace LootListManager.Controllers {
 
     #region -- Need --
 
+    [HttpGet]
+    [Route("Needs")]
+    public IHttpActionResult GetNeeds() {
+      Exception ex = null;
+      LinkContainer<NeedViewModel> needs = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        needs = new LinkContainer<NeedViewModel>(_playerConnector.GetNeeds().Select(x => new NeedViewModel(x)).ToList());
+
+        foreach (var need in needs.Items) {
+          need.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/needs/" + need.NeedId));
+        }
+
+        needs.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/needs"));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(needs, ex);
+    }
+
+    [HttpGet]
+    [Route("Needs/{id:int}")]
+    public IHttpActionResult GetNeed([FromUri] int id) {
+      Exception ex = null;
+      NeedViewModel need = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        need = new NeedViewModel(_playerConnector.GetNeed(id));
+
+        need.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/needs/" + need.NeedId));
+        need.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/needs/" + need.NeedId));
+        need.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "players/needs/" + need.NeedId));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(need, ex);
+    }
+
+    [HttpPost]
+    [Route("Needs")]
+    public IHttpActionResult CreateNeed([FromBody] NeedBindingModel need) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveNeed(_bindingModelFactory.GetNeedFromModel(need));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpPut]
+    [Route("Needs/{id:int}")]
+    public IHttpActionResult UpdateNeed([FromUri] int id, [FromBody] NeedBindingModel need) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveNeed(_bindingModelFactory.GetNeedFromModel(need));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpDelete]
+    [Route("Needs/{id:int}")]
+    public IHttpActionResult DeleteNeed([FromUri] int id) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.DeleteNeed(id);
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
     #endregion
 
     #region -- Race --
+
+    [HttpGet]
+    [Route("Races")]
+    public IHttpActionResult GetRaces() {
+      Exception ex = null;
+      LinkContainer<RaceViewModel> races = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        // todo bla
+        var cultureInfo = new CultureInfo("de-CH");
+        races = new LinkContainer<RaceViewModel>(_playerConnector.GetRaces().Select(x => new RaceViewModel(x, cultureInfo)).ToList());
+
+        foreach (var race in races.Items) {
+          race.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/races/" + race.RaceId));
+        }
+
+        races.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/races"));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(races, ex);
+    }
+
+    [HttpGet]
+    [Route("races/{id:int}")]
+    public IHttpActionResult GetRace([FromUri] int id) {
+      Exception ex = null;
+      RaceViewModel race = null;
+
+      try {
+        var requestUri = Request.RequestUri;
+        // todo -> save in auth token after authorization is implemented
+        var cultureInfo = new CultureInfo("de-CH");
+        race = new RaceViewModel(_playerConnector.GetRace(id), cultureInfo);
+
+        race.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/races/" + race.RaceId));
+        race.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/races/" + race.RaceId));
+        race.AddLink(new Link(requestUri, HttpMethod.Delete, RelValues.Self, ActionValues.Delete, "players/races/" + race.RaceId));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(race, ex);
+    }
+
+    [HttpPost]
+    [Route("Races")]
+    public IHttpActionResult CreateRace([FromBody] RaceBindingModel race, [FromBody] ResourceEntryBindingModel raceName) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveRace(_bindingModelFactory.GetRaceFromModel(race));
+        _resourceConnector.AddResource(raceName.GetResourceEntry(_bindingModelFactory.GetRaceFromModel(race).GetType().Name));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpPut]
+    [Route("Races/{id:int")]
+    public IHttpActionResult UpdateRace([FromUri] int id, [FromBody] RaceBindingModel race) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.SaveRace(_bindingModelFactory.GetRaceFromModel(race));
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
+
+    [HttpDelete]
+    [Route("Races/{id:int}")]
+    public IHttpActionResult DeleteRace([FromUri] int id) {
+      Exception ex = null;
+
+      try {
+        _playerConnector.DeleteRace(id);
+      } catch (Exception e) {
+        ex = e;
+      }
+
+      return GetHttpActionResult(ex);
+    }
 
     #endregion
 

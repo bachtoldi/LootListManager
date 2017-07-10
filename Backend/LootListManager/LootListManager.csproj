@@ -166,6 +166,8 @@
     <Compile Include="BindingModels\ClassRaceSettingBindingModel.cs" />
     <Compile Include="BindingModels\FactionBindingModel.cs" />
     <Compile Include="BindingModels\InstanceBindingModel.cs" />
+    <Compile Include="BindingModels\NeedBindingModel.cs" />
+    <Compile Include="BindingModels\RaceBindingModel.cs" />
     <Compile Include="BindingModels\ResourceEntryBindingModel.cs" />
     <Compile Include="BindingModels\UserBindingModel.cs" />
     <Compile Include="Connectors\AuthDataConnector.cs" />
@@ -184,6 +186,8 @@
     <Compile Include="ViewModels\ClassViewModel.cs" />
     <Compile Include="ViewModels\FactionViewModel.cs" />
     <Compile Include="ViewModels\InstanceViewModel.cs" />
+    <Compile Include="ViewModels\NeedViewModel.cs" />
+    <Compile Include="ViewModels\RaceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />

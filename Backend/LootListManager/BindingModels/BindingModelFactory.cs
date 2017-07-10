@@ -45,6 +45,21 @@ namespace LootListManager.BindingModels {
       };
     }
 
+    public Need GetNeedFromModel(NeedBindingModel model) {
+      return new Need {
+        CharacterRef = _playerConnector.GetCharacter(model.CharacterFk),
+        ItemRef = _environmentConnector.GetItem(model.ItemFk),
+        NeedTypeRef = _configConnector.GetNeedType(model.NeedTypeFk),
+        PriorityRef = _configConnector.GetPriority(model.PriorityFk)
+      };
+    }
+
+    public Race GetRaceFromModel(RaceBindingModel model) {
+      return new Race {
+        FactionRef = _playerConnector.GetFaction(model.FactionFk)
+      };
+    }
+
     #endregion
 
   }
