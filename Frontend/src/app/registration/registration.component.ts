@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '../_services/index';
+import { TranslateService, UserService } from '../_services/index';
+import { Router } from '@angular/router';
 
 import { LoginUser } from '../_models/index';
 
@@ -24,15 +25,26 @@ export class RegistrationComponent {
     };
 
     constructor(
-        private _translate: TranslateService) {
-        this.username = this._translate.instant('username');
-        this.password = this._translate.instant('password');
-        this.passwordRepeat = this._translate.instant('passwordRepeat');
+        private translate: TranslateService,
+        private userService: UserService,
+        private router: Router) {
+        this.username = this.translate.instant('username');
+        this.password = this.translate.instant('password');
+        this.passwordRepeat = this.translate.instant('passwordRepeat');
     }
 
     onSubmit() {
-        if(this.user.password === this.passwordConfirmation){
-
+        if (this.user.password === this.passwordConfirmation) {
+            this.userService.register(this.user.username, this.user.password)
+                .subscribe(
+                data => {
+                    if (data == true) {
+                        this.router.navigate(['/login']);
+                    }
+                },
+                error => {
+                    alert('error');
+                });
         }
     }
 }
