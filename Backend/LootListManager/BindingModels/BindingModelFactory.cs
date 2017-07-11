@@ -14,6 +14,7 @@ namespace LootListManager.BindingModels {
     private readonly PlayerDataConnector _playerConnector;
     private readonly AuthDataConnector _authConnector;
     private readonly EnvironmentDataConnector _environmentConnector;
+    private readonly ConfigDataConnector _configConnector;
 
     #endregion
 
@@ -23,6 +24,7 @@ namespace LootListManager.BindingModels {
       _playerConnector = new PlayerDataConnector();
       _authConnector = new AuthDataConnector();
       _environmentConnector = new EnvironmentDataConnector();
+      _configConnector = new ConfigDataConnector();
     }
 
     #endregion

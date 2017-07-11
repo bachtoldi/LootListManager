@@ -11,4 +11,6 @@ export const LANG_EN_TRANS = {
     'cancel': 'cancel',
     'home': 'Home',
     'welcome': 'Welcome',
+    'character': 'Character',
+    'logout': 'Logout',
 };

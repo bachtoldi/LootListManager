@@ -11,4 +11,6 @@ export const LANG_DE_TRANS = {
     'cancel': 'Abbrechen',
     'home': 'Home',
     'welcome': 'Willkommen',
+    'character': 'Charakter',
+    'logout': 'Abmelden',
 };

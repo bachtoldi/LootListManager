@@ -25,9 +25,19 @@ namespace LootListManager.Logic.DataProviders {
 
     #region - Item -
 
+    Item GetItem(int id);
+    IList<Item> GetItems();
+    Item SaveItem(Item item);
+    bool DeleteItem(int id);
+
     #endregion
 
     #region - ItemBossSetting -
+
+    ItemBossSetting GetItemBossSetting(int id);
+    IList<ItemBossSetting> GetItemBossSettings();
+    ItemBossSetting SaveItemBossSetting(ItemBossSetting itemBossSetting);
+    bool DeleteItemBossSetting(int id);
 
     #endregion
 

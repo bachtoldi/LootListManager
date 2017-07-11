@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing';
 import { AuthGuard } from './_guards/index';
 import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate/index';
-import { AuthenticationService, TranslateService, UserService } from './_services/index';
+import { AuthenticationService, TranslateService, UserService, CharacterService } from './_services/index';
 import { CharacterComponent } from './character/character.component';
 
 @NgModule({
@@ -44,6 +44,7 @@ import { CharacterComponent } from './character/character.component';
     TRANSLATION_PROVIDERS,
     TranslateService,
     UserService,
+    CharacterService,
   ]
 })
 

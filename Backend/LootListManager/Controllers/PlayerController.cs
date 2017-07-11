@@ -548,7 +548,7 @@ namespace LootListManager.Controllers {
     }
 
     [HttpPut]
-    [Route("Races/{id:int")]
+    [Route("Races/{id:int}")]
     public IHttpActionResult UpdateRace([FromUri] int id, [FromBody] RaceBindingModel race) {
       Exception ex = null;
 
