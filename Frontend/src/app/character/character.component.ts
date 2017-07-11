@@ -9,7 +9,7 @@ import { CharacterService } from '../_services/index';
 })
 export class CharacterComponent implements OnInit {
 
-  character: Character;
+  characters: Character[];
 
   constructor(private characterService: CharacterService) { }
 
@@ -20,7 +20,8 @@ export class CharacterComponent implements OnInit {
   getCharacter() {
     this.characterService.getCharacter().subscribe(
       result => {
-        this.character = result;
+        this.characters = result;
+        console.log(this.characters);
       }
     );
   }

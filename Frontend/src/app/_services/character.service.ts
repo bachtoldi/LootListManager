@@ -11,9 +11,8 @@ export class CharacterService {
 
   constructor(private http: Http) { }
 
-  /*
-  getUser(): Observable<User> {
-    const url = globals.backendUrl + "/Auth/User/Current";
+  getCharacter(): Observable<Character[]> {
+    const url = globals.backendUrl + '/Players/Characters';
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
 
@@ -24,11 +23,10 @@ export class CharacterService {
 
     var options = new RequestOptions({ headers: headers });
 
-    let user = this.http.get(url, options)
-      .map(this.toUser);
+    let characters = this.http.get(url, options)
+      .map((response: Response) => response.json().Items as Character[]);
 
-    return user;
+    return characters;
   }
-  */
 
 }

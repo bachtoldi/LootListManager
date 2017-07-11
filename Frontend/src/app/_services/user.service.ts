@@ -54,7 +54,6 @@ export class UserService {
     return this.http
       .post(url, body, options)
       .map((response: Response) => {
-        console.log(response.status);
         if (response.status == 200) {
           return true;
         } else {
