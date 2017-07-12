@@ -8,8 +8,8 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
 
       Id(i => i.ItemBossSettingId);
 
-      References(i => i.ItemRef, "FK_ItemId");
-      References(i => i.BossRef, "FK_BossId");
+      References(i => i.ItemRef, "FK_ItemId").Cascade.None();
+      References(i => i.BossRef, "FK_BossId").Cascade.None();
     }
   }
 }

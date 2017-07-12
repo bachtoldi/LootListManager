@@ -20,9 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUser() {
-    this.userService.getUser().subscribe(result => {
-      this.user = result;
-    });
+    this.user = this.userService.getUser();
   }
 
 }

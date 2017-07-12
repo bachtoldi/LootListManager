@@ -50,7 +50,7 @@ namespace LootListManager.Controllers {
           character.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/characters/" + character.CharacterId));
         }
 
-        characters.AddLink(new Util.Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/characters"));
+        characters.AddLink(new Link(requestUri, HttpMethod.Post, RelValues.Child, ActionValues.Create, "players/characters"));
       } catch (Exception e) {
         ex = e;
       }

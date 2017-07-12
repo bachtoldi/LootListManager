@@ -12,7 +12,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Auth {
       Map(t => t.IssuedOn);
       Map(t => t.ExpiresOn);
 
-      References(t => t.UserRef, "FK_UserId");
+      References(t => t.UserRef, "FK_UserId").Cascade.None();
     }
   }
 }

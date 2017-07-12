@@ -8,10 +8,10 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
 
       Id(n => n.NeedId);
 
-      References(c => c.CharacterRef, "FK_CharacterId");
-      References(c => c.ItemRef, "FK_ItemId");
-      References(c => c.NeedTypeRef, "FK_NeedTypeId");
-      References(c => c.PriorityRef, "FK_PriorityId");
+      References(c => c.CharacterRef, "FK_CharacterId").Cascade.None();
+      References(c => c.ItemRef, "FK_ItemId").Cascade.None();
+      References(c => c.NeedTypeRef, "FK_NeedTypeId").Cascade.None();
+      References(c => c.PriorityRef, "FK_PriorityId").Cascade.None();
     }
   }
 }

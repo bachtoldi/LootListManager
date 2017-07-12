@@ -9,9 +9,11 @@ import * as globals from '../globals';
 @Injectable()
 export class UserService {
 
+  user: User;
+
   constructor(private http: Http) { }
 
-  getUser(): Observable<User> {
+  getUser(): User {
     const url = globals.backendUrl + "/Auth/User/Current";
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
@@ -23,10 +25,12 @@ export class UserService {
 
     var options = new RequestOptions({ headers: headers });
 
-    let user = this.http.get(url, options)
-      .map(this.toUser);
+    this.http.get(url, options)
+      .map(this.toUser).subscribe(result => {
+        this.user = result
+      });
 
-    return user;
+    return this.user;
   }
 
   toUser(response: Response): User {

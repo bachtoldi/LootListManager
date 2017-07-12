@@ -10,7 +10,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
 
       Map(b => b.BossSort);
 
-      References(b => b.InstanceRef, "FK_InstanceId");
+      References(b => b.InstanceRef, "FK_InstanceId").Cascade.None();
     }
   }
 }

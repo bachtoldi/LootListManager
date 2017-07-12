@@ -10,9 +10,9 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
 
       Map(c => c.CharacterName);
 
-      References(c => c.UserRef, "FK_UserId");
-      References(c => c.RaceRef, "FK_RaceId");
-      References(c => c.TalentRef, "FK_TalentId");
+      References(c => c.UserRef, "FK_UserId").Cascade.None();
+      References(c => c.RaceRef, "FK_RaceId").Cascade.None();
+      References(c => c.TalentRef, "FK_TalentId").Cascade.None();
     }
   }
 }

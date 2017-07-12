@@ -11,7 +11,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
       Map(t => t.TalentLogicalId);
       Map(t => t.TalentImage);
 
-      References(t => t.ClassRef, "FK_ClassId");
+      References(t => t.ClassRef, "FK_ClassId").Cascade.None();
     }
   }
 }
