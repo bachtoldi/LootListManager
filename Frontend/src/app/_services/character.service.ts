@@ -29,4 +29,16 @@ export class CharacterService {
     return characters;
   }
 
+  toCharacter(response: Response): Character[]{
+    let characters = <Character[]>({});
+
+    console.log(response.json().Items);
+
+    response.json().Items.foreach( item => {
+      
+    })
+
+    return characters;
+  }
+
 }
