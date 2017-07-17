@@ -11,7 +11,7 @@ export class CharacterService {
 
   constructor(private http: Http) { }
 
-  getCharacter(): Observable<Character[]> {
+  getCharacter(): Observable<any> {
     const url = globals.backendUrl + '/Players/Characters';
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
@@ -24,19 +24,39 @@ export class CharacterService {
     var options = new RequestOptions({ headers: headers });
 
     let characters = this.http.get(url, options)
-      .map((response: Response) => response.json().Items as Character[]);
+      .map(response => response.json().Items)
+      .map(item => {
+        return new Character(item.CharacterId, item.CharacterName, item.RaceFk, item.TalentFk);
+      })
+    // .map(
+    // response => {
+    //   return new Character(
+    //     response.json().CharacterId,
+    //     response.json().CharacterName,
+    //     response.json().RaceFk,
+    //     response.json().TalentFk);
+    // });
+
+    console.log(characters);
 
     return characters;
   }
 
-  toCharacter(response: Response): Character[]{
-    let characters = <Character[]>({});
+  toCharacter(response: Response): Character {
+    let characters: Character;
 
     console.log(response.json().Items);
 
-    response.json().Items.foreach( item => {
-      
+    response.json().Items.foreach(item => {
+      characters = <Character>{
+        characterId: item.CharacterId,
+        characterName: item.CharacterName,
+        raceFk: item.RaceFk,
+        talentFk: item.TalentFk
+      };
     })
+
+    console.log(characters);
 
     return characters;
   }
