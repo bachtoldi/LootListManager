@@ -1,4 +1,4 @@
 export class User{
-    userId: number;
-    userName: string;
+    UserId: number;
+    UserName: string;
 }

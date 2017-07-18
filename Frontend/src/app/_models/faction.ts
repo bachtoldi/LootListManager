@@ -1,5 +1,5 @@
 export class Faction {
-    factionId: number;
-    factionLogicalId: string;
-    factionName: string;
+    FactionId: number;
+    FactionLogicalId: string;
+    FactionName: string;
 }

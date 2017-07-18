@@ -1,7 +1,7 @@
 import { Faction } from './index';
 
 export class Race {
-    raceId: number;
-    raceName: string;
-    factionFk: number;
+    RaceId: number;
+    RaceName: string;
+    FactionFk: number;
 }
