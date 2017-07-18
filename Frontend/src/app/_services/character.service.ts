@@ -13,15 +13,10 @@ export class CharacterService {
   constructor(private http: Http,
     private userService: UserService) { }
 
-  getCharacter(): Observable<Character> {
-    var userId: number;
-    this.userService.getUser().subscribe(
-      response => {
-        userId = response.UserId
-      }
-    );
+  getCharacter(userId: number): Observable<Character> {
 
-    const url = globals.backendUrl + '/Players/Characters?userId=' + userId;
+    var url = globals.backendUrl + '/Players/Characters?userId=' + userId;
+
 
     console.log(url);
 

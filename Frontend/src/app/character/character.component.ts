@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../_models/index';
-import { CharacterService } from '../_services/index';
+import { CharacterService, UserService } from '../_services/index';
 
 @Component({
   selector: 'app-character',
@@ -10,15 +10,18 @@ import { CharacterService } from '../_services/index';
 export class CharacterComponent implements OnInit {
 
   characters: Character[];
+  userId: number;
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private characterService: CharacterService,
+    private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUser().subscribe(data => this.userId = data.UserId);
     this.getCharacter();
   }
 
   getCharacter() {
-    this.characterService.getCharacter().subscribe();
+    this.characterService.getCharacter(this.userId).subscribe();
   }
 
 }

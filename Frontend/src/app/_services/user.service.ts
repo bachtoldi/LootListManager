@@ -9,8 +9,6 @@ import * as globals from '../globals';
 @Injectable()
 export class UserService {
 
-  user: User;
-
   constructor(private http: Http) { }
 
   getUser(): Observable<User> {
