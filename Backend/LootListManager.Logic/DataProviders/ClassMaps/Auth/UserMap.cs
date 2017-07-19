@@ -1,6 +1,5 @@
 ﻿using FluentNHibernate.Mapping;
 using LootListManager.Logic.Entities.Auth;
-using LootListManager.Logic.Entities.Player;
 
 namespace LootListManager.Logic.DataProviders.ClassMaps.Auth {
   public class UserMap : ClassMap<User> {
@@ -12,8 +11,6 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Auth {
       Map(u => u.UserName);
       Map(u => u.PasswordHash);
       Map(u => u.UserLoginAttempts);
-
-      References(u => u.CharacterRef, "FK_CharacterId").Cascade.None();
     }
   }
 }

@@ -13,18 +13,12 @@ export class CharacterService {
   constructor(private http: Http,
     private userService: UserService) { }
 
-  getCharacter(userId: number): Observable<Character> {
-
-    var url = globals.backendUrl + '/Players/Characters?userId=' + userId;
-
-
-    console.log(url);
-
-    return null;
-  }
-
-  getCharacters(): Observable<Character[]> {
-    const url = globals.backendUrl + '/Players/Characters';
+  getCharacters(userId = -1): Observable<Character[]> {
+    if (userId === -1) {
+      var url = globals.backendUrl + '/Players/Characters';
+    } else {
+      var url = globals.backendUrl + '/Players/Characters?userId=' + userId;
+    }
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
 

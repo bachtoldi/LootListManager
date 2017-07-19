@@ -9,7 +9,7 @@ import { CharacterService, UserService } from '../_services/index';
 })
 export class CharacterComponent implements OnInit {
 
-  characters: Character[];
+  character: Character = new Character();
   userId: number;
 
   constructor(private characterService: CharacterService,
@@ -21,7 +21,11 @@ export class CharacterComponent implements OnInit {
   }
 
   getCharacter() {
-    this.characterService.getCharacter(this.userId).subscribe();
+    this.characterService.getCharacters(this.userId).subscribe(
+      data => {
+        this.character = data[0];
+      }
+    );
   }
 
 }
