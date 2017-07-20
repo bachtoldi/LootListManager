@@ -9,11 +9,9 @@ import * as globals from '../globals';
 @Injectable()
 export class UserService {
 
-  user: User;
-
   constructor(private http: Http) { }
 
-  getUser(): User {
+  getUser(): Observable<User> {
     const url = globals.backendUrl + "/Auth/User/Current";
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
@@ -25,20 +23,8 @@ export class UserService {
 
     var options = new RequestOptions({ headers: headers });
 
-    this.http.get(url, options)
-      .map(this.toUser).subscribe(result => {
-        this.user = result
-      });
-
-    return this.user;
-  }
-
-  toUser(response: Response): User {
-    let user = <User>({
-      userId: response.json().UserId,
-      userName: response.json().UserName,
-    });
-    return user;
+    return this.http.get(url, options)
+      .map(response => response.json() as User);
   }
 
   register(username: string, password: string) {

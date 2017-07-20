@@ -16,8 +16,7 @@ BEGIN
 		[Id] INT IDENTITY(1,1) PRIMARY KEY,
 		[UserName] NVARCHAR(50) NOT NULL UNIQUE,
 		[PasswordHash] NVARCHAR(MAX) NOT NULL,
-		[UserLoginAttempts] INT NOT NULL,
-		[FK_CharacterId] INT NULL
+		[UserLoginAttempts] INT NOT NULL
 	)
 END
 GO
@@ -237,9 +236,6 @@ BEGIN
 	)
 END
 GO
-
-ALTER TABLE [LootListManager].[dbo].[Users]
-ADD CONSTRAINT FK_CharacterId FOREIGN KEY ([FK_CharacterId]) REFERENCES [dbo].[Characters] ([CharacterId])
 
 -- NeedTypes
 IF OBJECT_ID(N'NeedTypes') IS NULL

@@ -9,7 +9,6 @@ namespace LootListManager.ViewModels {
     public UserViewModel(User user) {
       UserId = user.Id;
       UserName = user.UserName;
-      CharacterFk = (user.CharacterRef != null) ? user.CharacterRef.CharacterId : 0;
     }
 
     #endregion
@@ -18,7 +17,6 @@ namespace LootListManager.ViewModels {
 
     public int UserId { get; set; }
     public string UserName { get; set; }
-    public int CharacterFk { get; set; }
 
     #endregion
 
