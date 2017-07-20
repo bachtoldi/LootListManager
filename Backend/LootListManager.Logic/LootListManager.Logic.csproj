@@ -35,12 +35,12 @@
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.2\lib\net461\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -56,7 +56,6 @@
     <Compile Include="DataProviders\AuthDataProvider.cs" />
     <Compile Include="DataProviders\ClassMaps\Auth\RoleMap.cs" />
     <Compile Include="DataProviders\ConfigDataProvider.cs" />
-    <Compile Include="DataProviders\ConnectionString.cs" />
     <Compile Include="DataProviders\DataProviderFactory.cs" />
     <Compile Include="DataProviders\EnvironmentDataProvider.cs" />
     <Compile Include="DataProviders\IAuthDataProvider.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="DataProviders\ClassMaps\Player\TalentMap.cs" />
     <Compile Include="DataProviders\DataProvider.cs" />
     <Compile Include="DataProviders\IPlayerDataProvider.cs" />
+    <Compile Include="DataProviders\NHibernate\ConnectionString.cs" />
     <Compile Include="DataProviders\NHibernate\NHibernateConfig.cs" />
     <Compile Include="DataProviders\NHibernate\SessionFactory.cs" />
     <Compile Include="DataProviders\PlayerDataProvider.cs" />
@@ -104,6 +104,7 @@
     <Compile Include="ResourceProviders\ResourceProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

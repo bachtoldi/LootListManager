@@ -1,9 +1,5 @@
 ﻿using LootListManager.Logic.Entities.Player;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LootListManager.Logic.DataProviders {
   public interface IPlayerDataProvider {
@@ -12,6 +8,7 @@ namespace LootListManager.Logic.DataProviders {
 
     Character GetCharacter(int id);
     IList<Character> GetCharacters();
+    IList<Character> GetCharacters(int userId);
     Character SaveCharacter(Character character);
     bool DeleteCharacter(int id);
 
@@ -21,6 +18,7 @@ namespace LootListManager.Logic.DataProviders {
 
     Class GetClass(int id);
     IList<Class> GetClasses();
+    IList<Class> GetClasses(int raceId);
     Class SaveClass(Class c);
     bool DeleteClass(int id);
 
@@ -57,6 +55,7 @@ namespace LootListManager.Logic.DataProviders {
 
     Race GetRace(int id);
     IList<Race> GetRaces();
+    IList<Race> GetRaces(int factionId);
     Race SaveRace(Race race);
     bool DeleteRace(int id);
 
@@ -66,6 +65,7 @@ namespace LootListManager.Logic.DataProviders {
 
     Talent GetTalent(int id);
     IList<Talent> GetTalents();
+    IList<Talent> GetTalents(int classId);
     Talent SaveTalent(Talent talent);
     bool DeleteTalent(int id);
 

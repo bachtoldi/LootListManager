@@ -1,9 +1,6 @@
 ﻿using LootListManager.Logic.Entities.Player;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LootListManager.Logic.DataProviders {
   internal class PlayerDataProvider : DataProvider, IPlayerDataProvider {
@@ -16,6 +13,10 @@ namespace LootListManager.Logic.DataProviders {
 
     public IList<Character> GetCharacters() {
       return GetList<Character>();
+    }
+
+    public IList<Character> GetCharacters(int userId) {
+      return GetList<Character>().Where(x => x.UserRef.Id == userId).ToList();
     }
 
     public Character SaveCharacter(Character character) {
@@ -41,7 +42,11 @@ namespace LootListManager.Logic.DataProviders {
       return GetList<Class>();
     }
 
-    public Class SaveClass(Class c){
+    public IList<Class> GetClasses(int raceId) {
+      return GetList<ClassRaceSetting>().Where(x => x.RaceRef.RaceId == raceId).Select(x => x.ClassRef).ToList();
+    }
+
+    public Class SaveClass(Class c) {
       Save(c);
       return GetById<Class>(c.ClassId);
     }
@@ -133,6 +138,10 @@ namespace LootListManager.Logic.DataProviders {
       return GetList<Race>();
     }
 
+    public IList<Race> GetRaces(int factionId) {
+      return GetList<Race>().Where(x => x.FactionRef.FactionId == factionId).ToList();
+    }
+
     public Race SaveRace(Race race) {
       Save(race);
       return GetById<Race>(race.RaceId);
@@ -154,6 +163,10 @@ namespace LootListManager.Logic.DataProviders {
 
     public IList<Talent> GetTalents() {
       return GetList<Talent>();
+    }
+
+    public IList<Talent> GetTalents(int classId) {
+      return GetList<Talent>().Where(x => x.ClassRef.ClassId == classId).ToList();
     }
 
     public Talent SaveTalent(Talent talent) {

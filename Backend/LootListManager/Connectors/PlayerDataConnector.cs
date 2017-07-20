@@ -1,9 +1,6 @@
 ﻿using LootListManager.Logic.DataProviders;
 using LootListManager.Logic.Entities.Player;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace LootListManager.Connectors {
   internal class PlayerDataConnector {
@@ -32,6 +29,10 @@ namespace LootListManager.Connectors {
       return _dataProvider.GetCharacters();
     }
 
+    public IList<Character> GetCharacters(int userId) {
+      return _dataProvider.GetCharacters(userId);
+    }
+
     public void SaveCharacter(Character character) {
       _dataProvider.SaveCharacter(character);
     }
@@ -50,6 +51,10 @@ namespace LootListManager.Connectors {
 
     public IList<Class> GetClasses() {
       return _dataProvider.GetClasses();
+    }
+
+    public IList<Class> GetClasses(int raceId) {
+      return _dataProvider.GetClasses(raceId);
     }
 
     public void SaveClass(Class c) {
@@ -132,6 +137,10 @@ namespace LootListManager.Connectors {
       return _dataProvider.GetRaces();
     }
 
+    public IList<Race> GetRaces(int factionId) {
+      return _dataProvider.GetRaces(factionId);
+    }
+
     public void SaveRace(Race race) {
       _dataProvider.SaveRace(race);
     }
@@ -150,6 +159,10 @@ namespace LootListManager.Connectors {
 
     public IList<Talent> GetTalents() {
       return _dataProvider.GetTalents();
+    }
+
+    public IList<Talent> GetTalents(int classId) {
+      return _dataProvider.GetTalents(classId);
     }
 
     public void SaveTalent(Talent talent) {
