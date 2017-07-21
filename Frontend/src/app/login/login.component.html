@@ -1,7 +1,7 @@
-<div>
+<form name="loginForm" (submit)="onSubmit()">
     <h1>{{ 'loginTitle' | translate }}</h1>
-    <input [(ngModel)]="user.username" placeholder="{{username}}" />
-    <input [(ngModel)]="user.password" type="password" (keyup.enter)="onSubmit()" placeholder="{{password}}" />
-    <button class="cLoginButton" type="submit" (click)="onSubmit()">{{ 'login' | translate }}</button>
-    <button class="cRegisterButton" type="submit" routerLink="/registration">{{ 'register' | translate }}</button>
-</div>
+    <input name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
+    <input name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
+    <button class="cLoginButton" type="submit">{{ 'login' | translate }}</button>
+    <button class="cRegisterButton" type="button" routerLink="/registration">{{ 'register' | translate }}</button>
+</form>

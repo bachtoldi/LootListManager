@@ -6,23 +6,50 @@ export class TranslateService {
     public currentLanguage: string;
     public supportedLanguages: any[];
 
-    constructor( @Inject(TRANSLATIONS) private _translations: any) { }
+    constructor( @Inject(TRANSLATIONS) private translations: any) {
+        this.supportedLanguages = [
+            { display: 'English', value: 'en' },
+            { display: 'Deutsch', value: 'de' }
+        ];
 
-    public use(lang: string): void {
+        let currentLanguage = localStorage.getItem('currentLanguage');
+
+        if (currentLanguage) {
+            this.currentLanguage = currentLanguage;
+        } else {
+            this.currentLanguage = 'en';
+        }
+    }
+
+    use(lang: string) {
         this.currentLanguage = lang;
+    }
+
+    selectLanguage(lang: string) {
+        var selectedLanguage = this.supportedLanguages.find(x => x.value == lang).value;
+        if (selectedLanguage && !this.isCurrentLanguage(lang)) {
+            this.currentLanguage = selectedLanguage;
+
+            localStorage.setItem('currentLanguage', lang);
+            window.location.reload();
+        }
+    }
+
+    isCurrentLanguage(lang: string) {
+        return lang === this.currentLanguage;
     }
 
     private translate(key: string): string {
         let translation = key;
 
-        if (this._translations[this.currentLanguage] && this._translations[this.currentLanguage][key]) {
-            return this._translations[this.currentLanguage][key];
+        if (this.translations[this.currentLanguage] && this.translations[this.currentLanguage][key]) {
+            return this.translations[this.currentLanguage][key];
         }
 
         return translation;
     }
 
-    public instant(key: string) {
+    instant(key: string) {
         return this.translate(key);
     }
 }

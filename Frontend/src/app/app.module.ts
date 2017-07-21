@@ -12,9 +12,9 @@ import { LanguagesComponent } from './languages/languages.component';
 import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './app.routing';
-import { AuthGuard } from './_guards/index';
-import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate/index';
-import { AuthenticationService, TranslateService, UserService, CharacterService } from './_services/index';
+import { AuthGuard } from './_guards';
+import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate';
+import { AuthenticationService, TranslateService, UserService, CharacterService } from './_services';
 import { CharacterComponent } from './character/character.component';
 
 @NgModule({

@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
-import { TranslateService, UserService } from '../_services/index';
+import { TranslateService, UserService } from '../_services';
 import { Router } from '@angular/router';
 
-import { LoginUser } from '../_models/index';
+import { LoginUser } from '../_models';
 
 @Component({
-    moduleId: module.id,
     selector: 'registration',
     templateUrl: 'registration.component.html',
     styleUrls: ['registration.component.scss']
 })
 
 export class RegistrationComponent {
-    public username: string;
-    public password: string;
-    public passwordRepeat: string;
     public passwordConfirmation: string;
 
     submitTitle = 'Registrieren';
@@ -27,11 +23,7 @@ export class RegistrationComponent {
     constructor(
         private translate: TranslateService,
         private userService: UserService,
-        private router: Router) {
-        this.username = this.translate.instant('username');
-        this.password = this.translate.instant('password');
-        this.passwordRepeat = this.translate.instant('passwordRepeat');
-    }
+        private router: Router) { }
 
     onSubmit() {
         if (this.user.password === this.passwordConfirmation) {

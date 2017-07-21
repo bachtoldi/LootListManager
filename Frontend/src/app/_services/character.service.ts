@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { Character } from '../_models/index';
-import { UserService } from './index';
+import { Character } from '../_models';
+import { UserService } from '.';
 
 import * as globals from '../globals';
 

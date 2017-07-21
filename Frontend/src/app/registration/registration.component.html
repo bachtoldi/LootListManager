@@ -1,8 +1,8 @@
 <div>
     <h1>{{ 'registerTitle' | translate }}</h1>
-    <input [(ngModel)]="user.username" placeholder="{{username}}" />
-    <input [(ngModel)]="user.password" type="password" placeholder="{{password}}" />
-    <input [(ngModel)]="passwordConfirmation" type="password" (keyup.enter)="onSubmit()" placeholder="{{passwordRepeat}}" />
+    <input [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
+    <input [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
+    <input [(ngModel)]="passwordConfirmation" type="password" (keyup.enter)="onSubmit()" placeholder="{{'passwordRepeat' | translate}}" />
     <button class="cRegisterButton" type="submit" (click)="onSubmit()">{{ 'register' | translate }}</button>
     <button class="cCancelButton" type="submit" routerLink="/login">{{ 'cancel' | translate }}</button>
 </div>

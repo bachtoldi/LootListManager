@@ -46,10 +46,6 @@ export class AuthenticationService {
   }
 
   isAuthenticated() {
-    if (localStorage.getItem('currentUser')) {
-      return true;
-    }
-
-    return false;
+    return localStorage.getItem('currentUser');
   }
 }
