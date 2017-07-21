@@ -3,10 +3,8 @@ using LootListManager.Connectors;
 using LootListManager.Util;
 using LootListManager.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
@@ -38,13 +36,14 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Characters")]
-    public IHttpActionResult GetCharacters() {
+    public IHttpActionResult GetCharacters([FromUri] int userId = 0) {
       Exception ex = null;
       LinkContainer<CharacterViewModel> characters = null;
 
       try {
         var requestUri = Request.RequestUri;
-        characters = new LinkContainer<CharacterViewModel>(_playerConnector.GetCharacters().Select(x => new CharacterViewModel(x)).ToList());
+        var charactersFromDatabase = (userId == 0) ? _playerConnector.GetCharacters() : _playerConnector.GetCharacters(userId);
+        characters = new LinkContainer<CharacterViewModel>(charactersFromDatabase.Select(x => new CharacterViewModel(x)).ToList());
 
         foreach (var character in characters.Items) {
           character.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/characters/" + character.CharacterId));
@@ -126,7 +125,7 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Classes")]
-    public IHttpActionResult GetClasss() {
+    public IHttpActionResult GetClasses([FromUri] int raceId = 0) {
       Exception ex = null;
       LinkContainer<ClassViewModel> classes = null;
 
@@ -134,7 +133,8 @@ namespace LootListManager.Controllers {
         var requestUri = Request.RequestUri;
         // todo -> save in auth token after authorization is implemented
         var cultureInfo = new CultureInfo("de-CH");
-        classes = new LinkContainer<ClassViewModel>(_playerConnector.GetClasses().Select(x => new ClassViewModel(x, cultureInfo)).ToList());
+        var classesFromDatabase = (raceId == 0) ? _playerConnector.GetClasses() : _playerConnector.GetClasses(raceId);
+        classes = new LinkContainer<ClassViewModel>(classesFromDatabase.Select(x => new ClassViewModel(x, cultureInfo)).ToList());
 
         foreach (var c in classes.Items) {
           c.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/classes/" + c.ClassId));
@@ -488,7 +488,7 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Races")]
-    public IHttpActionResult GetRaces() {
+    public IHttpActionResult GetRaces([FromUri] int factionId = 0) {
       Exception ex = null;
       LinkContainer<RaceViewModel> races = null;
 
@@ -496,7 +496,8 @@ namespace LootListManager.Controllers {
         var requestUri = Request.RequestUri;
         // todo bla
         var cultureInfo = new CultureInfo("de-CH");
-        races = new LinkContainer<RaceViewModel>(_playerConnector.GetRaces().Select(x => new RaceViewModel(x, cultureInfo)).ToList());
+        var racesFromDatabase = (factionId == 0) ? _playerConnector.GetRaces() : _playerConnector.GetRaces(factionId);
+        races = new LinkContainer<RaceViewModel>(racesFromDatabase.Select(x => new RaceViewModel(x, cultureInfo)).ToList());
 
         foreach (var race in races.Items) {
           race.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/races/" + race.RaceId));
@@ -581,7 +582,7 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Talents")]
-    public IHttpActionResult GetTalents() {
+    public IHttpActionResult GetTalents([FromUri] int classId = 0) {
       Exception ex = null;
       LinkContainer<TalentViewModel> talents = null;
 
@@ -589,7 +590,8 @@ namespace LootListManager.Controllers {
         var requestUri = Request.RequestUri;
         // todo -> save in auth token after authorization is implemented
         var cultureInfo = new CultureInfo("de-CH");
-        talents = new LinkContainer<TalentViewModel>(_playerConnector.GetTalents().Select(x => new TalentViewModel(x, cultureInfo)).ToList());
+        var talentsFromDatabase = (classId == 0) ? _playerConnector.GetTalents() : _playerConnector.GetTalents(classId);
+        talents = new LinkContainer<TalentViewModel>(talentsFromDatabase.Select(x => new TalentViewModel(x, cultureInfo)).ToList());
 
         foreach (var talent in talents.Items) {
           talent.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/talents/" + talent.TalentId));
