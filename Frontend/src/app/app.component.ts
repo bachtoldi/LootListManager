@@ -3,7 +3,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TranslateService, AuthenticationService } from './_services';
 
 @Component({
-  selector: 'my-app',
+  selector: 'll-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })

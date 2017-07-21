@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '../_services/translate.service';
 
 @Component({
-  selector: 'languages',
+  selector: 'll-languages',
   templateUrl: 'languages.component.html',
   styleUrls: ['languages.component.scss']
 })

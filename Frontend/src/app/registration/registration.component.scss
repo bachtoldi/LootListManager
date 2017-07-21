@@ -1,6 +1,5 @@
-div {
+form {
     width: 300px;
-    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -26,10 +25,10 @@ button {
     margin: 0;
 }
 
-.cRegisterButton {
+.registerButton {
     float: left;
 }
 
-.cCancelButton {
+.cancelButton {
     float: right;
 }

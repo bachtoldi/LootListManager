@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { LoginUser } from '../_models';
 
 @Component({
-    selector: 'registration',
+    selector: 'll-registration',
     templateUrl: 'registration.component.html',
     styleUrls: ['registration.component.scss']
 })

@@ -3,7 +3,7 @@ import { UserService, TranslateService } from '../_services';
 import { User } from '../_models';
 
 @Component({
-  selector: 'home',
+  selector: 'll-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

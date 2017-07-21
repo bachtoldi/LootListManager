@@ -2,6 +2,6 @@
     <h1>{{ 'loginTitle' | translate }}</h1>
     <input name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
     <input name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
-    <button class="cLoginButton" type="submit">{{ 'login' | translate }}</button>
-    <button class="cRegisterButton" type="button" routerLink="/registration">{{ 'register' | translate }}</button>
+    <button class="loginButton" type="submit">{{ 'login' | translate }}</button>
+    <button class="registerButton" type="button" routerLink="/registration">{{ 'register' | translate }}</button>
 </form>

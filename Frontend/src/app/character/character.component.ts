@@ -3,7 +3,7 @@ import { Character } from '../_models';
 import { CharacterService, UserService } from '../_services';
 
 @Component({
-  selector: 'app-character',
+  selector: 'll-character',
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.scss']
 })

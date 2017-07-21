@@ -1,13 +1,13 @@
-<div class="cView">
-    <div class="cNavi" *ngIf="hasToken()">
-        <navigation></navigation>
+<div class="view">
+    <div class="navi" *ngIf="hasToken()">
+        <ll-navigation></ll-navigation>
     </div>
-    <div class="cRight clearfix">
-        <div class="cContent">
+    <div class="right clearfix">
+        <div class="content">
             <router-outlet></router-outlet>
         </div>
-        <div class="cLanguages">
-            <languages></languages>
+        <div class="languages">
+            <ll-languages></ll-languages>
         </div>
     </div>
 </div>
