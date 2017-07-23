@@ -13,4 +13,158 @@ export const LANG_DE_TRANS = {
     'welcome': 'Willkommen',
     'character': 'Charakter',
     'logout': 'Abmelden',
+
+    // Instances
+    'ony': 'Onyxias Hort',
+    'mc': 'Geschmolzener Kern',
+    'zg': 'Zul\'Gurub',
+    'bwl': 'Pechschwingenhort',
+    'aq20': 'Ruinen von Ahn\'Qiraj',
+    'aq40': 'Tempel von Ahn\'Qiraj',
+    'nax': 'Naxxramas',
+    'wb': 'Weltbosse',
+
+    // Bosses
+    'onyxia': 'Onyxia',
+
+    'luci': 'Lucifron',
+    'magma': 'Magmadar',
+    'gehe': 'Gehennas',
+    'garr': 'Garr',
+    'shazz': 'Shazzrah',
+    'geddon': 'Baron Geddon',
+    'sulfuron': 'Sulfuronherold',
+    'gole': 'Golemagg der Verbrenner',
+    'majo': 'Majordomus Exekutus',
+    'raggi': 'Ragnaros',
+    'mctrash': 'Trash',
+
+    'jeklik': 'Hohepriesterin Jeklik',
+    'venoxis': 'Hohepriester Venoxis',
+    'marli': 'Hohepriesterin Mar\'li',
+    'thekal': 'Hohepriester Thekal',
+    'arlokk': 'Hohepriesterin Arlokk',
+    'mando': 'Blutfürst Mandokir',
+    'jindo': 'Jin\'do der Verhexer',
+    'ghaz': 'Gahz\'ranka',
+    'madness': 'Hort des Wahnsinns',
+    'hakkar' :'Hakkar',
+    'zgtrash': 'Trash',
+
+    'razo': 'Feuerkralle der Ungezähmte',
+    'vael': 'Vaelastrasz',
+    'lash': 'Brutwächter Dreschbringer',
+    'flamegor': 'Feuerschwinge',
+    'ebonroc':  'Schattenschwinge',
+    'firemaw': 'Flammenmaul',
+    'chrommi': 'Chromagus',
+    'nef': 'Nefarian',
+    'bwltrash': 'Trash',
+
+    'kurinaxx': 'Kurinaxx',
+    'rajaxx': 'General Rajaxx',
+    'moam': 'Moam',
+    'buru': 'Buru der Verschlinger',
+    'aya': 'Ayamiss der Jäger',
+    'ossi': 'Ossirian der Narbenlose',
+    'aq20trash': 'Trash',
+
+    'skeram': 'Der Prophet Skeram',
+    'bugs': 'Adel der Silithiden',
+    'sartura': 'Schlachtwache Sartura',
+    'fankriss': 'Fankriss der Unnachgiebige',
+    'visci': 'Viscidus',
+    'huhu': 'Prinzessin Huhuran',
+    'twins': 'Zwilingsimperatoren',
+    'ouro': 'Ouro',
+    'cthun': 'C\'Thun',
+    'aq40trash': 'Trash',
+
+    'anub': 'Anub\'Rekhan',
+    'widow': 'Großwitwe Faerlina',
+    'maexxna': 'Maexxna',
+    'noth': 'Noth der Seuchenfürst',
+    'heigan': 'Heigan der Unreine',
+    'loatheb': 'Loatheb',
+    'razuvi': 'Instrukteur Razuvious',
+    'gothik': 'Gothik der Seelenjäger',
+    'horsement': 'Die vier Reiter',
+    'patchwork': 'Flickwerk',
+    'grobbulus': 'Grobbulus',
+    'gluth': 'Gluth',
+    'thaddius': 'Thaddius',
+    'saphiron': 'Saphiron',
+    'kel': 'Kel\'Thuzad',
+    'naxtrash': 'Trash',
+
+    'kazzak': 'Kazzak',
+    'azu': 'Azuregos',
+    'ysondre': 'Ysondre',
+    'lethon': 'Lethon',
+    'taerar': 'Taerar',
+    'emeriss': 'Emeriss',
+
+    // Classes
+    'priest': 'Priester',
+    'mage': 'Magier',
+    'wl': 'Hexenmeister',
+    'rogue': 'Schurke',
+    'druid': 'Druide',
+    'hunter': 'Jäger',
+    'shami': 'Schamane',
+    'warri': 'Krieger',
+    'pala': 'Paladin',
+
+    // Talents
+    'holypr': 'Heilig',
+    'disc': 'Disziplin',
+    'shadow': 'Schatten',
+
+    'frost': 'Frost',
+    'fire': 'Feuer',
+    'arcane': 'Arkan',
+
+    'affli': 'Gebrechen',
+    'destro': 'Zerstörung',
+    'demo': 'Dämonologie',
+
+    'combat': 'Kampf',
+    'sub': 'Täuschung',
+    'ass': 'Meucheln',
+
+    'feral': 'Wilder Kampf',
+    'balance': 'Gleichgewicht',
+    'restod': 'Wiederherstellung',
+
+    'surv': 'Überleben',
+    'mark': 'Treffsicherheit',
+    'beast': 'Tierherrschaft',
+
+    'restos': 'Wiederherstellung',
+    'enh': 'Verstärkung',
+    'ele': 'Elementar',
+
+    'protw': 'Schutz',
+    'arms': 'Waffen',
+    'fury': 'Furor',
+
+    'holypa': 'Heilig',
+    'protp': 'Schutz',
+    'ret': 'Vergeltung',
+
+    // Factions
+    'ally': 'Allianz',
+    'horde': 'Horde',
+
+    // Races
+    'gnome': 'Gnom',
+    'dwarf': 'Zwerg',
+    'human': 'Mensch',
+    'ne': 'Nachtelf',
+    'ud': 'Untot',
+    'orc': 'Ork',
+    'troll': 'Troll',
+    'tauren': 'Taure',
+
+    // Items
 };

@@ -13,4 +13,158 @@ export const LANG_EN_TRANS = {
     'welcome': 'Welcome',
     'character': 'Character',
     'logout': 'Logout',
+
+    // Instances
+    'ony': '',
+    'mc': '',
+    'zg': '',
+    'bwl': '',
+    'aq20': '',
+    'aq40': '',
+    'nax': '',
+    'wb': '',
+
+    // Bosses
+    'onyxia': '',
+
+    'luci': '',
+    'magma': '',
+    'gehe': '',
+    'garr': '',
+    'shazz': '',
+    'geddon': '',
+    'sulfuron': '',
+    'gole': '',
+    'majo': '',
+    'raggi': '',
+    'mctrash': '',
+
+    'jeklik': '',
+    'venoxis': '',
+    'marli': '',
+    'thekal': '',
+    'arlokk': '',
+    'mando': '',
+    'jindo': '',
+    'ghaz': '',
+    'madness': '',
+    'hakkar' :'',
+    'zgtrash': '',
+
+    'razo': '',
+    'vael': '',
+    'lash': '',
+    'flamegor': '',
+    'ebonroc':  '',
+    'firemaw': '',
+    'chrommi': '',
+    'nef': '',
+    'bwltrash': '',
+
+    'kurinaxx': '',
+    'rajaxx': '',
+    'moam': '',
+    'buru': '',
+    'aya': '',
+    'ossi': '',
+    'aq20trash': '',
+
+    'skeram': '',
+    'bugs': '',
+    'sartura': '',
+    'fankriss': '',
+    'visci': '',
+    'huhu': '',
+    'twins': '',
+    'ouro': '',
+    'cthun': '',
+    'aq40trash': '',
+
+    'anub': '',
+    'widow': '',
+    'maexxna': '',
+    'noth': '',
+    'heigan': '',
+    'loatheb': '',
+    'razuvi': '',
+    'gothik': '',
+    'horsement': '',
+    'patchwork': '',
+    'grobbulus': '',
+    'gluth': '',
+    'thaddius': '',
+    'saphiron': '',
+    'kel': '',
+    'naxtrash': '',
+
+    'kazzak': '',
+    'azu': '',
+    'ysondre': '',
+    'lethon': '',
+    'taerar': '',
+    'emeriss': '',
+
+    // Classes
+    'priest': '',
+    'mage': '',
+    'wl': '',
+    'rogue': '',
+    'druid': '',
+    'hunter': '',
+    'shami': '',
+    'warri': '',
+    'pala': '',
+
+    // Talents
+    'holypr': '',
+    'disc': '',
+    'shadow': '',
+
+    'frost': '',
+    'fire': '',
+    'arcane': '',
+
+    'affli': '',
+    'destro': '',
+    'demo': '',
+
+    'combat': '',
+    'sub': '',
+    'ass': '',
+
+    'feral': '',
+    'balance': '',
+    'restod': '',
+
+    'surv': '',
+    'mark': '',
+    'beast': '',
+
+    'restos': '',
+    'enh': '',
+    'ele': '',
+
+    'protw': '',
+    'arms': '',
+    'fury': '',
+
+    'holypa': '',
+    'protp': '',
+    'ret': '',
+
+    // Factions
+    'ally': '',
+    'horde': '',
+
+    // Races
+    'gnome': '',
+    'dwarf': '',
+    'human': '',
+    'ne': '',
+    'ud': '',
+    'orc': '',
+    'troll': '',
+    'tauren': '',
+
+    // Items
 };
