@@ -3,7 +3,6 @@ using LootListManager.Connectors;
 using LootListManager.Util;
 using LootListManager.ViewModels;
 using System;
-using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
@@ -15,7 +14,6 @@ namespace LootListManager.Controllers {
     #region - Instance Variables -
 
     private readonly EnvironmentDataConnector _dataConnector;
-    private readonly ResourceDataConnector _resourceConnector;
 
     #endregion
 
@@ -23,7 +21,6 @@ namespace LootListManager.Controllers {
 
     public EnvironmentController() : base() {
       _dataConnector = new EnvironmentDataConnector();
-      _resourceConnector = new ResourceDataConnector();
     }
 
     #endregion
@@ -38,9 +35,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        instances = new LinkContainer<InstanceViewModel>(_dataConnector.GetInstances().Select(x => new InstanceViewModel(x, cultureInfo)).ToList());
+        instances = new LinkContainer<InstanceViewModel>(_dataConnector.GetInstances().Select(x => new InstanceViewModel(x)).ToList());
 
         foreach (var instance in instances.Items) {
           instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "environments/instances/" + instance.InstanceId));
@@ -62,9 +57,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        instance = new InstanceViewModel(_dataConnector.GetInstance(id), cultureInfo);
+        instance = new InstanceViewModel(_dataConnector.GetInstance(id));
 
         instance.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "environments/instances/" + instance.InstanceId));
         instance.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "environments/instances/" + instance.InstanceId));
@@ -78,12 +71,11 @@ namespace LootListManager.Controllers {
 
     [HttpPost]
     [Route("Instances")]
-    public IHttpActionResult CreateInstance([FromBody] InstanceBindingModel instance, [FromBody] ResourceEntryBindingModel instanceName) {
+    public IHttpActionResult CreateInstance([FromBody] InstanceBindingModel instance) {
       Exception ex = null;
 
       try {
         _dataConnector.SaveInstance(instance.GetEntity());
-        _resourceConnector.AddResource(instanceName.GetResourceEntry(instance.GetEntity().GetType().Name));
       } catch (Exception e) {
         ex = e;
       }

@@ -3,7 +3,6 @@ using LootListManager.Connectors;
 using LootListManager.Util;
 using LootListManager.ViewModels;
 using System;
-using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
@@ -15,7 +14,6 @@ namespace LootListManager.Controllers {
     #region - Instance Variables -
 
     private readonly PlayerDataConnector _playerConnector;
-    private readonly ResourceDataConnector _resourceConnector;
     private readonly BindingModelFactory _bindingModelFactory;
 
     #endregion
@@ -24,7 +22,6 @@ namespace LootListManager.Controllers {
 
     public PlayerController() : base() {
       _playerConnector = new PlayerDataConnector();
-      _resourceConnector = new ResourceDataConnector();
       _bindingModelFactory = new BindingModelFactory();
     }
 
@@ -131,10 +128,8 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
         var classesFromDatabase = (raceId == 0) ? _playerConnector.GetClasses() : _playerConnector.GetClasses(raceId);
-        classes = new LinkContainer<ClassViewModel>(classesFromDatabase.Select(x => new ClassViewModel(x, cultureInfo)).ToList());
+        classes = new LinkContainer<ClassViewModel>(classesFromDatabase.Select(x => new ClassViewModel(x)).ToList());
 
         foreach (var c in classes.Items) {
           c.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/classes/" + c.ClassId));
@@ -156,9 +151,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        c = new ClassViewModel(_playerConnector.GetClass(id), cultureInfo);
+        c = new ClassViewModel(_playerConnector.GetClass(id));
 
         c.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/Classes/" + c.ClassId));
         c.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/Classes/" + c.ClassId));
@@ -172,12 +165,11 @@ namespace LootListManager.Controllers {
 
     [HttpPost]
     [Route("Classes")]
-    public IHttpActionResult CreateClass([FromBody] ClassBindingModel c, [FromBody] ResourceEntryBindingModel className) {
+    public IHttpActionResult CreateClass([FromBody] ClassBindingModel c) {
       Exception ex = null;
 
       try {
         _playerConnector.SaveClass(c.GetEntity());
-        _resourceConnector.AddResource(className.GetResourceEntry(c.GetEntity().GetType().Name));
       } catch (Exception e) {
         ex = e;
       }
@@ -313,9 +305,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        factions = new LinkContainer<FactionViewModel>(_playerConnector.GetFactions().Select(x => new FactionViewModel(x, cultureInfo)).ToList());
+        factions = new LinkContainer<FactionViewModel>(_playerConnector.GetFactions().Select(x => new FactionViewModel(x)).ToList());
 
         foreach (var faction in factions.Items) {
           faction.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/factions/" + faction.FactionId));
@@ -337,9 +327,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        faction = new FactionViewModel(_playerConnector.GetFaction(id), cultureInfo);
+        faction = new FactionViewModel(_playerConnector.GetFaction(id));
 
         faction.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/factions/" + faction.FactionId));
         faction.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/factions/" + faction.FactionId));
@@ -353,12 +341,11 @@ namespace LootListManager.Controllers {
 
     [HttpPost]
     [Route("Factions")]
-    public IHttpActionResult CreateFaction([FromBody] FactionBindingModel faction, [FromBody] ResourceEntryBindingModel factionName) {
+    public IHttpActionResult CreateFaction([FromBody] FactionBindingModel faction) {
       Exception ex = null;
 
       try {
         _playerConnector.SaveFaction(faction.GetEntity());
-        _resourceConnector.AddResource(factionName.GetResourceEntry(faction.GetEntity().GetType().Name));
       } catch (Exception e) {
         ex = e;
       }
@@ -494,10 +481,8 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo bla
-        var cultureInfo = new CultureInfo("de-CH");
         var racesFromDatabase = (factionId == 0) ? _playerConnector.GetRaces() : _playerConnector.GetRaces(factionId);
-        races = new LinkContainer<RaceViewModel>(racesFromDatabase.Select(x => new RaceViewModel(x, cultureInfo)).ToList());
+        races = new LinkContainer<RaceViewModel>(racesFromDatabase.Select(x => new RaceViewModel(x)).ToList());
 
         foreach (var race in races.Items) {
           race.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/races/" + race.RaceId));
@@ -519,9 +504,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        race = new RaceViewModel(_playerConnector.GetRace(id), cultureInfo);
+        race = new RaceViewModel(_playerConnector.GetRace(id));
 
         race.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/races/" + race.RaceId));
         race.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/races/" + race.RaceId));
@@ -535,12 +518,11 @@ namespace LootListManager.Controllers {
 
     [HttpPost]
     [Route("Races")]
-    public IHttpActionResult CreateRace([FromBody] RaceBindingModel race, [FromBody] ResourceEntryBindingModel raceName) {
+    public IHttpActionResult CreateRace([FromBody] RaceBindingModel race) {
       Exception ex = null;
 
       try {
         _playerConnector.SaveRace(_bindingModelFactory.GetRaceFromModel(race));
-        _resourceConnector.AddResource(raceName.GetResourceEntry(_bindingModelFactory.GetRaceFromModel(race).GetType().Name));
       } catch (Exception e) {
         ex = e;
       }
@@ -588,10 +570,8 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
         var talentsFromDatabase = (classId == 0) ? _playerConnector.GetTalents() : _playerConnector.GetTalents(classId);
-        talents = new LinkContainer<TalentViewModel>(talentsFromDatabase.Select(x => new TalentViewModel(x, cultureInfo)).ToList());
+        talents = new LinkContainer<TalentViewModel>(talentsFromDatabase.Select(x => new TalentViewModel(x)).ToList());
 
         foreach (var talent in talents.Items) {
           talent.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Load, "players/talents/" + talent.TalentId));
@@ -613,9 +593,7 @@ namespace LootListManager.Controllers {
 
       try {
         var requestUri = Request.RequestUri;
-        // todo -> save in auth token after authorization is implemented
-        var cultureInfo = new CultureInfo("de-CH");
-        talent = new TalentViewModel(_playerConnector.GetTalent(id), cultureInfo);
+        talent = new TalentViewModel(_playerConnector.GetTalent(id));
 
         talent.AddLink(new Link(requestUri, HttpMethod.Get, RelValues.Self, ActionValues.Refresh, "players/talents/" + talent.TalentId));
         talent.AddLink(new Link(requestUri, HttpMethod.Put, RelValues.Self, ActionValues.Update, "players/talents/" + talent.TalentId));
@@ -629,12 +607,11 @@ namespace LootListManager.Controllers {
 
     [HttpPost]
     [Route("Talents")]
-    public IHttpActionResult CreateTalent([FromBody] TalentBindingModel talent, [FromBody] ResourceEntryBindingModel talentName) {
+    public IHttpActionResult CreateTalent([FromBody] TalentBindingModel talent) {
       Exception ex = null;
 
       try {
         _playerConnector.SaveTalent(_bindingModelFactory.GetTalentFromModel(talent));
-        _resourceConnector.AddResource(talentName.GetResourceEntry(_bindingModelFactory.GetTalentFromModel(talent).GetType().Name));
       } catch (Exception e) {
         ex = e;
       }

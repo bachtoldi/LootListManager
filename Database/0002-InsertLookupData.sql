@@ -17,17 +17,17 @@ SET IDENTITY_INSERT [LootListManager].[dbo].[Instances] OFF
 GO
 
 -- InstanceNames
-INSERT INTO [LootListManager].[dbo].[InstanceNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('ony',		'de',	'Onyxias Hort'),			('ony',		'en',	'Onyxia''s Lair'),
-('mc',		'de',	'Geschmolzener Kern'),		('mc',		'en',	'Molten Core'),
-('zg',		'de',	'Zul''Gurub'),				('zg',		'en',	'Zul''Gurub'),
-('bwl',		'de',	'Pechschwingenhort'),		('bwl',		'en',	'Blackwinglair'),
-('aq20',	'de',	'Ruinen von Ahn''Qiraj'),	('aq20',	'en',	'Ruins of Ahn''Qiraj'),
-('aq40',	'de',	'Tempel von Ahn''Qiraj'),	('aq40',	'en',	'Temple of Ahn''Qiraj'),
-('nax',		'de',	'Naxxramas'),				('nax',		'en',	'Naxxramas'),
-('wb',		'de',	'Weltbosse'),				('wb',		'en',	'World Bosses')
+--INSERT INTO [LootListManager].[dbo].[InstanceNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('ony',		'de',	'Onyxias Hort'),			('ony',		'en',	'Onyxia''s Lair'),
+--('mc',		'de',	'Geschmolzener Kern'),		('mc',		'en',	'Molten Core'),
+--('zg',		'de',	'Zul''Gurub'),				('zg',		'en',	'Zul''Gurub'),
+--('bwl',		'de',	'Pechschwingenhort'),		('bwl',		'en',	'Blackwinglair'),
+--('aq20',	'de',	'Ruinen von Ahn''Qiraj'),	('aq20',	'en',	'Ruins of Ahn''Qiraj'),
+--('aq40',	'de',	'Tempel von Ahn''Qiraj'),	('aq40',	'en',	'Temple of Ahn''Qiraj'),
+--('nax',		'de',	'Naxxramas'),				('nax',		'en',	'Naxxramas'),
+--('wb',		'de',	'Weltbosse'),				('wb',		'en',	'World Bosses')
 
-GO
+--GO
 
 -- Bosses
 
@@ -119,87 +119,87 @@ GO
 
 -- BossNames
 
-INSERT INTO [LootListManager].[dbo].[BossNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('onyxia',		'de',	'Onyxia'),						('onyxia',		'en', 'Onyxia'),
+--INSERT INTO [LootListManager].[dbo].[BossNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('onyxia',		'de',	'Onyxia'),						('onyxia',		'en', 'Onyxia'),
 
-('luci',		'de',	'Lucifron'),					('luci',		'en',	'Lucifron'),
-('magma',		'de',	'Magmadar'),					('magma',		'en',	'Magmadar'),
-('gehe',		'de',	'Gehennas'),					('gehe',		'en',	'Gehennas'),
-('garr',		'de',	'Garr'),						('garr',		'en',	'Garr'),
-('shazz',		'de',	'Shazzrah'),					('shazz',		'en',	'Shazzrah'),
-('geddon',		'de',	'Baron Geddon'),				('geddon',		'en',	'Baron Geddon'),
-('sulfuron',	'de',	'Sulfuronherold'),				('sulfuron',	'en',	'Sulfuron Herold'),
-('gole',		'de',	'Golemagg der Verbrenner'),		('gole',		'en',	'Golemagg the Incinerator'),
-('majo',		'de',	'Majordomus Exekutus'),			('majo',		'en',	'Majordomo Executus'),
-('raggi',		'de',	'Ragnaros'),					('raggi',		'en',	'Ragnaros'),
-('mctrash',		'de',	'Trash'),						('mctrash',		'en',	'Trash'),
+--('luci',		'de',	'Lucifron'),					('luci',		'en',	'Lucifron'),
+--('magma',		'de',	'Magmadar'),					('magma',		'en',	'Magmadar'),
+--('gehe',		'de',	'Gehennas'),					('gehe',		'en',	'Gehennas'),
+--('garr',		'de',	'Garr'),						('garr',		'en',	'Garr'),
+--('shazz',		'de',	'Shazzrah'),					('shazz',		'en',	'Shazzrah'),
+--('geddon',		'de',	'Baron Geddon'),				('geddon',		'en',	'Baron Geddon'),
+--('sulfuron',	'de',	'Sulfuronherold'),				('sulfuron',	'en',	'Sulfuron Herold'),
+--('gole',		'de',	'Golemagg der Verbrenner'),		('gole',		'en',	'Golemagg the Incinerator'),
+--('majo',		'de',	'Majordomus Exekutus'),			('majo',		'en',	'Majordomo Executus'),
+--('raggi',		'de',	'Ragnaros'),					('raggi',		'en',	'Ragnaros'),
+--('mctrash',		'de',	'Trash'),						('mctrash',		'en',	'Trash'),
 
-('jeklik',		'de',	'Hohepriesterin Jeklik'),		('jeklik',		'en',	'High Priestess Jeklik'),
-('venoxis',		'de',	'Hohepriester Venoxis'),		('venoxis',		'en',	'High Priest Venoxis'),
-('marli',		'de',	'Hohepriesterin Mar''li'),		('marli',		'en',	'High Priestess Mar''li'),
-('thekal',		'de',	'Hohepriester Thekal'),			('thekal',		'en',	'High Priest Thekal'),
-('arlokk',		'de',	'Hohepriesterin Arlokk'),		('arlokk',		'en',	'High Priestess Arlokk'),
-('mando',		'de',	'Blutfürst Mandokir'),			('mando',		'en',	'Bloodlord Mandokir'),
-('jindo',		'de',	'Jin''do der Verhexer'),		('jindo',		'en',	'Jin''do the Hexxer'),
-('gahz',		'de',	'Gahz''ranka'),					('gahz',		'en',	'Gahz''ranka'),
-('madness',		'de',	'Hort des Wahnsinns'),			('madness',		'en',	'Edge of Madness'),
-('hakkar',		'de',	'Hakkar'),						('hakkar',		'en',	'Hakkar'),
-('zgtrash',		'de',	'Trash'),						('zgtrash',		'en',	'Trash'),
+--('jeklik',		'de',	'Hohepriesterin Jeklik'),		('jeklik',		'en',	'High Priestess Jeklik'),
+--('venoxis',		'de',	'Hohepriester Venoxis'),		('venoxis',		'en',	'High Priest Venoxis'),
+--('marli',		'de',	'Hohepriesterin Mar''li'),		('marli',		'en',	'High Priestess Mar''li'),
+--('thekal',		'de',	'Hohepriester Thekal'),			('thekal',		'en',	'High Priest Thekal'),
+--('arlokk',		'de',	'Hohepriesterin Arlokk'),		('arlokk',		'en',	'High Priestess Arlokk'),
+--('mando',		'de',	'Blutfürst Mandokir'),			('mando',		'en',	'Bloodlord Mandokir'),
+--('jindo',		'de',	'Jin''do der Verhexer'),		('jindo',		'en',	'Jin''do the Hexxer'),
+--('gahz',		'de',	'Gahz''ranka'),					('gahz',		'en',	'Gahz''ranka'),
+--('madness',		'de',	'Hort des Wahnsinns'),			('madness',		'en',	'Edge of Madness'),
+--('hakkar',		'de',	'Hakkar'),						('hakkar',		'en',	'Hakkar'),
+--('zgtrash',		'de',	'Trash'),						('zgtrash',		'en',	'Trash'),
 
-('razo',		'de',	'Feuerkralle der Ungezähmte'),	('razo',		'en',	'Razorgore the Untamed'),
-('vael',		'de',	'Vaelastrasz'),					('vael',		'en',	'Vaelastrasz the Corrupt'),
-('lash',		'de',	'Brutwächter Dreschbringer'),	('lash',		'en',	'Broodlord Lashlayer'),
-('flamegor',	'de',	'Feuerschwinge'),				('flamegor',	'en',	'Flamegor'),
-('ebonroc',		'de',	'Schattenschwinge'),			('ebonroc',		'en',	'Ebonroc'),
-('firemaw',		'de',	'Flammenmaul'),					('firemaw',		'en',	'Firemaw'),
-('chrommi',		'de',	'Chromagus'),					('chrommi',		'en',	'Chromaggus'),
-('nef',			'de',	'Nefarian'),					('nef',			'en',	'Nefarian'),
-('bwltrash',	'de',	'Trash'),						('bwltrash',	'en',	'Trash'),
+--('razo',		'de',	'Feuerkralle der Ungezähmte'),	('razo',		'en',	'Razorgore the Untamed'),
+--('vael',		'de',	'Vaelastrasz'),					('vael',		'en',	'Vaelastrasz the Corrupt'),
+--('lash',		'de',	'Brutwächter Dreschbringer'),	('lash',		'en',	'Broodlord Lashlayer'),
+--('flamegor',	'de',	'Feuerschwinge'),				('flamegor',	'en',	'Flamegor'),
+--('ebonroc',		'de',	'Schattenschwinge'),			('ebonroc',		'en',	'Ebonroc'),
+--('firemaw',		'de',	'Flammenmaul'),					('firemaw',		'en',	'Firemaw'),
+--('chrommi',		'de',	'Chromagus'),					('chrommi',		'en',	'Chromaggus'),
+--('nef',			'de',	'Nefarian'),					('nef',			'en',	'Nefarian'),
+--('bwltrash',	'de',	'Trash'),						('bwltrash',	'en',	'Trash'),
 
-('kurinaxx',	'de',	'Kurinaxx'),					('kurinaxx',	'en',	'Kurinaxx'),
-('rajaxx',		'de',	'General Rajaxx'),				('rajaxx',		'en',	'General Rajaxx'),
-('moam',		'de',	'Moam'),						('moam',		'en',	'Moam'),
-('buru',		'de',	'Buru der Verschlinger'),		('buru',		'en',	'Buru the Gorger'),
-('aya',			'de',	'Ayamiss der Jäger'),			('aya',			'en',	'Ayamiss the Hunter'),
-('ossi',		'de',	'Ossirian der Narbenlose'),		('ossi',		'en',	'Ossirian the Unscarred'),
-('aq20trash',	'de',	'Trash'),						('aq20trash',	'en',	'Trash'),
+--('kurinaxx',	'de',	'Kurinaxx'),					('kurinaxx',	'en',	'Kurinaxx'),
+--('rajaxx',		'de',	'General Rajaxx'),				('rajaxx',		'en',	'General Rajaxx'),
+--('moam',		'de',	'Moam'),						('moam',		'en',	'Moam'),
+--('buru',		'de',	'Buru der Verschlinger'),		('buru',		'en',	'Buru the Gorger'),
+--('aya',			'de',	'Ayamiss der Jäger'),			('aya',			'en',	'Ayamiss the Hunter'),
+--('ossi',		'de',	'Ossirian der Narbenlose'),		('ossi',		'en',	'Ossirian the Unscarred'),
+--('aq20trash',	'de',	'Trash'),						('aq20trash',	'en',	'Trash'),
 
-('skeram',		'de',	'Der Prophet Skeram'),			('skeram',		'en',	'The Prophet Skeram'),
-('bugs',		'de',	'Adel der Silithiden'),			('bugs',		'en',	'Silithid Royalty'),
-('sartura',		'de',	'Schlachtwache Sartura'),		('sartura',		'en',	'Battleguard Sartura'),
-('fankriss',	'de',	'Fankriss der Unnachgiebige'),	('fankriss',	'en',	'Fankriss the Unyielding'),
-('visci',		'de',	'Viscidus'),					('visci',		'en',	'Viscidus'),
-('huhu',		'de',	'Prinzessin Huhuran'),			('huhu',		'en',	'Princess Huhuran'),
-('twins',		'de',	'Zwilingsimperatoren'),			('twins',		'en',	'The Twin Emperors'),
-('ouro',		'de',	'Ouro'),						('ouro',		'en',	'Ouro'),
-('cthun',		'de',	'C''Thun'),						('cthun',		'en',	'C''Thun'),
-('aq40trash',	'de',	'Trash'),						('aq40trash',	'en',	'Trash'),
+--('skeram',		'de',	'Der Prophet Skeram'),			('skeram',		'en',	'The Prophet Skeram'),
+--('bugs',		'de',	'Adel der Silithiden'),			('bugs',		'en',	'Silithid Royalty'),
+--('sartura',		'de',	'Schlachtwache Sartura'),		('sartura',		'en',	'Battleguard Sartura'),
+--('fankriss',	'de',	'Fankriss der Unnachgiebige'),	('fankriss',	'en',	'Fankriss the Unyielding'),
+--('visci',		'de',	'Viscidus'),					('visci',		'en',	'Viscidus'),
+--('huhu',		'de',	'Prinzessin Huhuran'),			('huhu',		'en',	'Princess Huhuran'),
+--('twins',		'de',	'Zwilingsimperatoren'),			('twins',		'en',	'The Twin Emperors'),
+--('ouro',		'de',	'Ouro'),						('ouro',		'en',	'Ouro'),
+--('cthun',		'de',	'C''Thun'),						('cthun',		'en',	'C''Thun'),
+--('aq40trash',	'de',	'Trash'),						('aq40trash',	'en',	'Trash'),
 
-('anub',		'de',	'Anub''Rekhan'),				('anub',		'en',	'Anub''Rekhan'),
-('widow',		'de',	'Großwitwe Faerlina'),			('widow',		'en',	'Grand Widow Faerlina'),
-('maexxna',		'de',	'Maexxna'),						('maexxna',		'en',	'Maexxna'),
-('noth',		'de',	'Noth der Seuchenfürst'),		('noth',		'en',	'Noth the Plaguebringer'),
-('heigan',		'de',	'Heigan der Unreine'),			('heigan',		'en',	'Heigan the Unclean'),
-('loatheb',		'de',	'Loatheb'),						('loatheb',		'en',	'Loatheb'),
-('razuvi',		'de',	'Instrukteur Razuvious'),		('razuvi',		'en',	'Instructor Razuvious'),
-('gothik',		'de',	'Gothik der Seelenjäger'),		('gothik',		'en',	'Gothik the Harvester'),
-('horsemen',	'de',	'Die vier Reiter'),				('horsemen',	'en',	'The Four Horsemen'),
-('patchwork',	'de',	'Flickwerk'),					('patchwork',	'en',	'Patchwork'),
-('grobbulus',	'de',	'Grobbulus'),					('grobbulus',	'en',	'Grobbulus'),
-('gluth',		'de',	'Gluth'),						('gluth',		'en',	'Gluth'),
-('thaddius',	'de',	'Thaddius'),					('thaddius',	'en',	'Thaddius'),
-('saphiron',	'de',	'Saphiron'),					('saphiron',	'en',	'Sapphiron'),
-('kel',			'de',	'Kel''Thuzad'),					('kel',			'en',	'Kel''Thuzad'),
-('naxtrash',	'de',	'Trash'),						('naxtrash',	'en',	'Trash'),
+--('anub',		'de',	'Anub''Rekhan'),				('anub',		'en',	'Anub''Rekhan'),
+--('widow',		'de',	'Großwitwe Faerlina'),			('widow',		'en',	'Grand Widow Faerlina'),
+--('maexxna',		'de',	'Maexxna'),						('maexxna',		'en',	'Maexxna'),
+--('noth',		'de',	'Noth der Seuchenfürst'),		('noth',		'en',	'Noth the Plaguebringer'),
+--('heigan',		'de',	'Heigan der Unreine'),			('heigan',		'en',	'Heigan the Unclean'),
+--('loatheb',		'de',	'Loatheb'),						('loatheb',		'en',	'Loatheb'),
+--('razuvi',		'de',	'Instrukteur Razuvious'),		('razuvi',		'en',	'Instructor Razuvious'),
+--('gothik',		'de',	'Gothik der Seelenjäger'),		('gothik',		'en',	'Gothik the Harvester'),
+--('horsemen',	'de',	'Die vier Reiter'),				('horsemen',	'en',	'The Four Horsemen'),
+--('patchwork',	'de',	'Flickwerk'),					('patchwork',	'en',	'Patchwork'),
+--('grobbulus',	'de',	'Grobbulus'),					('grobbulus',	'en',	'Grobbulus'),
+--('gluth',		'de',	'Gluth'),						('gluth',		'en',	'Gluth'),
+--('thaddius',	'de',	'Thaddius'),					('thaddius',	'en',	'Thaddius'),
+--('saphiron',	'de',	'Saphiron'),					('saphiron',	'en',	'Sapphiron'),
+--('kel',			'de',	'Kel''Thuzad'),					('kel',			'en',	'Kel''Thuzad'),
+--('naxtrash',	'de',	'Trash'),						('naxtrash',	'en',	'Trash'),
 
-('kazzak',		'de',	'Kazzak'),						('kazzak',		'en',	'Kazzak'),
-('azu',			'de',	'Azuregos'),					('azu',			'en',	'Azuregos'),
-('ysondre',		'de',	'Ysondre'),						('ysondre',		'en',	'Ysondre'),
-('lethon',		'de',	'Lethon'),						('lethon',		'en',	'Lethon'),
-('taerar',		'de',	'Taerar'),						('taerar',		'en',	'Taerar'),
-('emeriss',		'de',	'Emeriss'),						('emeriss',		'en',	'Emeriss')
+--('kazzak',		'de',	'Kazzak'),						('kazzak',		'en',	'Kazzak'),
+--('azu',			'de',	'Azuregos'),					('azu',			'en',	'Azuregos'),
+--('ysondre',		'de',	'Ysondre'),						('ysondre',		'en',	'Ysondre'),
+--('lethon',		'de',	'Lethon'),						('lethon',		'en',	'Lethon'),
+--('taerar',		'de',	'Taerar'),						('taerar',		'en',	'Taerar'),
+--('emeriss',		'de',	'Emeriss'),						('emeriss',		'en',	'Emeriss')
 
-GO
+--GO
 
 -- Classes
 
@@ -222,18 +222,18 @@ GO
 
 -- ClassNames
 
-INSERT INTO [LootListManager].[dbo].[ClassNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('priest',	'de',	'Priester'),		('priest',	'en',	'Priest'),
-('mage',	'de',	'Magier'),			('mage',	'en',	'Mage'),
-('wl',		'de',	'Hexenmeister'),	('wl',		'en',	'Warlock'),
-('rogue',	'de',	'Schurke'),			('rogue',	'en',	'Rogue'),
-('druid',	'de',	'Druide'),			('druid',	'en',	'Druid'),
-('hunter',	'de',	'Jäger'),			('hunter',	'en',	'Hunter'),
-('shami',	'de',	'Schamane'),		('shami',	'en',	'Shaman'),
-('warri',	'de',	'Krieger'),			('warri',	'en',	'Warrior'),
-('pala',	'de',	'Paladin'),			('pala',	'en',	'Paladin')
+--INSERT INTO [LootListManager].[dbo].[ClassNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('priest',	'de',	'Priester'),		('priest',	'en',	'Priest'),
+--('mage',	'de',	'Magier'),			('mage',	'en',	'Mage'),
+--('wl',		'de',	'Hexenmeister'),	('wl',		'en',	'Warlock'),
+--('rogue',	'de',	'Schurke'),			('rogue',	'en',	'Rogue'),
+--('druid',	'de',	'Druide'),			('druid',	'en',	'Druid'),
+--('hunter',	'de',	'Jäger'),			('hunter',	'en',	'Hunter'),
+--('shami',	'de',	'Schamane'),		('shami',	'en',	'Shaman'),
+--('warri',	'de',	'Krieger'),			('warri',	'en',	'Warrior'),
+--('pala',	'de',	'Paladin'),			('pala',	'en',	'Paladin')
 
-GO
+--GO
 
 -- Talents
 
@@ -282,44 +282,44 @@ GO
 
 -- TalentNames
 
-INSERT INTO [LootListManager].[dbo].[TalentNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('holypr',	'de',	'Heilig'),				('holypr',	'en',	'Holy'),
-('disc',	'de',	'Disziplin'),			('disc',	'en',	'Discipline'),
-('shadow',	'de',	'Schatten'),			('shadow',	'en',	'Shadow'),
+--INSERT INTO [LootListManager].[dbo].[TalentNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('holypr',	'de',	'Heilig'),				('holypr',	'en',	'Holy'),
+--('disc',	'de',	'Disziplin'),			('disc',	'en',	'Discipline'),
+--('shadow',	'de',	'Schatten'),			('shadow',	'en',	'Shadow'),
 
-('frost',	'de',	'Frost'),				('frost',	'en',	'Frost'),
-('fire',	'de',	'Feuer'),				('fire',	'en',	'Fire'),
-('arcane',	'de',	'Arkan'),				('arcane',	'en',	'Arcane'),
+--('frost',	'de',	'Frost'),				('frost',	'en',	'Frost'),
+--('fire',	'de',	'Feuer'),				('fire',	'en',	'Fire'),
+--('arcane',	'de',	'Arkan'),				('arcane',	'en',	'Arcane'),
 
-('affli',	'de',	'Gebrechen'),			('affli',	'en',	'Affliction'),
-('destro',	'de',	'Zerstörung'),			('destro',	'en',	'Descruction'),
-('demo',	'de',	'Dämonologie'),			('demo',	'en',	'Demonology'),
+--('affli',	'de',	'Gebrechen'),			('affli',	'en',	'Affliction'),
+--('destro',	'de',	'Zerstörung'),			('destro',	'en',	'Descruction'),
+--('demo',	'de',	'Dämonologie'),			('demo',	'en',	'Demonology'),
 
-('combat',	'de',	'Kampf'),				('combat',	'en',	'Combat'),
-('sub',		'de',	'Täuschung'),			('sub',		'en',	'Subtlety'),
-('ass',		'de',	'Meucheln'),			('ass',		'en',	'Assassination'),
+--('combat',	'de',	'Kampf'),				('combat',	'en',	'Combat'),
+--('sub',		'de',	'Täuschung'),			('sub',		'en',	'Subtlety'),
+--('ass',		'de',	'Meucheln'),			('ass',		'en',	'Assassination'),
 
-('feral',	'de',	'Wilder Kampf'),		('feral',	'en',	'Feral'),
-('balance',	'de',	'Gleichgewicht'),		('balance',	'en',	'Balance'),
-('restod',	'de',	'Wiederherstellung'),	('restod',	'en',	'Restoration'),
+--('feral',	'de',	'Wilder Kampf'),		('feral',	'en',	'Feral'),
+--('balance',	'de',	'Gleichgewicht'),		('balance',	'en',	'Balance'),
+--('restod',	'de',	'Wiederherstellung'),	('restod',	'en',	'Restoration'),
 
-('surv',	'de',	'Überleben'),			('surv',	'en',	'Survival'),
-('mark',	'de',	'Treffsicherheit'),		('mark',	'en',	'Marksmanship'),
-('beast',	'de',	'Tierherrschaft'),		('beast',	'en',	'Beast Mastery'),
+--('surv',	'de',	'Überleben'),			('surv',	'en',	'Survival'),
+--('mark',	'de',	'Treffsicherheit'),		('mark',	'en',	'Marksmanship'),
+--('beast',	'de',	'Tierherrschaft'),		('beast',	'en',	'Beast Mastery'),
 
-('restos',	'de',	'Wiederherstellung'),	('restos',	'en',	'Restoration'),
-('enh',		'de',	'Verstärkung'),			('enh',		'en',	'Enhancement'),
-('ele',		'de',	'Elementar'),			('ele',		'en',	'Elemental'),
+--('restos',	'de',	'Wiederherstellung'),	('restos',	'en',	'Restoration'),
+--('enh',		'de',	'Verstärkung'),			('enh',		'en',	'Enhancement'),
+--('ele',		'de',	'Elementar'),			('ele',		'en',	'Elemental'),
 
-('protw',	'de',	'Schutz'),				('protw',	'en',	'Protection'),
-('arms',	'de',	'Waffen'),				('arms',	'en',	'Arms'),
-('fury',	'de',	'Furor'),				('fury',	'en',	'Fury'),
+--('protw',	'de',	'Schutz'),				('protw',	'en',	'Protection'),
+--('arms',	'de',	'Waffen'),				('arms',	'en',	'Arms'),
+--('fury',	'de',	'Furor'),				('fury',	'en',	'Fury'),
 
-('holypa',	'de',	'Heilig'),				('holypa',	'en',	'Holy'),
-('protp',	'de',	'Schutz'),				('protp',	'en',	'Protection'),
-('ret',		'de',	'Vergeltung'),			('ret',		'en',	'Retribution')
+--('holypa',	'de',	'Heilig'),				('holypa',	'en',	'Holy'),
+--('protp',	'de',	'Schutz'),				('protp',	'en',	'Protection'),
+--('ret',		'de',	'Vergeltung'),			('ret',		'en',	'Retribution')
 
-GO
+--GO
 
 -- Factions
 
@@ -335,11 +335,11 @@ GO
 
 -- FactionNames
 
-INSERT INTO [LootListManager].[dbo].[FactionNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('ally',	'de',	'Allianz'),		('ally',	'en',	'Alliance'),
-('horde',	'de',	'Horde'),		('horde',	'en',	'Horde')
+--INSERT INTO [LootListManager].[dbo].[FactionNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('ally',	'de',	'Allianz'),		('ally',	'en',	'Alliance'),
+--('horde',	'de',	'Horde'),		('horde',	'en',	'Horde')
 
-GO
+--GO
 
 -- Races
 
@@ -361,17 +361,17 @@ GO
 
 -- RaceNames
 
-INSERT INTO [LootListManager].[dbo].[RaceNames] ( [LogicalId], [Culture], [Value] ) VALUES
-('gnome',	'de',	'Gnom'),		('gnome',	'en',	'Gnome'),
-('dwarf',	'de',	'Zwerg'),		('dwarf',	'en',	'Dwarf'),
-('human',	'de',	'Mensch'),		('human',	'en',	'Human'),
-('ne',		'de',	'Nachtelf'),	('ne',		'en',	'Nightelf'),
-('ud',		'de',	'Untot'),		('ud',		'en',	'Undead'),
-('orc',		'de',	'Ork'),			('orc',		'en',	'Orc'),
-('troll',	'de',	'Troll'),		('troll',	'en',	'Troll'),
-('tauren',	'de',	'Taure'),		('tauren',	'en',	'Tauren')
+--INSERT INTO [LootListManager].[dbo].[RaceNames] ( [LogicalId], [Culture], [Value] ) VALUES
+--('gnome',	'de',	'Gnom'),		('gnome',	'en',	'Gnome'),
+--('dwarf',	'de',	'Zwerg'),		('dwarf',	'en',	'Dwarf'),
+--('human',	'de',	'Mensch'),		('human',	'en',	'Human'),
+--('ne',		'de',	'Nachtelf'),	('ne',		'en',	'Nightelf'),
+--('ud',		'de',	'Untot'),		('ud',		'en',	'Undead'),
+--('orc',		'de',	'Ork'),			('orc',		'en',	'Orc'),
+--('troll',	'de',	'Troll'),		('troll',	'en',	'Troll'),
+--('tauren',	'de',	'Taure'),		('tauren',	'en',	'Tauren')
 
-GO
+--GO
 
 -- ClassRaceSettings
 
