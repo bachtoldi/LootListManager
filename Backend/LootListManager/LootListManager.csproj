@@ -168,14 +168,12 @@
     <Compile Include="BindingModels\InstanceBindingModel.cs" />
     <Compile Include="BindingModels\NeedBindingModel.cs" />
     <Compile Include="BindingModels\RaceBindingModel.cs" />
-    <Compile Include="BindingModels\ResourceEntryBindingModel.cs" />
     <Compile Include="BindingModels\TalentBindingModel.cs" />
     <Compile Include="BindingModels\UserBindingModel.cs" />
     <Compile Include="Connectors\AuthDataConnector.cs" />
     <Compile Include="Connectors\ConfigDataConnector.cs" />
     <Compile Include="Connectors\PlayerDataConnector.cs" />
     <Compile Include="Connectors\EnvironmentDataConnector.cs" />
-    <Compile Include="Connectors\ResourceDataConnector.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Util\LinkContainer.cs" />

@@ -1,0 +1,18 @@
+:host {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+
+    grid-template-columns: [navi-start] 1fr [navi-end view-start] 4fr [view-end];
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.navi {
+    grid-column: navi-start / navi-end;
+    background-color: lightgrey;
+}
+
+.view {
+    grid-column: view-start / view-end;
+}

@@ -22,7 +22,7 @@ export class LoginComponent {
       .subscribe(
       data => {
         if (data === true) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/main/home']);
         }
       },
       error => {

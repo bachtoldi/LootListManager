@@ -1,14 +1,6 @@
-body {
-    margin: 0;
-}
+@import './assets/reset.css';
 
-label,
-p,
-s,
-h1,
-input,
-button,
-a {
+label, p, s, h1, input, button, a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
@@ -16,6 +8,7 @@ a {
 h1 {
     color: #369;
     font-size: 200%;
+    font-weight: bold;
 }
 
 a {

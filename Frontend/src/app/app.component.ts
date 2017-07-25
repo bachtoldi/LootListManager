@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationComponent } from './navigation/navigation.component';
-import { TranslateService, AuthenticationService } from './_services';
 
 @Component({
   selector: 'll-app',
@@ -8,11 +6,4 @@ import { TranslateService, AuthenticationService } from './_services';
   styleUrls: ['app.component.scss']
 })
 
-export class AppComponent {
-
-  constructor(private authService: AuthenticationService) { }
-
-  hasToken() {
-    return this.authService.isAuthenticated();
-  }
-}
+export class AppComponent { }

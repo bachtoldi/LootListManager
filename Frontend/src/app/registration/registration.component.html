@@ -3,6 +3,6 @@
     <input name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
     <input name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
     <input name="repeatInput" [(ngModel)]="passwordConfirmation" type="password" placeholder="{{'passwordRepeat' | translate}}" />
-    <button class="registerButton" type="submit">{{ 'register' | translate }}</button>
-    <button class="cancelButton" type="button" routerLink="/login">{{ 'cancel' | translate }}</button>
+    <button class="register-button" type="submit">{{ 'register' | translate }}</button>
+    <button class="cancel-button" type="button" routerLink="/login">{{ 'cancel' | translate }}</button>
 </form>
