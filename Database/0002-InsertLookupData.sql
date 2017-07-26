@@ -208,13 +208,13 @@ SET IDENTITY_INSERT [LootListManager].[dbo].[Classes] ON
 INSERT INTO [LootListManager].[dbo].[Classes] ( [ClassId], [ClassLogicalId] ) VALUES
 (1, 'priest'),
 (2,	'mage'),
-(3,	'wl'),
+(3,	'warlock'),
 (4,	'rogue'),
 (5,	'druid'),
 (6,	'hunter'),
-(7,	'shami'),
-(8,	'warri'),
-(9,	'pala')
+(7,	'shaman'),
+(8,	'warrior'),
+(9,	'paladin')
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Classes] OFF
 
@@ -326,7 +326,7 @@ GO
 SET IDENTITY_INSERT [LootListManager].[dbo].[Factions] ON
 
 INSERT INTO [LootListManager].[dbo].[Factions] ( [FactionId], [FactionLogicalId] ) VALUES
-(1, 'ally'),
+(1, 'alliance'),
 (2, 'horde')
 
 SET IDENTITY_INSERT [LootListManager].[dbo].[Factions] OFF

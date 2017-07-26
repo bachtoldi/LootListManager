@@ -14,7 +14,6 @@ export class LoginComponent {
 
   constructor(
     private authenticationSercie: AuthenticationService,
-    private translate: TranslateService,
     private router: Router) { }
 
   onSubmit() {
@@ -26,7 +25,7 @@ export class LoginComponent {
         }
       },
       error => {
-        alert('error');
+        alert('login failed!');
       });
   }
 }

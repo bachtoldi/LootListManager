@@ -26,7 +26,7 @@ export class TranslateService {
     }
 
     selectLanguage(lang: string) {
-        var selectedLanguage = this.supportedLanguages.find(x => x.value == lang).value;
+        var selectedLanguage = this.supportedLanguages.find(x => x.value === lang).value;
         if (selectedLanguage && !this.isCurrentLanguage(lang)) {
             this.currentLanguage = selectedLanguage;
 

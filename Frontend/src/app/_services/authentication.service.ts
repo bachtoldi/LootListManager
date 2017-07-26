@@ -6,12 +6,8 @@ import * as globals from '../globals';
 
 @Injectable()
 export class AuthenticationService {
-  public token: string;
 
-  constructor(private http: Http) {
-    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
-  }
+  constructor(private http: Http) { }
 
   login(username: string, password: string) {
     let header = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -25,12 +21,10 @@ export class AuthenticationService {
     let options = new RequestOptions({ headers: header });
 
     return this.http
-      .post(url, body, header)
+      .post(url, body, options)
       .map((response: Response) => {
-        // login successful if there's a jwt token in the response
         let token = response.json() && response.json().access_token;
         if (token) {
-          this.token = token;
           localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
 
           return true;
@@ -41,11 +35,14 @@ export class AuthenticationService {
   }
 
   logout() {
-    // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
   }
 
   isAuthenticated() {
     return localStorage.getItem('currentUser');
+  }
+
+  getToken() {
+    return JSON.parse(localStorage.getItem('currentUser')).token;
   }
 }

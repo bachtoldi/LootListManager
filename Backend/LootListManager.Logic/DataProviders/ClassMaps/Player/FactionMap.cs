@@ -8,7 +8,7 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
 
       Id(f => f.FactionId);
 
-      Map(f => f.FactionImage);
+      Map(f => f.FactionLogicalId);
     }
   }
 }

@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing';
 import { AuthGuard } from './_guards';
 import { TRANSLATION_PROVIDERS, TranslatePipe } from './translate';
+import { IMAGES, ImagePipe } from './image';
 import { AuthenticationService, TranslateService, UserService, CharacterService } from './_services';
 import { CharacterComponent } from './character/character.component';
 import { MainComponent } from './main/main.component';
@@ -35,7 +36,8 @@ import { MainComponent } from './main/main.component';
     HomeComponent,
     LanguagesComponent,
     CharacterComponent,
-    MainComponent
+    MainComponent,
+    ImagePipe,
   ],
   bootstrap: [
     AppComponent

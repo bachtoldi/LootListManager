@@ -1,9 +1,9 @@
 <form class="login-form" name="loginForm" (submit)="onSubmit()">
-    <h1>{{ 'loginTitle' | translate }}</h1>
-    <input name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
-    <input name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
+    <h1 class="login-title">{{ 'loginTitle' | translate }}</h1>
+    <input class="login-input" name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
+    <input class="login-input" name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
     <div class="buttons">
-        <button class="login-button" type="submit">{{ 'login' | translate }}</button>
-        <button class="register-button" type="button" routerLink="/registration">{{ 'register' | translate }}</button>
+        <button class="button" type="submit">{{ 'login' | translate }}</button>
+        <button class="button" type="button" routerLink="/registration">{{ 'register' | translate }}</button>
     </div>
 </form>

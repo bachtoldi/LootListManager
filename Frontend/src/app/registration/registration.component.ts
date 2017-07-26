@@ -11,17 +11,10 @@ import { LoginUser } from '../_models';
 })
 
 export class RegistrationComponent {
-    public passwordConfirmation: string;
-
-    submitTitle = 'Registrieren';
-    cancelTitle = 'Abbrechen';
-    user: LoginUser = {
-        username: '',
-        password: ''
-    };
+    passwordConfirmation: string;
+    user: LoginUser = new LoginUser();
 
     constructor(
-        private translate: TranslateService,
         private userService: UserService,
         private router: Router) { }
 
@@ -30,12 +23,12 @@ export class RegistrationComponent {
             this.userService.register(this.user.username, this.user.password)
                 .subscribe(
                 data => {
-                    if (data == true) {
+                    if (data === true) {
                         this.router.navigate(['/login']);
                     }
                 },
                 error => {
-                    alert('error');
+                    alert('registration failed!');
                 });
         }
     }

@@ -1,5 +1,5 @@
 export class Race {
     RaceId: number;
-    RaceName: string;
+    RaceLogicalId: string;
     FactionFk: number;
 }

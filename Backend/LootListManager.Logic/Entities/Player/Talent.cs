@@ -3,6 +3,5 @@
     public virtual int TalentId { get; set; }
     public virtual string TalentLogicalId { get; set; }
     public virtual Class ClassRef { get; set; }
-    public virtual string TalentImage { get; set; }
   }
 }

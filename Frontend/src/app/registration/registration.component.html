@@ -1,8 +1,11 @@
-<form name="registrationForm" (submit)="onSubmit()">
-    <h1>{{ 'registerTitle' | translate }}</h1>
-    <input name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
-    <input name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
-    <input name="repeatInput" [(ngModel)]="passwordConfirmation" type="password" placeholder="{{'passwordRepeat' | translate}}" />
-    <button class="register-button" type="submit">{{ 'register' | translate }}</button>
-    <button class="cancel-button" type="button" routerLink="/login">{{ 'cancel' | translate }}</button>
+<form class="registration-form" name="registrationForm" (submit)="onSubmit()">
+    <h1 class="registration-title">{{ 'registerTitle' | translate }}</h1>
+    <input class="registration-input" name="usernameInput" [(ngModel)]="user.username" placeholder="{{'username' | translate}}" />
+    <input class="registration-input" name="passwordInput" [(ngModel)]="user.password" type="password" placeholder="{{'password' | translate}}" />
+    <input class="registration-input" name="repeatInput" [(ngModel)]="passwordConfirmation" type="password" placeholder="{{'passwordRepeat' | translate}}"
+    />
+    <div class="buttons">
+        <button class="register-button" type="submit">{{ 'register' | translate }}</button>
+        <button class="cancel-button" type="button" routerLink="/login">{{ 'cancel' | translate }}</button>
+    </div>
 </form>

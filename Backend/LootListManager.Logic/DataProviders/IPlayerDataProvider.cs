@@ -19,6 +19,7 @@ namespace LootListManager.Logic.DataProviders {
     Class GetClass(int id);
     IList<Class> GetClasses();
     IList<Class> GetClasses(int raceId);
+    IList<Class> GetClasses(string raceLogicalId);
     Class SaveClass(Class c);
     bool DeleteClass(int id);
 
@@ -56,6 +57,7 @@ namespace LootListManager.Logic.DataProviders {
     Race GetRace(int id);
     IList<Race> GetRaces();
     IList<Race> GetRaces(int factionId);
+    IList<Race> GetRaces(string factionLogicalId);
     Race SaveRace(Race race);
     bool DeleteRace(int id);
 
@@ -66,6 +68,7 @@ namespace LootListManager.Logic.DataProviders {
     Talent GetTalent(int id);
     IList<Talent> GetTalents();
     IList<Talent> GetTalents(int classId);
+    IList<Talent> GetTalents(string classLogicalId);
     Talent SaveTalent(Talent talent);
     bool DeleteTalent(int id);
 

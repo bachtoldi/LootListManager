@@ -1,0 +1,89 @@
+:host {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: [title-start] auto [title-end race-start] auto [race-end class-start] auto [class-end talent-start] auto [talent-end] 1fr [buttons-start] auto [buttons-end];
+    justify-items: start;
+    align-items: start;
+}
+
+.title {
+    grid-row: title-start / title-end;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+
+.race, .class, .talent {
+    margin-left: 5px;
+}
+
+.race {
+    grid-row: race-start / race-end;
+}
+
+.class {
+    grid-row: class-start / class-end;
+}
+
+.talent {
+    grid-row: talent-start / talent-end;
+}
+
+.buttons {
+    grid-row: buttons-start / buttons-end;
+    
+    background-color: grey;
+    width: 100%;
+    display: flex;
+}
+
+.button {
+    flex: 0 0 auto;
+
+    &:disabled{
+        color: lightgrey;
+        
+        &:hover {
+            background-color: grey;
+        }
+    }
+}
+
+.radio {
+    margin-top: 10px;
+    display: flex;
+}
+
+.radio-item {
+    background-color: grey;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.radio-item-selected {
+    background-color: white;
+}
+
+
+.radio-item, .radio-item-selected {
+    margin-right: 5px;
+    width: 200px;
+    height: 100px;
+
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.radio-input {
+    display: none;
+}
+
+.radio-image {
+    flex: 0 0 auto;
+    opacity: 0.5;
+}

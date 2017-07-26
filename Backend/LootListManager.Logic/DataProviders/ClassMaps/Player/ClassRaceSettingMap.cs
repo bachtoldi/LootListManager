@@ -8,8 +8,8 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
 
       Id(c => c.ClassRaceSettingId);
 
-      References(c => c.ClassRef, "FK_ClassId").Cascade.None();
-      References(c => c.RaceRef, "FK_RaceId").Cascade.None();
+      References(c => c.ClassRef, "FK_ClassId").Cascade.None().Not.LazyLoad();
+      References(c => c.RaceRef, "FK_RaceId").Cascade.None().Not.LazyLoad();
     }
   }
 }

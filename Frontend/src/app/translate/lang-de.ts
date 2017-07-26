@@ -13,6 +13,10 @@ export const LANG_DE_TRANS = {
     'welcome': 'Willkommen',
     'character': 'Charakter',
     'logout': 'Abmelden',
+    'race': 'Volk',
+    'class': 'Klasse',
+    'talent': 'Skillung',
+    'save': 'Speichern',
 
     // Instances
     'ony': 'Onyxias Hort',

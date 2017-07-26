@@ -13,6 +13,10 @@ export const LANG_EN_TRANS = {
     'welcome': 'Welcome',
     'character': 'Character',
     'logout': 'Logout',
+    'race': 'Race',
+    'class': 'Class',
+    'talent': 'Talent',
+    'save': 'Save',
 
     // Instances
     'ony': 'Onyxia\'s Lair',

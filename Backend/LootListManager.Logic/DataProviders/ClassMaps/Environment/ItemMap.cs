@@ -7,8 +7,6 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Environment {
       Table("Items");
 
       Id(i => i.ItemId);
-
-      Map(i => i.ItemImage);
     }
   }
 }

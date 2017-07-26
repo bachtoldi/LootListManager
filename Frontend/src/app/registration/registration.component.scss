@@ -1,18 +1,27 @@
-form {
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+$width: 300px;
+$margin: 2.5px;
+
+:host {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10%;
+.registration-form {
+    flex: 0 0 auto;
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input {
+.registration-title {
+    margin-bottom: 5px;
+}
+
+.registration-input {
     text-align: center;
     width: 100%;
     height: 25px;
@@ -20,16 +29,12 @@ input {
     box-sizing: border-box;
 }
 
-button {
-    width: 49%;
-    padding: 0;
-    margin: 0;
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.register-button {
-    float: left;
-}
-
-.cancel-button {
-    float: right;
+.register-button, .cancel-button {
+    width: ($width / 2) - $margin;
 }

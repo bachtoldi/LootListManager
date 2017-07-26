@@ -1,7 +1,33 @@
-<p>
-  {{character.CharacterId}}
-  {{character.CharacterName}}
-  {{character.UserFk}}
-  {{character.RaceFk}}
-  {{character.TalentFk}}
-</p>
+<h1 class="title">{{ 'character' | translate }}</h1>
+<div class="race">
+  <h2>{{ 'race' | translate }}</h2>
+  <div class="radio">
+    <label *ngFor="let race of races" [ngClass]="{'radio-item': character.RaceFk != race.RaceId, 'radio-item-selected': character.RaceFk == race.RaceId}">
+      <input class="radio-input" type="radio" name="raceRadio" value="{{race.RaceId}}" [(ngModel)]="character.RaceFk" (change)="getClasses()" />
+      <img class="radio-image" src="{{ race.RaceLogicalId + '-m-icon' | image }}" />
+      <img class="radio-image" src="{{ race.RaceLogicalId + '-f-icon' | image }}" />
+    </label>
+  </div>
+</div>
+<div class="class" [hidden]="character.RaceFk == 0">
+  <h2>{{ 'class' | translate }}</h2>
+  <div class="radio">
+    <label *ngFor="let class of classes" [ngClass]="{'radio-item': selectedClass != class.ClassLogicalId, 'radio-item-selected': selectedClass == class.ClassLogicalId}">
+      <input class="radio-input" type="radio" name="classRadio" value="{{class.ClassLogicalId}}" [(ngModel)]="selectedClass" (change)="getTalents()" />
+      <img class="radio-image" src="{{ class.ClassLogicalId + '-icon' | image }}" />
+    </label>
+  </div>
+</div>
+<div class="talent" [hidden]="!selectedClass">
+  <h2>{{ 'talent' | translate }}</h2>
+  <div class="radio">
+    <label *ngFor="let talent of talents" [ngClass]="{'radio-item': character.TalentFk != talent.TalentId, 'radio-item-selected': character.TalentFk == talent.TalentId}">
+      <input class="radio-input" type="radio" name="talentRadio" value="{{talent.TalentId}}" [(ngModel)]="character.TalentFk" />
+      <img class="radio-image" src="{{ selectedClass + '-' + talent.TalentLogicalId + '-icon' | image }}" />
+    </label>
+  </div>
+</div>
+<div class="buttons">
+  <button class="button" (click)="cancel()">{{ 'cancel' | translate }}</button>
+  <button class="button" [disabled]="character.TalentFk == 0" (click)="save()">{{ 'save' | translate }}</button>
+</div>

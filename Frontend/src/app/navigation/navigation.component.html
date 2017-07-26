@@ -1,13 +1,13 @@
-<nav class="cTop">
-    <li>
-        <a routerLink="/main/home">{{ 'home' | translate }}</a>
+<nav class="navigation top">
+    <li class="navigation-item">
+        <a class="navigation-link" routerLink="/main/home">{{ 'home' | translate }}</a>
     </li>
-    <li>
-        <a routerLink="/main/character">{{'character' | translate}}</a>
+    <li class="navigation-item">
+        <a class="navigation-link" routerLink="/main/character">{{ 'character' | translate }}</a>
     </li>
 </nav>
-<nav>
-    <li>
-        <a routerLink="/login" (click)="logout()">{{'logout' | translate}}</a>
+<nav class="navigation bottom">
+    <li class="navigation-item">
+        <a class="navigation-link" routerLink="/login" (click)="logout()">{{ 'logout' | translate }}</a>
     </li>
 </nav>

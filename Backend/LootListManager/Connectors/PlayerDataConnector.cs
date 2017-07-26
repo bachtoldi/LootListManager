@@ -57,6 +57,10 @@ namespace LootListManager.Connectors {
       return _dataProvider.GetClasses(raceId);
     }
 
+    public IList<Class> GetClasses(string raceLogicalId) {
+      return _dataProvider.GetClasses(raceLogicalId);
+    }
+
     public void SaveClass(Class c) {
       _dataProvider.SaveClass(c);
     }
@@ -141,6 +145,10 @@ namespace LootListManager.Connectors {
       return _dataProvider.GetRaces(factionId);
     }
 
+    public IList<Race> GetRaces(string factionLogicalId) {
+      return _dataProvider.GetRaces(factionLogicalId);
+    }
+
     public void SaveRace(Race race) {
       _dataProvider.SaveRace(race);
     }
@@ -163,6 +171,10 @@ namespace LootListManager.Connectors {
 
     public IList<Talent> GetTalents(int classId) {
       return _dataProvider.GetTalents(classId);
+    }
+
+    public IList<Talent> GetTalents(string classLogicalId) {
+      return _dataProvider.GetTalents(classLogicalId);
     }
 
     public void SaveTalent(Talent talent) {

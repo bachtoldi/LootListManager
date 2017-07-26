@@ -122,13 +122,13 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Classes")]
-    public IHttpActionResult GetClasses([FromUri] int raceId = 0) {
+    public IHttpActionResult GetClasses([FromUri] int raceId = 0, [FromUri] string raceLogicalId = "") {
       Exception ex = null;
       LinkContainer<ClassViewModel> classes = null;
 
       try {
         var requestUri = Request.RequestUri;
-        var classesFromDatabase = (raceId == 0) ? _playerConnector.GetClasses() : _playerConnector.GetClasses(raceId);
+        var classesFromDatabase = (raceId != 0) ? _playerConnector.GetClasses(raceId) : (!string.IsNullOrWhiteSpace(raceLogicalId)) ? _playerConnector.GetClasses(raceLogicalId) : _playerConnector.GetClasses();
         classes = new LinkContainer<ClassViewModel>(classesFromDatabase.Select(x => new ClassViewModel(x)).ToList());
 
         foreach (var c in classes.Items) {
@@ -475,13 +475,13 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Races")]
-    public IHttpActionResult GetRaces([FromUri] int factionId = 0) {
+    public IHttpActionResult GetRaces([FromUri] int factionId = 0, [FromUri] string factionLogicalId = "") {
       Exception ex = null;
       LinkContainer<RaceViewModel> races = null;
 
       try {
         var requestUri = Request.RequestUri;
-        var racesFromDatabase = (factionId == 0) ? _playerConnector.GetRaces() : _playerConnector.GetRaces(factionId);
+        var racesFromDatabase = (factionId != 0) ? _playerConnector.GetRaces(factionId) : (!string.IsNullOrWhiteSpace(factionLogicalId)) ? _playerConnector.GetRaces(factionLogicalId) : _playerConnector.GetRaces();
         races = new LinkContainer<RaceViewModel>(racesFromDatabase.Select(x => new RaceViewModel(x)).ToList());
 
         foreach (var race in races.Items) {
@@ -564,13 +564,13 @@ namespace LootListManager.Controllers {
 
     [HttpGet]
     [Route("Talents")]
-    public IHttpActionResult GetTalents([FromUri] int classId = 0) {
+    public IHttpActionResult GetTalents([FromUri] int classId = 0, [FromUri] string classLogicalId = "") {
       Exception ex = null;
       LinkContainer<TalentViewModel> talents = null;
 
       try {
         var requestUri = Request.RequestUri;
-        var talentsFromDatabase = (classId == 0) ? _playerConnector.GetTalents() : _playerConnector.GetTalents(classId);
+        var talentsFromDatabase = (classId != 0) ? _playerConnector.GetTalents(classId) : (!string.IsNullOrWhiteSpace(classLogicalId)) ? _playerConnector.GetTalents(classLogicalId) : _playerConnector.GetTalents();
         talents = new LinkContainer<TalentViewModel>(talentsFromDatabase.Select(x => new TalentViewModel(x)).ToList());
 
         foreach (var talent in talents.Items) {

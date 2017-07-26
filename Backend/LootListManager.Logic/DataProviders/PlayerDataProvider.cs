@@ -46,6 +46,10 @@ namespace LootListManager.Logic.DataProviders {
       return GetList<ClassRaceSetting>().Where(x => x.RaceRef.RaceId == raceId).Select(x => x.ClassRef).ToList();
     }
 
+    public IList<Class> GetClasses(string raceLogicalId) {
+      return GetList<ClassRaceSetting>().Where(x => x.RaceRef.RaceLogicalId.Equals(raceLogicalId)).Select(x => x.ClassRef).ToList();
+    }
+
     public Class SaveClass(Class c) {
       Save(c);
       return GetById<Class>(c.ClassId);
@@ -142,6 +146,10 @@ namespace LootListManager.Logic.DataProviders {
       return GetList<Race>().Where(x => x.FactionRef.FactionId == factionId).ToList();
     }
 
+    public IList<Race> GetRaces(string factionLogicalId) {
+      return GetList<Race>().Where(x => x.FactionRef.FactionLogicalId.Equals(factionLogicalId)).ToList();
+    }
+
     public Race SaveRace(Race race) {
       Save(race);
       return GetById<Race>(race.RaceId);
@@ -167,6 +175,10 @@ namespace LootListManager.Logic.DataProviders {
 
     public IList<Talent> GetTalents(int classId) {
       return GetList<Talent>().Where(x => x.ClassRef.ClassId == classId).ToList();
+    }
+
+    public IList<Talent> GetTalents(string classLogicalId) {
+      return GetList<Talent>().Where(x => x.ClassRef.ClassLogicalId.Equals(classLogicalId)).ToList();
     }
 
     public Talent SaveTalent(Talent talent) {

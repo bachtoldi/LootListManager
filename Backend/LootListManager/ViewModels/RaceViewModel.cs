@@ -8,6 +8,7 @@ namespace LootListManager.ViewModels {
 
     public RaceViewModel(Race race) {
       RaceId = race.RaceId;
+      RaceLogicalId = race.RaceLogicalId;
       FactionFk = race.FactionRef.FactionId;
     }
 
@@ -16,6 +17,7 @@ namespace LootListManager.ViewModels {
     #region - Properties -
 
     public int RaceId { get; set; }
+    public string RaceLogicalId { get; set; }
     public int FactionFk { get; set; }
 
     #endregion

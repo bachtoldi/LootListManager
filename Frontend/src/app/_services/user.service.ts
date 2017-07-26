@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: Http) { }
 
   getUser(): Observable<User> {
-    const url = globals.backendUrl + "/Auth/User/Current";
+    const url = globals.backendUrl + '/Auth/User/Current';
 
     var token = JSON.parse(localStorage.getItem('currentUser')).token;
 
@@ -28,7 +28,7 @@ export class UserService {
   }
 
   register(username: string, password: string) {
-    const url = globals.backendUrl + "/Auth/Register";
+    const url = globals.backendUrl + '/Auth/Register';
 
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -44,7 +44,7 @@ export class UserService {
     return this.http
       .post(url, body, options)
       .map((response: Response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return true;
         } else {
           return false;

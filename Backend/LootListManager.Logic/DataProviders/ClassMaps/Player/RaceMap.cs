@@ -9,9 +9,8 @@ namespace LootListManager.Logic.DataProviders.ClassMaps.Player {
       Id(r => r.RaceId);
 
       Map(r => r.RaceLogicalId);
-      Map(r => r.RaceImage);
 
-      References(r => r.FactionRef, "FK_FactionId").Cascade.None();
+      References(r => r.FactionRef, "FK_FactionId").Cascade.None().Not.LazyLoad();
     }
   }
 }

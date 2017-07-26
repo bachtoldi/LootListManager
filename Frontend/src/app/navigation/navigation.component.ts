@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AuthenticationService } from '../_services';
+
 @Component({
     selector: 'll-navigation',
     templateUrl: 'navigation.component.html',
@@ -7,13 +9,8 @@ import { Component } from '@angular/core';
 })
 
 export class NavigationComponent {
-    hasToken() {
-        if (localStorage.getItem('currentUser')) {
-            return true;
-        }
 
-        return false;
-    }
+    constructor(private authService: AuthenticationService) { }
 
     logout() {
         localStorage.removeItem('currentUser');
