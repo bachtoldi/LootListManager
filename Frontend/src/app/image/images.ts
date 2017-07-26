@@ -27,6 +27,10 @@ export const IMAGES = {
     'paladin-icon': imgPath + 'classes\\Ui-charactercreate-classes_paladin.png',
     'warrior-icon': imgPath + 'classes\\Ui-charactercreate-classes_warrior.png',
 
+    // Faction Crests
+    'alliance-crest': imgPath + 'factions\\AllianceCrest.jpg',
+    'horde-crest': imgPath + 'factions\\HordeCrest.jpg',
+
     // Faction Icons
     'alliance-icon': imgPath + 'factions\\Ui-charactercreate-factions_alliance.png',
     'horde-icon': imgPath + 'factions\\Ui-charactercreate-factions_horde.png',
